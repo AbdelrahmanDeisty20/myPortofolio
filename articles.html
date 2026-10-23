@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Notes — Abdelrahman El-Deisty</title>
+  <meta name="description" content="Technical articles on Laravel 11, idempotent webhooks, database query optimization, and clean backend architecture.">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .articles-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 2rem;
+      margin-top: 2.5rem;
+    }
+    .article-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+    }
+    .article-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-medium);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    @media (max-width: 768px) {
+      .articles-list-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name">Abdelrahman El-Deisty</span>
+          <span class="brand-role">Backend Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="./work.html" class="nav-link">Work</a>
+        <a href="./skills.html" class="nav-link">Skills</a>
+        <a href="./experience.html" class="nav-link">Experience</a>
+        <a href="./services.html" class="nav-link">Services</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./articles.html" class="nav-link active">Notes</a>
+        <a href="./resume.html" class="nav-link">Resume</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+                <!-- Language Switcher -->
+        <button class="lang-switcher-btn" aria-label="Switch Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-label-slot">العربية</span>
+        </button>
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrapper" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="articles.badge">Engineering Notes</span>
+        <h1 class="section-title" data-i18n="articles.title">Articles & System Design Insights</h1>
+        <p class="section-desc" data-i18n="articles.desc">
+          Documenting solutions to real backend problems: race condition prevention, spatial MySQL indexing, and clean service-layer design.
+        </p>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="articles-list-grid" id="articlesGrid">
+        <!-- Rendered from PortfolioAPI -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered for scale and maintainability.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadArticles();
+    });
+
+    window.refreshPageData = async () => {
+      await loadArticles();
+    };
+
+    async function loadArticles() {
+      const grid = document.getElementById('articlesGrid');
+      const articles = await PortfolioAPI.getArticles();
+
+      const isAr = window.I18n && window.I18n.getLanguage() === 'ar';
+      grid.innerHTML = articles.map(a => {
+        const title = PortfolioDB.getLocalized(a, 'title');
+        const excerpt = PortfolioDB.getLocalized(a, 'excerpt');
+        const cat = PortfolioDB.getLocalized(a, 'category') || a.category;
+        const readBtn = isAr ? 'قراءة المقال ←' : 'Read Article →';
+        return `
+        <article class="article-card">
+          <div>
+            <div style="height: 200px; overflow: hidden; background: var(--bg-surface);">
+              <img src="${a.coverImage}" alt="${escapeHtml(a.title)}" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="padding: 1.5rem 1.5rem 0.5rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem;">
+                <span class="badge badge-indigo">${escapeHtml(cat)}</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(a.readTime)}</span>
+              </div>
+              <h2 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); line-height: 1.4;">
+                <a href="./article-details.html?slug=${a.slug}">${escapeHtml(title)}</a>
+              </h2>
+              <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">
+                ${escapeHtml(excerpt)}
+              </p>
+            </div>
+          </div>
+
+          <div style="padding: 1.25rem 1.5rem 1.5rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-subtle); margin-top: 1rem;">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(a.date)}</span>
+            <a href="./article-details.html?slug=${a.slug}" class="btn btn-sm btn-outline">${readBtn}</a>
+          </div>
+        </article>
+      `; }).join('');
+    }
+  </script>
+</body>
+</html>

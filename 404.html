@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Endpoint Not Dispatched | Abdelrahman El-Deisty</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .notfound-card {
+      max-width: 620px;
+      margin: 6rem auto;
+      text-align: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      padding: 3.5rem 2.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .http-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: #EF4444;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.25);
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1.5rem;
+    }
+  </style>
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name">Abdelrahman El-Deisty</span>
+          <span class="brand-role">Backend Engineer</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="./index.html" class="btn btn-sm btn-outline">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notfound-card">
+      <span class="http-badge">HTTP 404 NOT_FOUND</span>
+      <h1 class="hero-headline" style="font-size: 2.8rem; margin-bottom: 0.75rem;">Route Not Dispatched</h1>
+      <p style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem;">
+        This route doesn't exist in the routing table. Perhaps the controller was never registered or the endpoint was deprecated.
+      </p>
+
+      <div style="background: #090D16; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 1rem; font-family: var(--font-mono); font-size: 0.82rem; color: #94A3B8; text-align: left; margin-bottom: 2rem;">
+        <span style="color: #EF4444;">NotFoundHttpException:</span> The URI requested did not match any active web or API endpoints in <span style="color: var(--accent-cyan);">routes/web.php</span>.
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="./index.html" class="btn btn-primary">Back to Homepage</a>
+        <a href="./work.html" class="btn btn-secondary">View Selected Work</a>
+      </div>
+    </div>
+  </main>
+
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

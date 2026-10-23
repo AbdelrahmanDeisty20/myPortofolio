@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Search — Abdelrahman El-Deisty</title>
+  <meta name="description" content="Search all production projects, technical articles, skills, and engineering services.">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <style>
+    .search-hero-box {
+      max-width: 740px;
+      margin: 2rem auto 3rem;
+      position: relative;
+    }
+    .deep-search-input {
+      width: 100%;
+      padding: 1.25rem 1.5rem 1.25rem 3.5rem;
+      font-size: 1.15rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-xl);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-lg);
+      outline: none;
+      transition: all var(--transition-fast);
+    }
+    .deep-search-input:focus {
+      border-color: var(--accent-cyan);
+      box-shadow: var(--shadow-glow);
+    }
+    .search-icon-pos {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+    .results-category-group {
+      margin-bottom: 2rem;
+    }
+    .results-group-title {
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.85rem;
+    }
+  </style>
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name">Abdelrahman El-Deisty</span>
+          <span class="brand-role">Backend Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="./work.html" class="nav-link">Work</a>
+        <a href="./skills.html" class="nav-link">Skills</a>
+        <a href="./experience.html" class="nav-link">Experience</a>
+        <a href="./services.html" class="nav-link">Services</a>
+        <a href="./about.html" class="nav-link">About</a>
+        <a href="./articles.html" class="nav-link">Notes</a>
+        <a href="./resume.html" class="nav-link">Resume</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+                <!-- Language Switcher -->
+        <button class="lang-switcher-btn" aria-label="Switch Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-label-slot">العربية</span>
+        </button>
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrapper" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="section-header" style="text-align: center;">
+        <span class="section-label">Omni Index</span>
+        <h1 class="section-title">Search Everything</h1>
+        <p class="section-desc" style="margin: 0 auto;">
+          Instant full-text query matching across production projects, case studies, technical articles, and skills.
+        </p>
+      </div>
+
+      <div class="search-hero-box">
+        <svg class="search-icon-pos" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="deepSearchInput" class="deep-search-input" placeholder="Search by technology (e.g. Laravel, MySQL), project name, or topic..." autofocus>
+      </div>
+
+      <!-- Results Container -->
+      <div id="searchResultsContainer" style="max-width: 740px; margin: 0 auto;">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered for scale and maintainability.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const input = document.getElementById('deepSearchInput');
+      const container = document.getElementById('searchResultsContainer');
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const q = urlParams.get('q');
+      if (q) {
+        input.value = q;
+        await executeSearch(q, container);
+      } else {
+        await executeSearch('', container);
+      }
+
+      input.addEventListener('input', async (e) => {
+        await executeSearch(e.target.value, container);
+      });
+    });
+
+    async function executeSearch(query, container) {
+      if (!query || query.trim() === '') {
+        container.innerHTML = `
+          <div style="text-align: center; color: var(--text-muted); padding: 3rem 1rem;">
+            <p>Popular queries: <a href="?q=Laravel" style="color: var(--accent-cyan); text-decoration: underline;">Laravel</a>, <a href="?q=MySQL" style="color: var(--accent-cyan); text-decoration: underline;">MySQL</a>, <a href="?q=SaaS" style="color: var(--accent-cyan); text-decoration: underline;">SaaS</a>, <a href="?q=API" style="color: var(--accent-cyan); text-decoration: underline;">API</a>, <a href="?q=Webhooks" style="color: var(--accent-cyan); text-decoration: underline;">Webhooks</a></p>
+          </div>
+        `;
+        return;
+      }
+
+      const results = await PortfolioAPI.searchAll(query);
+
+      if (!results.length) {
+        container.innerHTML = `
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 3rem; text-align: center;">
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary);">No records matched "${escapeHtml(query)}"</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Try searching for a core competency such as PHP, MySQL, Redis, or Bynona.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = `
+        <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+          Found ${results.length} result${results.length === 1 ? '' : 's'} for "<strong>${escapeHtml(query)}</strong>"
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+          ${results.map(r => `
+            <a href="${r.url}" style="display: flex; align-items: center; justify-content: space-between; padding: 1.25rem; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); transition: all var(--transition-fast);">
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <span class="badge badge-cyan">${escapeHtml(r.type)}</span>
+                <div>
+                  <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary);">${escapeHtml(r.title)}</h3>
+                  <p style="font-size: 0.82rem; color: var(--text-secondary); margin-top: 0.2rem;">${escapeHtml(r.subtitle)}</p>
+                </div>
+              </div>
+              <span class="btn btn-sm btn-outline">Open →</span>
+            </a>
+          `).join('')}
+        </div>
+      `;
+    }
+  </script>
+</body>
+</html>

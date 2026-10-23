@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience & Career — Abdelrahman El-Deisty</title>
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <style>
+    .timeline {
+      position: relative;
+      margin-top: 2.5rem;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background: var(--border-medium);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 3.5rem;
+    }
+    .timeline-bullet {
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 3px solid var(--accent-cyan);
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4);
+    }
+    .timeline-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      transition: all var(--transition-fast);
+    }
+    .timeline-card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-medium);
+      box-shadow: var(--shadow-md);
+    }
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .role-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .company-name {
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      font-weight: 600;
+      margin-top: 0.15rem;
+    }
+    .period-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      background: var(--bg-tertiary);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
+          <span class="brand-role" data-i18n="brand.role">Backend Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="./work.html" class="nav-link" data-i18n="nav.projects">Work</a>
+        <a href="./skills.html" class="nav-link" data-i18n="nav.skills">Skills</a>
+        <a href="./experience.html" class="nav-link active" data-i18n="nav.experience">Experience</a>
+        <a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="./about.html" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="./articles.html" class="nav-link" data-i18n="nav.articles">Notes</a>
+        <a href="./resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
+        <a href="./contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <!-- Language Switcher -->
+        <button class="lang-switcher-btn" aria-label="Switch Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-label-slot">العربية</span>
+        </button>
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrapper" style="padding-top: 3.5rem;">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header">
+        <span class="section-label" data-i18n="experience.badge">Career Journey</span>
+        <h1 class="section-title" data-i18n="experience.title">Work & Production Experience</h1>
+        <p class="section-desc" data-i18n="experience.desc">
+          Concrete engineering roles, real responsibilities, and delivered projects. Concrete engineering roles, real responsibilities, and delivered systems.
+        </p>
+      </div>
+
+      <!-- Experience Timeline Container -->
+      <div class="timeline" id="experienceTimeline">
+        <!-- Rendered from PortfolioAPI -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered for scale and maintainability.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadExperience();
+    });
+
+    window.refreshPageData = async () => {
+      await loadExperience();
+    };
+
+    window.refreshPageData = async () => {
+      await loadExperience();
+    };
+
+    async function loadExperience() {
+      const timeline = document.getElementById('experienceTimeline');
+      const exps = await PortfolioAPI.getExperience();
+      const isAr = window.I18n && window.I18n.getLanguage() === 'ar';
+
+      if (!exps.length) {
+        timeline.innerHTML = `<p style="color: var(--text-muted);">${isAr ? 'لا توجد سجلات خبرة مسجلة حالياً.' : 'No experience entries recorded.'}</p>`;
+        return;
+      }
+
+      timeline.innerHTML = exps.map(exp => {
+        const role = PortfolioDB.getLocalized(exp, 'role');
+        const company = PortfolioDB.getLocalized(exp, 'company');
+        const desc = PortfolioDB.getLocalized(exp, 'description');
+        return `
+        <div class="timeline-item">
+          <div class="timeline-bullet"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="role-title">${escapeHtml(role)}</h3>
+                <div class="company-name">${escapeHtml(company)} • <span style="color: var(--text-muted); font-size: 0.88rem;">${escapeHtml(exp.location || 'Remote')}</span></div>
+              </div>
+              <span class="period-badge font-mono">${escapeHtml(exp.period)}</span>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              ${escapeHtml(desc)}
+            </p>
+
+            <h4 style="font-size: 0.82rem; font-family: var(--font-mono); text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.65rem; letter-spacing: 0.05em;">${isAr ? 'أبرز المسؤوليات والمخرجات الهندسية:' : 'Key Responsibilities & Deliverables:'}</h4>
+            <ul style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+              ${(exp.responsibilities || []).map(r => `
+                <li style="display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.92rem; color: var(--text-secondary);">
+                  <span style="color: var(--accent-cyan); font-weight: 700;">▸</span>
+                  <span>${escapeHtml(r)}</span>
+                </li>
+              `).join('')}
+            </ul>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+              ${(exp.technologies || []).map(t => `<span class="badge">${escapeHtml(t)}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+    }
+  </script>
+</body>
+</html>

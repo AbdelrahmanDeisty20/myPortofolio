@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="seo.defaultTitle">Abdelrahman El-Deisty — Software Engineer & Backend Specialist</title>
+  <meta name="description" content="Backend Developer building production-ready Laravel applications, APIs, SaaS platforms, and business systems.">
+  <meta name="keywords" content="Laravel, PHP, Backend Developer, REST API, MySQL, Software Engineer, SaaS, Filament, Cairo">
+  <meta name="author" content="Abdelrahman El-Deisty">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Abdelrahman El-Deisty — Software Engineer & Backend Specialist">
+  <meta property="og:description" content="Backend Developer building production-ready Laravel applications, APIs, SaaS platforms, and business systems.">
+  <meta property="og:type" content="website">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
+          <span class="brand-role" data-i18n="brand.role">Backend Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="./work.html" class="nav-link" data-i18n="nav.projects">Work</a>
+        <a href="./skills.html" class="nav-link" data-i18n="nav.skills">Skills</a>
+        <a href="./experience.html" class="nav-link" data-i18n="nav.experience">Experience</a>
+        <a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="./about.html" class="nav-link" data-i18n="nav.about">About</a>
+        <a href="./articles.html" class="nav-link" data-i18n="nav.articles">Notes</a>
+        <a href="./resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
+        <a href="./contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Command Palette Trigger -->
+        <button class="search-trigger-btn" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <!-- Language Switcher -->
+        <button class="lang-switcher-btn" aria-label="Switch Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-label-slot">العربية</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="status-pill" id="heroStatusPill">
+          <span class="status-beacon"></span>
+          <span id="heroAvailabilityText">Available for selected opportunities</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Abdelrahman El-Deisty<br>
+          <span class="text-gradient">Backend Developer</span>
+        </h1>
+
+        <p class="hero-subheadline" id="heroSubtitle">
+          Building production-ready Laravel applications, high-throughput REST APIs, SaaS platforms, and automated business workflows.
+        </p>
+
+        <div class="hero-actions">
+          <a href="./work.html" class="btn btn-primary">
+            <span data-i18n="hero.ctaPrimary">View Selected Work</span>
+            <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a href="./contact.html" class="btn btn-secondary" data-i18n="hero.ctaContact">Contact Me</a>
+          <a href="./resume.html" class="btn btn-outline" data-i18n="hero.ctaResume">Resume</a>
+          <a href="https://github.com/Abdelrahman-El-Deisty" target="_blank" rel="noopener" class="btn btn-outline" id="heroGithubLink">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span data-i18n="hero.ctaGithub">GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Interactive Developer Terminal Widget -->
+      <div class="terminal-card">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+          </div>
+          <span class="terminal-title">eldeisty@production-server:~</span>
+          <span class="badge" style="font-size: 0.65rem;">bash</span>
+        </div>
+        <div class="terminal-body" id="heroTerminalBody">
+          <!-- Populated by JavaScript micro-typing engine -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Proof Facts Banner (Bento Style) -->
+  <section class="proof-banner">
+    <div class="container">
+      <div class="proof-grid" id="quickProofGrid">
+        <!-- Dynamically rendered from Profile Stats -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Selected Work -->
+  <section class="section-wrapper" id="featuredSection">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="sections.featuredBadge">Engineering Portfolio</span>
+        <h2 class="section-title" data-i18n="sections.featuredTitle">Selected Production Work</h2>
+        <p class="section-desc" data-i18n="sections.featuredDesc">Real-world systems, SaaS backends, and logistics dispatchers architected for reliability, concurrency, and scale.</p>
+      </div>
+
+      <div class="projects-bento-grid" id="featuredProjectsGrid">
+        <!-- Dynamically populated from PortfolioAPI -->
+      </div>
+
+      <div style="text-align: center; margin-top: 3rem;">
+        <a href="./work.html" class="btn btn-secondary btn-lg">
+          <span data-i18n="sections.viewAllProjects">Explore All Projects & Case Studies</span>
+          <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Technical Stack -->
+  <section class="section-wrapper" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="sections.stackBadge">Technical Competencies</span>
+        <h2 class="section-title" data-i18n="sections.stackTitle">Core Technical Stack</h2>
+        <p class="section-desc" data-i18n="sections.stackDesc">Technologies I use to build scalable systems. No arbitrary 99% progress bars — categorized by production proficiency.</p>
+      </div>
+
+      <div class="tech-categories-grid" id="techStackGrid">
+        <!-- Populated from PortfolioAPI -->
+      </div>
+
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <a href="./skills.html" class="btn btn-outline" data-i18n="sections.viewAllSkills">View Complete Skills Breakdown & Projects Mapping →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Behind the Code Showcase -->
+  <section class="section-wrapper">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="sections.codeBadge">Code Architecture</span>
+        <h2 class="section-title" data-i18n="sections.codeTitle">Behind the Code</h2>
+        <p class="section-desc">Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.</p>
+      </div>
+
+      <div class="code-showcase-container">
+        <div class="code-tabs-header" id="codeTabsHeader">
+          <!-- Populated from codeSnippets -->
+        </div>
+        <div class="code-content-grid" id="codeContentGrid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Philosophy ("How I Build") -->
+  <section class="section-wrapper" style="background: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="sections.philosophyBadge">Engineering Methodology</span>
+        <h2 class="section-title" data-i18n="sections.philosophyTitle">How I Build Systems</h2>
+        <p class="section-desc" data-i18n="sections.philosophyDesc">Systems engineering that prioritizes business workflows, data integrity, and maintainability.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-step-card">
+          <span class="step-number">01</span>
+          <h3 class="step-title" data-i18n="philosophy.step1Title">Understand Business Workflows</h3>
+          <p class="step-desc" data-i18n="philosophy.step1Desc">Analyze domain rules, actor permissions, transaction boundaries, and operational bottlenecks before writing code.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">02</span>
+          <h3 class="step-title" data-i18n="philosophy.step2Title">Design Normalized Relational Models</h3>
+          <p class="step-desc" data-i18n="philosophy.step2Desc">Craft 3NF database schemas, enforce foreign key integrity, and establish compound indexes on high-frequency query paths.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">03</span>
+          <h3 class="step-title" data-i18n="philosophy.step3Title">Architect Decoupled Domain Services</h3>
+          <p class="step-desc" data-i18n="philosophy.step3Desc">Keep controllers thin. Encapsulate business logic in isolated, single-responsibility services and transactional pipelines.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">04</span>
+          <h3 class="step-title" data-i18n="philosophy.step4Title">Build Secure, Versioned REST APIs</h3>
+          <p class="step-desc" data-i18n="philosophy.step4Desc">Strict Form Request validation, Sanctum token ability scopes, consistent API Resources, and rate limiting.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">05</span>
+          <h3 class="step-title" data-i18n="philosophy.step5Title">Handle Edge Cases & Concurrency</h3>
+          <p class="step-desc" data-i18n="philosophy.step5Desc">Employ database locking, idempotent webhook handling, and deterministic state machine transitions to eliminate race conditions.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">06</span>
+          <h3 class="step-title" data-i18n="philosophy.step6Title">Optimize Database & Caching</h3>
+          <p class="step-desc" data-i18n="philosophy.step6Desc">Inspect EXPLAIN plans, eliminate N+1 queries with eager loading, and leverage Redis for rate limits and taxonomy caching.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Notes Preview -->
+  <section class="section-wrapper">
+    <div class="container">
+      <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-direction: row; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="section-label" data-i18n="sections.notesBadge">Knowledge Sharing</span>
+          <h2 class="section-title" data-i18n="sections.notesTitle">Engineering Notes</h2>
+          <p class="section-desc" data-i18n="sections.notesDesc">Practical architecture notes on Laravel, database query optimization, and resilient API design.</p>
+        </div>
+        <a href="./articles.html" class="btn btn-outline" style="white-space: nowrap;" data-i18n="sections.allArticles">All Articles →</a>
+      </div>
+
+      <div class="projects-bento-grid" id="homeArticlesGrid">
+        <!-- Rendered from PortfolioAPI -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion CTA Banner -->
+  <section class="section-wrapper" style="padding-bottom: 5.5rem;">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-copy">
+          <h2 class="cta-title" data-i18n="cta.title">Building a Laravel backend, SaaS, or API platform?</h2>
+          <p class="cta-subtitle" data-i18n="cta.subtitle">Let's discuss your system architecture, data models, and business logic requirements.</p>
+        </div>
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="./contact.html" class="btn btn-primary btn-lg" data-i18n="cta.startBtn">Start a Conversation</a>
+          <a href="./resume.html" class="btn btn-secondary btn-lg" data-i18n="cta.resumeBtn">View Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a href="./index.html" class="brand-link">
+            <span class="brand-badge">AE</span>
+            <span class="brand-name">Abdelrahman El-Deisty</span>
+          </a>
+          <p class="footer-brand-desc">
+            Backend Developer specializing in production Laravel applications, high-performance REST APIs, and automated business platforms.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="./work.html" class="footer-link">Selected Work</a></li>
+            <li><a href="./skills.html" class="footer-link">Tech Stack</a></li>
+            <li><a href="./experience.html" class="footer-link">Experience</a></li>
+            <li><a href="./services.html" class="footer-link">Services</a></li>
+            <li><a href="./articles.html" class="footer-link">Engineering Notes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Resources</h4>
+          <ul class="footer-links-list">
+            <li><a href="./resume.html" class="footer-link">Resume / CV</a></li>
+            <li><a href="./search.html" class="footer-link">Global Search</a></li>
+            <li><a href="https://github.com/Abdelrahman-El-Deisty" target="_blank" rel="noopener" class="footer-link">GitHub Profile</a></li>
+            <li><a href="https://linkedin.com/in/abdelrahman-el-deisty" target="_blank" rel="noopener" class="footer-link">LinkedIn Profile</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Administration</h4>
+          <ul class="footer-links-list">
+            
+            
+            <li><a href="./contact.html" class="footer-link">Send Inquiry</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered with clean architecture and vanilla web standards.</span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">v2.6.0-prod</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <!-- Homepage Rendering Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadHomepageData();
+    });
+
+    window.refreshPageData = async () => {
+      await loadHomepageData();
+    };
+
+    async function loadHomepageData() {
+      const profile = await PortfolioAPI.getProfile();
+      if (!profile) return;
+      const isAr = window.I18n && window.I18n.getLanguage() === 'ar';
+
+      // Update Hero Elements
+      const availEl = document.getElementById('heroAvailabilityText');
+      if (availEl) {
+        availEl.textContent = PortfolioDB.getLocalized(profile, 'availabilityStatus') || 'Available for selected opportunities';
+      }
+
+      const subtitleEl = document.getElementById('heroSubtitle');
+      if (subtitleEl) {
+        subtitleEl.textContent = PortfolioDB.getLocalized(profile, 'tagline') || profile.tagline;
+      }
+
+      // Render Proof Stats
+      const statsGrid = document.getElementById('quickProofGrid');
+      if (statsGrid && profile.stats) {
+        statsGrid.innerHTML = profile.stats.map(s => `
+          <div class="proof-card">
+            <div class="proof-value">${escapeHtml(PortfolioDB.getLocalized(s, 'value'))}</div>
+            <div class="proof-label">${escapeHtml(PortfolioDB.getLocalized(s, 'label'))}</div>
+            <div class="proof-detail">${escapeHtml(PortfolioDB.getLocalized(s, 'detail'))}</div>
+          </div>
+        `).join('');
+      }
+
+      // Render Featured Projects
+      const projectsGrid = document.getElementById('featuredProjectsGrid');
+      if (projectsGrid) {
+        const featured = await PortfolioAPI.getProjects({ featuredOnly: true });
+        projectsGrid.innerHTML = featured.map((p, idx) => {
+          const isMain = idx === 0;
+          const title = PortfolioDB.getLocalized(p, 'title');
+          const desc = PortfolioDB.getLocalized(p, 'shortDescription') || PortfolioDB.getLocalized(p, 'description');
+          return `
+            <div class="project-card ${isMain ? 'featured-primary' : ''}" onclick="if (!event.target.closest('a, button')) { window.location.href='./project-details.html?slug=${encodeURIComponent(p.slug)}'; }">
+              <a href="./project-details.html?slug=${encodeURIComponent(p.slug)}" class="project-thumb-wrapper" aria-label="${escapeHtml(title)}">
+                <img src="${p.thumbnail}" alt="${escapeHtml(title)}" class="project-thumb" loading="lazy">
+              </a>
+              <div class="project-body">
+                <div>
+                  <div class="project-meta-top">
+                    <span class="badge badge-cyan">${escapeHtml(p.category)}</span>
+                    <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(p.year)}</span>
+                  </div>
+                  <h3 class="project-name" style="margin-top: 0.65rem;">
+                    <a href="./project-details.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(title)}</a>
+                  </h3>
+                  <p class="project-desc" style="margin-top: 0.4rem;">${escapeHtml(desc)}</p>
+                </div>
+
+                <div>
+                  <div class="project-tech-tags">
+                    ${p.technologies.slice(0, 5).map(t => `<span class="badge">${escapeHtml(t)}</span>`).join('')}
+                    ${p.technologies.length > 5 ? `<span class="badge">+${p.technologies.length - 5}</span>` : ''}
+                  </div>
+
+                  <div class="project-links">
+                    <a href="./project-details.html?slug=${encodeURIComponent(p.slug)}" class="btn btn-sm btn-primary">
+                      <span>${isAr ? 'دراسة الحالة' : 'Case Study'}</span>
+                      <svg class="arrow-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    ${p.isPrivate ? 
+                      `<span class="private-lock-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        ${isAr ? 'مشروع خاص' : 'Private Project'}
+                      </span>` : 
+                      (p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>` : '')
+                    }
+                    ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline">${isAr ? 'تجربة حية' : 'Live Demo'}</a>` : ''}
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Render Tech Stack Grouped
+      const techGrid = document.getElementById('techStackGrid');
+      if (techGrid) {
+        const allTechs = await PortfolioAPI.getTechnologies();
+        const categories = ["Backend", "Database", "Admin / UI", "Infrastructure", "AI & Integrations"];
+        
+        techGrid.innerHTML = categories.map(cat => {
+          const items = allTechs.filter(t => t.category.toLowerCase() === cat.toLowerCase());
+          if (!items.length) return '';
+          return `
+            <div class="tech-group-card">
+              <div class="tech-group-title">
+                <span>${cat}</span>
+                <span class="badge" style="font-size: 0.7rem;">${items.length} ${isAr ? 'مهارة' : 'Skills'}</span>
+              </div>
+              <div class="tech-items-list">
+                ${items.map(t => {
+                  let levelClass = 'level-working';
+                  if (t.level === 'Primary') levelClass = 'level-primary';
+                  else if (t.level === 'Strong') levelClass = 'level-strong';
+                  return `
+                    <div class="tech-item-row" title="${escapeHtml(t.description || '')}">
+                      <span class="tech-name">${escapeHtml(t.name)}</span>
+                      <span class="tech-level-pill ${levelClass}">${escapeHtml(t.level)}</span>
+                    </div>
+                  `;
+                }).join('')}
+              </div>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // Render Behind the Code Showcase
+      const codeSnippets = await PortfolioAPI.getCodeSnippets();
+      const tabsHeader = document.getElementById('codeTabsHeader');
+      const contentGrid = document.getElementById('codeContentGrid');
+
+      if (tabsHeader && contentGrid && codeSnippets.length) {
+        let activeIdx = 0;
+
+        const renderCodeSnippet = (idx) => {
+          const s = codeSnippets[idx];
+          tabsHeader.innerHTML = codeSnippets.map((item, i) => `
+            <button class="code-tab-btn ${i === idx ? 'active' : ''}" data-index="${i}">
+              ${escapeHtml(item.title)}
+            </button>
+          `).join('');
+
+          contentGrid.innerHTML = `
+            <div class="code-info-panel">
+              <div>
+                <span class="badge badge-indigo">${escapeHtml(s.project)}</span>
+                <h3 style="font-size: 1.25rem; font-weight: 700; margin-top: 0.75rem; color: var(--text-primary);">${escapeHtml(s.title)}</h3>
+                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">${escapeHtml(s.description)}</p>
+              </div>
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
+                Target: Production-grade concurrency safety
+              </div>
+            </div>
+            <div class="code-viewer-panel">
+              <pre class="code-pre"><code>${escapeHtml(s.code)}</code></pre>
+            </div>
+          `;
+
+          tabsHeader.querySelectorAll('.code-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+              const nextI = parseInt(btn.getAttribute('data-index'), 10);
+              renderCodeSnippet(nextI);
+            });
+          });
+        };
+
+        renderCodeSnippet(0);
+      }
+
+      // Render Articles on Homepage
+      const homeArticles = document.getElementById('homeArticlesGrid');
+      if (homeArticles) {
+        const articles = await PortfolioAPI.getArticles();
+        homeArticles.innerHTML = articles.slice(0, 2).map(a => {
+          const title = PortfolioDB.getLocalized(a, 'title');
+          const excerpt = PortfolioDB.getLocalized(a, 'excerpt');
+          return `
+          <div class="project-card" style="grid-column: span 6;">
+            <div class="project-thumb-wrapper" style="min-height: 180px;">
+              <img src="${a.coverImage}" alt="${escapeHtml(title)}" class="project-thumb" loading="lazy">
+            </div>
+            <div class="project-body">
+              <div>
+                <div class="project-meta-top">
+                  <span class="badge badge-indigo">${escapeHtml(a.category)}</span>
+                  <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(a.readTime)}</span>
+                </div>
+                <h3 class="project-name" style="font-size: 1.25rem; margin-top: 0.65rem;">
+                  <a href="./article-details.html?slug=${a.slug}">${escapeHtml(title)}</a>
+                </h3>
+                <p class="project-desc" style="margin-top: 0.4rem;">${escapeHtml(excerpt)}</p>
+              </div>
+              <div class="project-links">
+                <a href="./article-details.html?slug=${a.slug}" class="btn btn-sm btn-outline">${isAr ? 'قراءة المقال ←' : 'Read Article →'}</a>
+              </div>
+            </div>
+          </div>
+        `;
+        }).join('');
+      }
+    }
+  </script>
+</body>
+</html>

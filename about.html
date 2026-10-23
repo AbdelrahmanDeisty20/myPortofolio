@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About & Engineering Philosophy — Abdelrahman El-Deisty</title>
+  <meta name="description" content="Software Engineer specializing in backend architectures, Laravel, APIs, and product-focused systems.">
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <!-- Centralized Localization & Theme Engine (Pre-render bootstrap to eliminate flash) -->
+  <script src="./assets/js/locales/en.js"></script>
+  <script src="./assets/js/locales/ar.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="./index.html" class="brand-link">
+        <span class="brand-badge">AE</span>
+        <div class="brand-text">
+          <span class="brand-name">Abdelrahman El-Deisty</span>
+          <span class="brand-role">Backend Engineer</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu">
+        <a href="./work.html" class="nav-link">Work</a>
+        <a href="./skills.html" class="nav-link">Skills</a>
+        <a href="./experience.html" class="nav-link">Experience</a>
+        <a href="./services.html" class="nav-link">Services</a>
+        <a href="./about.html" class="nav-link active">About</a>
+        <a href="./articles.html" class="nav-link">Notes</a>
+        <a href="./resume.html" class="nav-link">Resume</a>
+        <a href="./contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="search-trigger-btn" aria-label="Search (Ctrl+K)" title="Search (Ctrl+K)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+                <!-- Language Switcher -->
+        <button class="lang-switcher-btn" aria-label="Switch Language">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <span class="lang-label-slot">العربية</span>
+        </button>
+        <button class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <span class="theme-icon-slot"></span>
+        </button>
+        <button class="mobile-nav-toggle" aria-label="Open Mobile Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section-wrapper" style="padding-top: 3.5rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label" data-i18n="aboutPage.badge">Engineering Profile</span>
+        <h1 class="section-title" data-i18n="aboutPage.title">A Software Engineer's Product Lab</h1>
+        <p class="section-desc" data-i18n="aboutPage.desc">
+          Building systems around real business workflows — not just passing tests locally, but handling edge cases, concurrency, and real-world scale.
+        </p>
+      </div>
+
+      <!-- About Bento Grid -->
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; margin-bottom: 4rem;">
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 1.05rem; line-height: 1.8; color: var(--text-secondary);">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 2.25rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;" data-i18n="aboutPage.whoIAm">Who I Am</h2>
+            <p id="aboutBioSummary" style="margin-bottom: 1.25rem;">
+              I'm Abdelrahman El-Deisty, a software engineer with a primary focus on backend architecture and product-focused systems. I build reliable Laravel applications, high-performance REST APIs, database schemas, and management dashboards.
+            </p>
+            <p id="aboutBioFull">
+              Rather than viewing code in isolation, I look at software as an operational tool that must solve tangible business problems. My work emphasizes data integrity, clean service layer abstractions, defensive webhook processing, and query performance.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 2.25rem;">
+            <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem;" data-i18n="aboutPage.whatIEnjoy">What I Enjoy Building</h2>
+            <ul style="display: flex; flex-direction: column; gap: 0.85rem; font-size: 0.98rem;">
+              <li style="display: flex; gap: 0.65rem; align-items: flex-start;">
+                <span style="color: var(--accent-cyan); font-weight: 700;">▸</span>
+                <span><strong>Multi-tenant SaaS Engines</strong>: Partitioned databases, subscription billing synchronization, and transactional isolation.</span>
+              </li>
+              <li style="display: flex; gap: 0.65rem; align-items: flex-start;">
+                <span style="color: var(--accent-cyan); font-weight: 700;">▸</span>
+                <span><strong>Logistics & Dispatch APIs</strong>: Geospatial radius driver matching, state machine order lifecycles, and push alert triggers.</span>
+              </li>
+              <li style="display: flex; gap: 0.65rem; align-items: flex-start;">
+                <span style="color: var(--accent-cyan); font-weight: 700;">▸</span>
+                <span><strong>Internal Dashboards</strong>: High-utility control panels enabling teams to manage orders, inventory, and audit histories.</span>
+              </li>
+              <li style="display: flex; gap: 0.65rem; align-items: flex-start;">
+                <span style="color: var(--accent-cyan); font-weight: 700;">▸</span>
+                <span><strong>Resilient Webhook Handlers</strong>: Idempotent processing pipelines with cryptographic signature verification and queue retries.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Sidebar Facts -->
+        <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-xl); padding: 2rem;">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 1.25rem;" data-i18n="aboutPage.quickFacts">Quick Facts</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem; font-size: 0.9rem;">
+              <div>
+                <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;">Location</span>
+                <div style="font-weight: 600; color: var(--text-primary); margin-top: 0.2rem;" id="aboutLocation">Cairo, Egypt / Remote Worldwide</div>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;">Primary Stack</span>
+                <div style="font-weight: 600; color: var(--text-primary); margin-top: 0.2rem;">Laravel 11, PHP 8.3, MySQL 8, Redis, REST APIs</div>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;">Current Availability</span>
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-top: 0.25rem;">
+                  <span class="status-beacon"></span>
+                  <span style="font-weight: 600; color: #34D399;" id="aboutAvailability">Available for selected opportunities</span>
+                </div>
+              </div>
+              <div>
+                <span style="color: var(--text-muted); font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase;">Engineering Mindset</span>
+                <div style="font-weight: 600; color: var(--text-primary); margin-top: 0.2rem;">Product-oriented, defensive programming, clean architecture</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%), var(--bg-card); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 2rem;">
+            <h3 style="font-size: 1.15rem; font-weight: 700; margin-bottom: 0.75rem;">Looking for an Engineer?</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+              Whether you need to architect a new SaaS backend, optimize sluggish database queries, or build custom REST endpoints.
+            </p>
+            <a href="./contact.html" class="btn btn-primary" style="width: 100%;">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Engineering Philosophy 8-Step Breakdown -->
+      <div class="section-header" style="margin-top: 2rem;">
+        <span class="section-label">Development Process</span>
+        <h2 class="section-title">How I Build: 8 Core Principles</h2>
+        <p class="section-desc">A structured engineering methodology from concept to production maintenance.</p>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-step-card">
+          <span class="step-number">01</span>
+          <h3 class="step-title">Understand Domain Workflows</h3>
+          <p class="step-desc">Deep-dive into business rules, actor roles, concurrency bottlenecks, and compliance constraints.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">02</span>
+          <h3 class="step-title">Model Relational Integrity</h3>
+          <p class="step-desc">Design normalized 3NF database models with foreign keys, composite indexes, and strict field constraints.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">03</span>
+          <h3 class="step-title">Build Clean, Versioned APIs</h3>
+          <p class="step-desc">Strict Form Request validation, Sanctum token ability scopes, and structured API Resources.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">04</span>
+          <h3 class="step-title">Encapsulate Service Layer</h3>
+          <p class="step-desc">Separate business logic from HTTP controllers. Use single-responsibility domain services and DTOs.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">05</span>
+          <h3 class="step-title">Defend Edge Cases & Race Conditions</h3>
+          <p class="step-desc">Implement pessimistic row locking, deterministic state machines, and idempotent webhook handlers.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">06</span>
+          <h3 class="step-title">Optimize Database & Cache</h3>
+          <p class="step-desc">Analyze EXPLAIN plans, eliminate N+1 queries through eager loading, and employ Redis for hot taxonomies.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">07</span>
+          <h3 class="step-title">Simulate Production Stress</h3>
+          <p class="step-desc">Validate concurrent requests, network timeouts, and third-party API retries before shipping.</p>
+        </div>
+        <div class="philosophy-step-card">
+          <span class="step-number">08</span>
+          <h3 class="step-title">Document & Maintain</h3>
+          <p class="step-desc">Deliver clean Postman collections, architectural schemas, and clear code comments for future engineers.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered for scale and maintainability.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/js/db.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/main.js"></script>
+
+  <script>
+    async function loadAboutData() {
+      const profile = await PortfolioAPI.getProfile();
+      if (!profile) return;
+      const bioSum = PortfolioDB.getLocalized(profile, 'bioSummary');
+      const bioF = PortfolioDB.getLocalized(profile, 'bioFull');
+      const loc = PortfolioDB.getLocalized(profile, 'location');
+      const avail = PortfolioDB.getLocalized(profile, 'availabilityStatus');
+
+      if (bioSum) document.getElementById('aboutBioSummary').textContent = bioSum;
+      if (bioF) document.getElementById('aboutBioFull').textContent = bioF;
+      if (loc) document.getElementById('aboutLocation').textContent = loc;
+      if (avail) document.getElementById('aboutAvailability').textContent = avail;
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadAboutData();
+    });
+
+    window.refreshPageData = async () => {
+      await loadAboutData();
+    };
+  </script>
+</body>
+</html>
