@@ -1310,29 +1310,177 @@ ul, ol {
   }
 }
 
-/* Mobile Navigation Drawer */
+/* ==========================================================================
+   Mobile Navigation Drawer - Fullscreen & Scrollable
+   ========================================================================== */
 .mobile-drawer {
-  position: fixed;
-  inset: 0;
-  background: var(--bg-primary);
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  padding: 5rem 2rem 2rem;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-width: 100vw !important;
+  background: var(--bg-primary) !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
   transform: translateX(100%);
-  transition: transform var(--transition-normal);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden !important;
 }
 
 .mobile-drawer.active {
-  transform: translateX(0);
+  transform: translateX(0) !important;
+}
+
+body.drawer-open, html.drawer-open {
+  overflow: hidden !important;
+  touch-action: none !important;
+}
+
+.mobile-drawer-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.85rem 1.25rem !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  background: var(--bg-surface) !important;
+  flex-shrink: 0 !important;
+  min-height: 4.25rem !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+}
+
+.mobile-drawer-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-drawer-close {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 2.35rem !important;
+  height: 2.35rem !important;
+  border-radius: var(--radius-md) !important;
+  background: var(--bg-tertiary) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  cursor: pointer !important;
+  transition: all var(--transition-fast) !important;
+  flex-shrink: 0 !important;
+}
+
+.mobile-drawer-close:hover {
+  background: var(--bg-card) !important;
+  border-color: var(--border-medium) !important;
+  color: var(--accent-cyan) !important;
+}
+
+.mobile-drawer-scroll {
+  flex: 1 1 auto !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  padding: 1.25rem 1.5rem 3rem !important;
+}
+
+.mobile-drawer-nav {
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .mobile-drawer-link {
-  font-size: 1.35rem;
-  font-weight: 700;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border-subtle);
-  color: var(--text-primary);
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  padding: 0.95rem 0.5rem !important;
+  border-bottom: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  transition: all var(--transition-fast) !important;
+}
+
+.mobile-drawer-link:hover, .mobile-drawer-link.active {
+  color: var(--accent-cyan) !important;
+  padding-inline-start: 0.75rem !important;
+}
+
+.mobile-drawer-footer {
+  margin-top: 1.75rem !important;
+  padding-top: 0.5rem !important;
+}
+
+/* ==========================================================================
+   About Page Bento Grid & Mobile Horizontal Scroll
+   ========================================================================== */
+.about-bento-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.mobile-swipe-hint {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--accent-cyan);
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .mobile-swipe-hint {
+    display: flex;
+  }
+
+  .about-bento-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 1.25rem !important;
+    padding: 0.5rem 0.25rem 1.5rem 0.25rem !important;
+    margin-bottom: 2.5rem !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--accent-cyan) var(--bg-tertiary) !important;
+  }
+
+  .about-bento-grid::-webkit-scrollbar {
+    height: 6px !important;
+  }
+
+  .about-bento-grid::-webkit-scrollbar-track {
+    background: var(--bg-tertiary) !important;
+    border-radius: 999px !important;
+  }
+
+  .about-bento-grid::-webkit-scrollbar-thumb {
+    background: var(--accent-cyan) !important;
+    border-radius: 999px !important;
+  }
+
+  .about-bento-grid > div {
+    min-width: 86vw !important;
+    max-width: 86vw !important;
+    width: 86vw !important;
+    flex-shrink: 0 !important;
+    scroll-snap-align: center !important;
+  }
 }
 
 /* ==========================================================================

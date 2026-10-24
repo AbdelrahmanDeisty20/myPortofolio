@@ -38,6 +38,7 @@ window.LOCALES.en = {
   // Common UI & Actions
   common: {
     filterAll: "All Projects",
+    swipeHint: "Swipe horizontally to explore cards →",
     searchPlaceholder: "Search tech, name, problem...",
     filter: "Filter",
     viewWork: "View Selected Work",

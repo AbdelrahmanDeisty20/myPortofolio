@@ -38,6 +38,7 @@ window.LOCALES.ar = {
   // Common UI & Actions
   common: {
     filterAll: "كافة المشاريع",
+    swipeHint: "اسحب أفقياً لتصفح البطاقات ←",
     searchPlaceholder: "ابحث بالتقنية، الاسم، المشكلة...",
     filter: "تصفية",
     viewWork: "استعراض المشاريع",

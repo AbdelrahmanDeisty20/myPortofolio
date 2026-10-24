@@ -255,35 +255,40 @@ const App = {
       drawer.className = 'mobile-drawer';
       const isAr = window.I18n && window.I18n.getLanguage() === 'ar';
       drawer.innerHTML = `
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div class="mobile-drawer-header">
           <div class="brand-link">
             <span class="brand-badge">AE</span>
-            <span class="brand-name">Abdelrahman</span>
+            <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
           </div>
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <div class="mobile-drawer-actions">
             <button class="lang-switcher-btn" aria-label="Switch Language">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
               <span class="lang-label-slot">${isAr ? 'English' : 'العربية'}</span>
             </button>
             <button class="theme-toggle-btn" aria-label="Toggle Theme">
               <span class="theme-icon-slot"></span>
             </button>
-            <button class="mobile-drawer-close" style="padding: 0.5rem; color: var(--text-secondary); background: transparent; border: none; cursor: pointer;" aria-label="Close Menu">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            <button class="mobile-drawer-close" aria-label="Close Menu">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
           </div>
         </div>
-        <nav style="display: flex; flex-direction: column;">
-          <a href="./index.html" class="mobile-drawer-link" data-i18n="nav.home">Home</a>
-          <a href="./work.html" class="mobile-drawer-link" data-i18n="nav.projects">Work / Projects</a>
-          <a href="./skills.html" class="mobile-drawer-link" data-i18n="nav.skills">Tech Stack</a>
-          <a href="./experience.html" class="mobile-drawer-link" data-i18n="nav.experience">Experience</a>
-          <a href="./services.html" class="mobile-drawer-link" data-i18n="nav.services">Services</a>
-          <a href="./about.html" class="mobile-drawer-link" data-i18n="nav.about">About & Philosophy</a>
-          <a href="./articles.html" class="mobile-drawer-link" data-i18n="nav.articles">Engineering Notes</a>
-          <a href="./resume.html" class="mobile-drawer-link" data-i18n="nav.resume">Resume</a>
-          <a href="./contact.html" class="mobile-drawer-link" data-i18n="nav.contact">Contact</a>
-        </nav>
+        <div class="mobile-drawer-scroll">
+          <nav class="mobile-drawer-nav">
+            <a href="./index.html" class="mobile-drawer-link" data-i18n="nav.home">Home</a>
+            <a href="./work.html" class="mobile-drawer-link" data-i18n="nav.projects">Work / Projects</a>
+            <a href="./skills.html" class="mobile-drawer-link" data-i18n="nav.skills">Tech Stack</a>
+            <a href="./experience.html" class="mobile-drawer-link" data-i18n="nav.experience">Experience</a>
+            <a href="./services.html" class="mobile-drawer-link" data-i18n="nav.services">Services</a>
+            <a href="./about.html" class="mobile-drawer-link" data-i18n="nav.about">About & Philosophy</a>
+            <a href="./articles.html" class="mobile-drawer-link" data-i18n="nav.articles">Engineering Notes</a>
+            <a href="./resume.html" class="mobile-drawer-link" data-i18n="nav.resume">Resume</a>
+            <a href="./contact.html" class="mobile-drawer-link" data-i18n="nav.contact">Contact</a>
+          </nav>
+          <div class="mobile-drawer-footer">
+            <a href="./contact.html" class="btn btn-primary" style="width: 100%; justify-content: center;" data-i18n="hero.ctaContact">Contact Me</a>
+          </div>
+        </div>
       `;
       document.body.appendChild(drawer);
       if (window.I18n) {
@@ -295,18 +300,34 @@ const App = {
       }
     }
 
-    const toggleBtn = document.querySelector('.mobile-nav-toggle');
+    const toggleBtns = document.querySelectorAll('.mobile-nav-toggle');
     const closeBtn = drawer.querySelector('.mobile-drawer-close');
 
-    if (toggleBtn) {
-      toggleBtn.addEventListener('click', () => {
-        drawer.classList.add('active');
-        if (window.I18n) window.I18n.translateDOM(drawer);
-      });
-    }
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => drawer.classList.remove('active'));
-    }
+    const openDrawer = () => {
+      drawer.classList.add('active');
+      document.body.classList.add('drawer-open');
+      document.documentElement.classList.add('drawer-open');
+      if (window.I18n) window.I18n.translateDOM(drawer);
+    };
+
+    const closeDrawer = () => {
+      drawer.classList.remove('active');
+      document.body.classList.remove('drawer-open');
+      document.documentElement.classList.remove('drawer-open');
+    };
+
+    toggleBtns.forEach(btn => btn.addEventListener('click', openDrawer));
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+
+    drawer.querySelectorAll('.mobile-drawer-link').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('active')) {
+        closeDrawer();
+      }
+    });
   },
 
   // ==========================================
