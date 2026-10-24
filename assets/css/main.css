@@ -1336,6 +1336,26 @@ ul, ol {
 }
 
 /* ==========================================================================
+   Language Switch Transition (moderate speed: not too fast, not too slow)
+   ========================================================================== */
+body.lang-transition-out {
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+}
+html[dir="ltr"] body.lang-transition-out { transform: translateX(-30px); }
+html[dir="rtl"] body.lang-transition-out { transform: translateX(30px); }
+
+body.lang-transition-in { opacity: 0; }
+html[dir="ltr"] body.lang-transition-in { transform: translateX(30px); }
+html[dir="rtl"] body.lang-transition-in { transform: translateX(-30px); }
+
+html body.lang-transition-in.lang-transition-in-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 0.45s ease-out, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ==========================================================================
    Full Arabic Right-To-Left (RTL) Layout & Typography Engine
    ========================================================================== */
 [dir="rtl"] {

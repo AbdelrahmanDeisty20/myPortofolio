@@ -41,8 +41,34 @@ class I18nManager {
   }
 
   toggleLanguage() {
+    if (this._switching) return;
     const next = this.currentLang === 'en' ? 'ar' : 'en';
-    this.setLanguage(next);
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const body = document.body;
+    if (reduceMotion || !body) {
+      this.setLanguage(next);
+      return;
+    }
+
+    // Moderate-speed transition: slide out toward the old reading direction, swap, slide in
+    const OUT_MS = 350;
+    const IN_MS = 450;
+    this._switching = true;
+    body.classList.add('lang-transition-out');
+
+    setTimeout(() => {
+      this.setLanguage(next);
+      body.classList.remove('lang-transition-out');
+      body.classList.add('lang-transition-in');
+      // force reflow so the "in" animation starts from the offset position
+      void body.offsetWidth;
+      body.classList.add('lang-transition-in-active');
+
+      setTimeout(() => {
+        body.classList.remove('lang-transition-in', 'lang-transition-in-active');
+        this._switching = false;
+      }, IN_MS);
+    }, OUT_MS);
   }
 
   applyLanguage(lang) {

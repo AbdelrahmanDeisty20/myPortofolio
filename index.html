@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="seo.defaultTitle">Abdelrahman El-Deisty — Software Engineer & Backend Specialist</title>
-  <meta name="description" content="Backend Developer building production-ready Laravel applications, APIs, SaaS platforms, and business systems.">
-  <meta name="keywords" content="Laravel, PHP, Backend Developer, REST API, MySQL, Software Engineer, SaaS, Filament, Cairo">
+  <title data-i18n="seo.defaultTitle">Abdelrahman El-Deisty — Software Engineer & Backend Developer</title>
+  <meta name="description" content="Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, and Hostinger (hPanel) server deployments.">
+  <meta name="keywords" content="Software Engineer, Backend Developer, Laravel, PHP, REST API, MySQL, Hostinger, hPanel, SaaS, Cairo, Remote">
   <meta name="author" content="Abdelrahman El-Deisty">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Abdelrahman El-Deisty — Software Engineer & Backend Specialist">
-  <meta property="og:description" content="Backend Developer building production-ready Laravel applications, APIs, SaaS platforms, and business systems.">
+  <meta property="og:title" content="Abdelrahman El-Deisty — Software Engineer & Backend Developer">
+  <meta property="og:description" content="Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, and Hostinger (hPanel) server deployments.">
   <meta property="og:type" content="website">
 
   <!-- Core CSS -->
@@ -30,7 +30,7 @@
         <span class="brand-badge">AE</span>
         <div class="brand-text">
           <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
-          <span class="brand-role" data-i18n="brand.role">Backend Engineer</span>
+          <span class="brand-role" data-i18n="brand.role">Software Engineer & Backend Developer</span>
         </div>
       </a>
 
@@ -76,12 +76,12 @@
       <div class="hero-copy">
         <div class="status-pill" id="heroStatusPill">
           <span class="status-beacon"></span>
-          <span id="heroAvailabilityText">Available for selected opportunities</span>
+          <span id="heroAvailabilityText" data-i18n="hero.availability">Available for Remote Work & Projects</span>
         </div>
 
         <h1 class="hero-headline">
-          Abdelrahman El-Deisty<br>
-          <span class="text-gradient">Backend Developer</span>
+          <span data-i18n="hero.title">Abdelrahman El-Deisty</span><br>
+          <span class="text-gradient" data-i18n="hero.subtitle">Software Engineer & Backend Developer</span>
         </h1>
 
         <p class="hero-subheadline" id="heroSubtitle">
@@ -343,7 +343,7 @@
       // Update Hero Elements
       const availEl = document.getElementById('heroAvailabilityText');
       if (availEl) {
-        availEl.textContent = PortfolioDB.getLocalized(profile, 'availabilityStatus') || 'Available for selected opportunities';
+        availEl.textContent = PortfolioDB.getLocalized(profile, 'availabilityStatus') || (isAr ? 'متاح للعمل عن بُعد (Remote) والمشاريع' : 'Available for Remote Work & Projects');
       }
 
       const subtitleEl = document.getElementById('heroSubtitle');

@@ -8,7 +8,7 @@ window.LOCALES.ar = {
   // Brand & Header
   brand: {
     name: "عبدالرحمن الديسطي",
-    role: "مهندس نظم خلفية (Backend)",
+    role: "مهندس برمجيات ومطور Backend",
     portalTitle: "لوحة تحكم البورتفوليو",
     portalSubtitle: "مركز إدارة المحتوى والأنظمة"
   },
@@ -112,21 +112,25 @@ window.LOCALES.ar = {
 
   // Hero Section
   hero: {
-    availability: "متاح لفرص العمل والمشاريع المختارة",
+    availability: "متاح للعمل عن بُعد (Remote) والمشاريع",
     title: "عبدالرحمن الديسطي",
-    subtitle: "مطور نظم خلفية (Backend Developer)",
-    tagline: "أبني تطبيقات لارافيل جاهزة للإنتاج الفعلي، واجهات برمجية REST APIs عالية الأداء، منصات SaaS، وأتمتة مسارات الأعمال المعقدة.",
-    terminalTitle: "eldeisty@production-server:~"
+    subtitle: "مهندس برمجيات ومطور Backend",
+    tagline: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات REST APIs، ونشر وإدارة الأنظمة على خوادم هوستينجر (hPanel).",
+    terminalTitle: "eldeisty@production-server:~",
+    ctaPrimary: "استعراض المشاريع",
+    ctaContact: "تواصل معي",
+    ctaResume: "السيرة الذاتية",
+    ctaGithub: "جيت هاب"
   },
 
   // Proof Section
   proof: {
     sectionLabel: "حقائق وأرقام واقعية",
     stat1Value: "+2 سنوات",
-    stat1Label: "هندسة النظم الخلفية",
-    stat1Detail: "أنظمة إنتاجية بلارافيل و PHP",
+    stat1Label: "هندسة البرمجيات والباك إند",
+    stat1Detail: "أنظمة إنتاجية بلارافيل واستضافات هوستينجر",
     stat2Value: "+10",
-    stat2Label: "مشاريع تم إطلاقها",
+    stat2Label: "مشاريع تم إطلاقها وتعديلها",
     stat2Detail: "منصات SaaS، APIs، ولوحات تحكم",
     stat3Value: "Laravel",
     stat3Label: "العمود الفقري للباك إند",
@@ -333,7 +337,7 @@ window.LOCALES.ar = {
 
   // Footer
   footer: {
-    desc: "مهندس نظم خلفية متخصص في بناء تطبيقات لارافيل الإنتاجية، واجهات REST APIs عالية السرعة، والمنصات السحابية.",
+    desc: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل الإنتاجية، واجهات REST APIs، وإدارة الاستضافات على هوستينجر (hPanel).",
     navTitle: "روابط التنقل",
     resourcesTitle: "المصادر",
     adminTitle: "الإدارة والنظام",

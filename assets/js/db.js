@@ -8,14 +8,14 @@ const DEFAULT_PORTFOLIO_DATA = {
   profile: {
     name: "Abdelrahman El-Deisty",
     name_ar: "عبدالرحمن الديستي",
-    title: "Software Engineer & Backend Specialist",
-    title_ar: "مهندس برمجيات ومتخصص في الأنظمة الخلفية",
-    tagline: "Backend Developer building production-ready Laravel applications, APIs, SaaS platforms, and business systems.",
-    tagline_ar: "مطور أنظمة خلفية متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، ومنصات SaaS، والأنظمة السحابية للشركات.",
-    heroSubtitle: "I architect reliable backend systems and product-focused web applications — from high-throughput REST APIs and multi-tenant architectures to intuitive dashboards and automated business workflows.",
-    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة خلفية وتطبيقات ويب معتمدة على أفضل الممارسات — بدءاً من واجهات REST API عالية الكفاءة والمعمارية متعددة المستأجرين وحتى لوحات التحكم الذكية وأتمتة مسارات العمل.",
-    availabilityStatus: "Available for selected opportunities",
-    availabilityStatus_ar: "متاح لفرص ومشاريع مختارة",
+    title: "Software Engineer & Backend Developer",
+    title_ar: "مهندس برمجيات ومطور Backend",
+    tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, and managing Hostinger (hPanel) deployments.",
+    tagline_ar: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، ونشر وإدارة الأنظمة على هوستينجر (hPanel).",
+    heroSubtitle: "I architect reliable backend systems and web applications — from high-throughput REST APIs and database design to reliable Hostinger (hPanel) server deployment.",
+    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة برمجية وتطبيقات ويب معتمدة — بدءاً من واجهات REST API وقواعد البيانات، وحتى نشر وإدارة الاستضافات على هوستينجر (hPanel).",
+    availabilityStatus: "Available for Remote Work & Projects",
+    availabilityStatus_ar: "متاح للعمل عن بُعد (Remote) والمشاريع",
     availabilityType: "available", // 'available' | 'busy' | 'selective'
     location: "Cairo, Egypt / Remote Worldwide",
     location_ar: "القاهرة، مصر / متاح للعمل عن بُعد عالمياً",
@@ -27,9 +27,9 @@ const DEFAULT_PORTFOLIO_DATA = {
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     yearsExperience: "2+",
     stats: [
-      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Backend Engineering", label_ar: "هندسة الأنظمة الخلفية", detail: "Production Laravel & PHP systems", detail_ar: "أنظمة إنتاجية قائمة على لارافيل و PHP" },
-      { id: "stat_2", value: "10+", value_ar: "+10", label: "Projects Shipped", label_ar: "مشاريع تم إطلاقها", detail: "SaaS, APIs & Business Dashboards", detail_ar: "منصات SaaS، واجهات APIs ولوحات تحكم" },
-      { id: "stat_3", value: "Laravel", value_ar: "لارافيل", label: "Core Backend Stack", label_ar: "حزمة التقنيات الأساسية", detail: "REST APIs, Sanctum, Queues & MySQL", detail_ar: "REST APIs، Sanctum، Queues وقواعد MySQL" },
+      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Software & Backend", label_ar: "هندسة البرمجيات والباك إند", detail: "Production Laravel & Hostinger systems", detail_ar: "أنظمة إنتاجية بلارافيل واستضافات هوستينجر" },
+      { id: "stat_2", value: "10+", value_ar: "+10", label: "Projects Shipped & Maintained", label_ar: "مشاريع تم إطلاقها وتعديلها", detail: "SaaS, APIs & Business Dashboards", detail_ar: "منصات SaaS، واجهات APIs ولوحات تحكم" },
+      { id: "stat_3", value: "Laravel", value_ar: "Laravel", label: "Core Backend Stack", label_ar: "حزمة التقنيات الأساسية", detail: "REST APIs, Sanctum, Queues & MySQL", detail_ar: "REST APIs، Sanctum، Queues وقواعد MySQL" },
       { id: "stat_4", value: "100%", value_ar: "100%", label: "Production Focused", label_ar: "تركيز إنتاجي عملي", detail: "Clean architecture & data integrity", detail_ar: "معمارية برمجية نظيفة ودقة في تكامل البيانات" }
     ],
     bioSummary: "I'm a backend-focused software engineer with a deep passion for building resilient, maintainable digital products. I specialize in the Laravel ecosystem, clean API design, and robust database architectures that solve tangible operational problems.",
@@ -80,8 +80,8 @@ When partnering with founders or engineering teams, my goal is always to deliver
       status: "Live",
       year: "2024 - 2025",
       role: "Lead Backend Architect",
-      coverImage: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=600&q=80",
+      coverImage: "./assets/img/bynona_showcase.webp",
+      thumbnail: "./assets/img/bynona_showcase.webp",
       description: "A production multi-store e-commerce platform featuring multi-warehouse inventory tracking, asynchronous order processing pipelines, and a headless REST API for client applications.",
       shortDescription: "Scalable multi-vendor commerce backend with inventory locking and asynchronous checkout pipelines.",
       technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Redis", "REST APIs", "Sanctum", "Firebase FCM", "Stripe Webhooks"],
@@ -410,11 +410,11 @@ When partnering with founders or engineering teams, my goal is always to deliver
     { id: "tech_vanillajs", name: "Vanilla JavaScript", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "terminal", featured: true, description: "ES6+, asynchronous DOM workflows, custom event buses, and client-side state." },
     { id: "tech_css", name: "Modern CSS", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "palette", featured: false, description: "Flexbox, CSS Grid, custom properties, responsive breakpoints, and animations." },
 
-    // Infrastructure & Tools
+    // Infrastructure & Hosting
+    { id: "tech_hostinger", name: "Hostinger (hPanel)", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "server", featured: true, description: "Production deployments on Hostinger/hPanel, domain DNS, SSL certificates, MySQL database management, and scheduled cron jobs." },
     { id: "tech_git", name: "Git & GitHub", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "git-branch", featured: true, description: "Feature branching, pull requests, rebase workflows, and release tagging." },
     { id: "tech_postman", name: "Postman & OpenAPI", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "check-circle", featured: false, description: "Collection testing, environment variables, pre-request scripts, and API docs." },
     { id: "tech_firebase", name: "Firebase (FCM)", category: "Infrastructure", level: "Strong", experience: "1.5 Years", icon: "bell", featured: true, description: "Push notification dispatching, device token registration, and topic messaging." },
-    { id: "tech_docker", name: "Docker Basics", category: "Infrastructure", level: "Working Knowledge", experience: "1 Year", icon: "box", featured: false, description: "Containerized local environments (Laravel Sail, MySQL, Redis) and Dockerfile setups." },
 
     // AI & Integrations
     { id: "tech_gemini", name: "Gemini / AI APIs", category: "AI & Integrations", level: "Strong", experience: "1 Year", icon: "sparkles", featured: true, description: "Automated text extraction, semantic tagging, prompt engineering, and response validation." },
@@ -1000,7 +1000,7 @@ trait HasSpatialProximityScope
   ],
 
   mediaLibrary: [
-    { id: "med_1", title: "Bynona Cover", url: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-15" },
+    { id: "med_1", title: "Bynona Cover", url: "./assets/img/bynona_showcase.webp", type: "Project Cover", dimensions: "1400x900", date: "2026-10-25" },
     { id: "med_2", title: "Wasly Fleet Cover", url: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-18" },
     { id: "med_3", title: "KCODE Sandbox Cover", url: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-20" },
     { id: "med_4", title: "Mizan FinTech Cover", url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-21" },
@@ -1008,16 +1008,16 @@ trait HasSpatialProximityScope
   ],
 
   seo: {
-    siteTitle: "Abdelrahman El-Deisty — Software Engineer & Backend Specialist",
-    siteDescription: "Backend developer building production-ready Laravel applications, high-performance REST APIs, SaaS platforms, and enterprise dashboards.",
-    keywords: "Laravel, PHP, Backend Developer, REST API, MySQL, Software Engineer, SaaS, Filament, Cairo, Remote",
+    siteTitle: "Abdelrahman El-Deisty — Software Engineer & Backend Developer",
+    siteDescription: "Software Engineer & Backend Developer building production-ready Laravel applications, high-performance REST APIs, and Hostinger (hPanel) server deployments.",
+    keywords: "Software Engineer, Backend Developer, Laravel, PHP, REST API, MySQL, Hostinger, hPanel, SaaS, Cairo, Remote",
     author: "Abdelrahman El-Deisty",
     ogImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
     twitterCard: "summary_large_image"
   }
 };
 
-const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v1';
+const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v5';
 const DB_SESSION_KEY = 'eldeisty_dashboard_auth';
 
 class PortfolioDB {

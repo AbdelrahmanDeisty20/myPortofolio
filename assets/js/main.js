@@ -317,10 +317,10 @@ const App = {
     if (!termBody) return;
 
     const sequence = [
-      { cmd: 'whoami', output: 'Abdelrahman El-Deisty — Backend Engineer & Laravel Architect' },
+      { cmd: 'whoami', output: 'Abdelrahman El-Deisty — Software Engineer & Backend Developer' },
       { cmd: 'php artisan --version', output: 'Laravel Framework 11.28.0 (PHP v8.3.12)' },
-      { cmd: 'cat core_stack.json', output: `["Laravel 11", "MySQL 8", "REST APIs", "Redis", "Sanctum", "Firebase", "Git"]` },
-      { cmd: 'systemctl status engineer.service', output: '● ACTIVE (Ready for backend & SaaS contract / full-time opportunities)' }
+      { cmd: 'cat core_stack.json', output: `["Laravel 11", "MySQL 8", "REST APIs", "Hostinger (hPanel)", "Redis", "Sanctum", "Git"]` },
+      { cmd: 'systemctl status engineer.service', output: '● ACTIVE (Ready for software engineering & backend opportunities)' }
     ];
 
     let currentStep = 0;
