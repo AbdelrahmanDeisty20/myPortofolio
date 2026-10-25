@@ -116,7 +116,7 @@ window.LOCALES.en = {
     availability: "Available for Remote Work & Projects",
     title: "Abdelrahman El-Deisty",
     subtitle: "Software Engineer & Backend Developer",
-    tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, high-throughput REST APIs, and Hostinger (hPanel) deployments.",
+    tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, high-throughput REST APIs, server management, and system deployments.",
     terminalTitle: "eldeisty@production-server:~",
     ctaPrimary: "View Selected Work",
     ctaContact: "Contact Me",
@@ -129,10 +129,10 @@ window.LOCALES.en = {
     sectionLabel: "High-Value Facts",
     stat1Value: "2+ Years",
     stat1Label: "Software & Backend",
-    stat1Detail: "Production Laravel & Hostinger systems",
+    stat1Detail: "Production Laravel & Server Deployments",
     stat2Value: "10+",
     stat2Label: "Projects Shipped & Maintained",
-    stat2Detail: "SaaS, APIs & Business Dashboards",
+    stat2Detail: "E-commerce, SaaS Platforms & REST APIs",
     stat3Value: "Laravel",
     stat3Label: "Core Backend Stack",
     stat3Detail: "REST APIs, Sanctum, Queues & MySQL",
@@ -144,7 +144,7 @@ window.LOCALES.en = {
   // Sections Headings
   sections: {
     featuredLabel: "Engineering Portfolio",
-    featuredTitle: "Selected Production Work",
+    featuredTitle: "Featured & Selected Work",
     featuredDesc: "Real-world systems, SaaS backends, and logistics dispatchers architected for reliability, concurrency, and scale.",
     skillsLabel: "Technical Competencies",
     skillsTitle: "Core Technical Stack",
@@ -338,7 +338,7 @@ window.LOCALES.en = {
 
   // Footer
   footer: {
-    desc: "Software Engineer & Backend Developer specializing in production Laravel applications, REST APIs, and Hostinger (hPanel) server deployment.",
+    desc: "Software Engineer & Backend Developer specializing in production Laravel applications, REST APIs, and server management & deployment.",
     navTitle: "Navigation",
     resourcesTitle: "Resources",
     adminTitle: "Administration",

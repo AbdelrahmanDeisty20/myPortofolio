@@ -116,7 +116,7 @@ window.LOCALES.ar = {
     availability: "متاح للعمل عن بُعد (Remote) والمشاريع",
     title: "عبدالرحمن الديسطي",
     subtitle: "مهندس برمجيات ومطور Backend",
-    tagline: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات REST APIs، ونشر وإدارة الأنظمة على خوادم هوستينجر (hPanel).",
+    tagline: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات REST APIs، والتعامل مع مختلف السيرفرات ونشر وإدارة الأنظمة الإنتاجية.",
     terminalTitle: "eldeisty@production-server:~",
     ctaPrimary: "استعراض المشاريع",
     ctaContact: "تواصل معي",
@@ -129,10 +129,10 @@ window.LOCALES.ar = {
     sectionLabel: "حقائق وأرقام واقعية",
     stat1Value: "+2 سنوات",
     stat1Label: "هندسة البرمجيات والباك إند",
-    stat1Detail: "أنظمة إنتاجية بلارافيل واستضافات هوستينجر",
+    stat1Detail: "أنظمة إنتاجية بلارافيل وإدارة السيرفرات",
     stat2Value: "+10",
     stat2Label: "مشاريع تم إطلاقها وتعديلها",
-    stat2Detail: "منصات SaaS، APIs، ولوحات تحكم",
+    stat2Detail: "متاجر E-commerce، منصات SaaS، وواجهات APIs",
     stat3Value: "Laravel",
     stat3Label: "العمود الفقري للباك إند",
     stat3Detail: "REST APIs، Sanctum، طوابير، و MySQL",
@@ -144,7 +144,7 @@ window.LOCALES.ar = {
   // Sections Headings
   sections: {
     featuredLabel: "معرض الأعمال البرمجية",
-    featuredTitle: "مشاريع إنتاجية مختارة",
+    featuredTitle: "مشاريع مفضلة مختارة",
     featuredDesc: "أنظمة برمجية حقيقية، محركات SaaS، وأنظمة توجيه لوجستي صُممت لتتحمل التزامن وتضمن سلامة العمليات.",
     skillsLabel: "الكفاءات والمهارات التقنية",
     skillsTitle: "حزمة التقنيات الأساسية",
@@ -338,7 +338,7 @@ window.LOCALES.ar = {
 
   // Footer
   footer: {
-    desc: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل الإنتاجية، واجهات REST APIs، وإدارة الاستضافات على هوستينجر (hPanel).",
+    desc: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل الإنتاجية، واجهات REST APIs، والتعامل مع مختلف السيرفرات وإدارة البيئات التشغيلية.",
     navTitle: "روابط التنقل",
     resourcesTitle: "المصادر",
     adminTitle: "الإدارة والنظام",

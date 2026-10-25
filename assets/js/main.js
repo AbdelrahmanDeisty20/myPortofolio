@@ -339,9 +339,9 @@ const App = {
 
     const sequence = [
       { cmd: 'whoami', output: 'Abdelrahman El-Deisty — Software Engineer & Backend Developer' },
-      { cmd: 'php artisan --version', output: 'Laravel Framework 11.28.0 (PHP v8.3.12)' },
-      { cmd: 'cat core_stack.json', output: `["Laravel 11", "MySQL 8", "REST APIs", "Hostinger (hPanel)", "Redis", "Sanctum", "Git"]` },
-      { cmd: 'systemctl status engineer.service', output: '● ACTIVE (Ready for software engineering & backend opportunities)' }
+      { cmd: 'what_i_do', output: 'Software Engineering, Backend Architecture & REST APIs' },
+      { cmd: 'experience', output: '2+ Years in Production Backend Engineering' },
+      { cmd: 'response_time', output: 'Fast Response • Available 24/7' }
     ];
 
     let currentStep = 0;

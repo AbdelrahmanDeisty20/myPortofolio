@@ -10,10 +10,10 @@ const DEFAULT_PORTFOLIO_DATA = {
     name_ar: "عبدالرحمن الديستي",
     title: "Software Engineer & Backend Developer",
     title_ar: "مهندس برمجيات ومطور Backend",
-    tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, and managing Hostinger (hPanel) deployments.",
-    tagline_ar: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، ونشر وإدارة الأنظمة على هوستينجر (hPanel).",
-    heroSubtitle: "I architect reliable backend systems and web applications — from high-throughput REST APIs and database design to reliable Hostinger (hPanel) server deployment.",
-    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة برمجية وتطبيقات ويب معتمدة — بدءاً من واجهات REST API وقواعد البيانات، وحتى نشر وإدارة الاستضافات على هوستينجر (hPanel).",
+    tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, server management, and system deployments.",
+    tagline_ar: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، والتعامل مع مختلف السيرفرات ونشر وإدارة الأنظمة الإنتاجية.",
+    heroSubtitle: "I architect reliable backend systems and web applications — from high-throughput REST APIs and database design to server management and reliable production deployments.",
+    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة برمجية وتطبيقات ويب معتمدة — بدءاً من واجهات REST API وقواعد البيانات، وحتى التعامل مع مختلف السيرفرات ونشر وإدارة البيئات الإنتاجية.",
     availabilityStatus: "Available for Remote Work & Projects",
     availabilityStatus_ar: "متاح للعمل عن بُعد (Remote) والمشاريع",
     availabilityType: "available", // 'available' | 'busy' | 'selective'
@@ -27,8 +27,8 @@ const DEFAULT_PORTFOLIO_DATA = {
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     yearsExperience: "2+",
     stats: [
-      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Software & Backend", label_ar: "هندسة البرمجيات والباك إند", detail: "Production Laravel & Hostinger systems", detail_ar: "أنظمة إنتاجية بلارافيل واستضافات هوستينجر" },
-      { id: "stat_2", value: "10+", value_ar: "+10", label: "Projects Shipped & Maintained", label_ar: "مشاريع تم إطلاقها وتعديلها", detail: "SaaS, APIs & Business Dashboards", detail_ar: "منصات SaaS، واجهات APIs ولوحات تحكم" },
+      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Software & Backend", label_ar: "هندسة البرمجيات والباك إند", detail: "Production Laravel & Server Deployment", detail_ar: "أنظمة إنتاجية بلارافيل وإدارة السيرفرات" },
+      { id: "stat_2", value: "10+", value_ar: "+10", label: "Projects Shipped & Maintained", label_ar: "مشاريع تم إطلاقها وتعديلها", detail: "E-commerce, SaaS & REST APIs", detail_ar: "متاجر E-commerce، منصات SaaS، وواجهات APIs" },
       { id: "stat_3", value: "Laravel", value_ar: "Laravel", label: "Core Backend Stack", label_ar: "حزمة التقنيات الأساسية", detail: "REST APIs, Sanctum, Queues & MySQL", detail_ar: "REST APIs، Sanctum، Queues وقواعد MySQL" },
       { id: "stat_4", value: "100%", value_ar: "100%", label: "Production Focused", label_ar: "تركيز إنتاجي عملي", detail: "Clean architecture & data integrity", detail_ar: "معمارية برمجية نظيفة ودقة في تكامل البيانات" }
     ],
@@ -141,8 +141,8 @@ When partnering with founders or engineering teams, my goal is always to deliver
       status: "Live",
       year: "2024",
       role: "Backend Engineer",
-      coverImage: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=1200&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=600&q=80",
+      coverImage: "./assets/img/wasly_showcase.webp",
+      thumbnail: "./assets/img/wasly_showcase.webp",
       description: "A high-performance logistics backend coordinating delivery dispatches, dynamic driver radius matching using MySQL spatial queries, and real-time state synchronization.",
       shortDescription: "High-throughput delivery dispatcher API with spatial radius driver matching and SMS verification.",
       technologies: ["Laravel 11", "PHP 8.3", "MySQL Spatial", "REST APIs", "Twilio SMS", "Firebase", "Queue Workers"],
@@ -187,19 +187,23 @@ When partnering with founders or engineering teams, my goal is always to deliver
     {
       id: "proj_kcode",
       slug: "kcode",
-      title: "KCODE Platform",
-      subtitle: "Developer Assessment & Automated Code Evaluation SaaS",
-      category: "SaaS",
+      title: "KCODE E-Commerce",
+      title_ar: "متجر KCODE للعناية الكورية",
+      subtitle: "Korean Skincare & Smart Skin Assessment E-Commerce Platform",
+      subtitle_ar: "متجر عناية كورية ومنصة تقييم ذكي للبشرة وتجارة إلكترونية",
+      category: "E-Commerce",
       featured: true,
-      status: "In Development",
+      status: "Live",
       year: "2025",
       role: "Full-Stack Backend Architect",
-      coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80",
-      description: "An automated coding assessment system for hiring engineering talent, featuring asynchronous test runner queues, sandboxed execution communication, and performance scoring.",
-      shortDescription: "Automated candidate assessment backend with test case validation and asynchronous grading queues.",
-      technologies: ["Laravel 11", "PHP 8.3", "Docker Sandboxing", "Redis Queues", "REST APIs", "WebSocket Events"],
-      liveUrl: "https://kcode.eldeisty.dev",
+      coverImage: "./assets/img/kcode_showcase.webp",
+      thumbnail: "./assets/img/kcode_showcase.webp",
+      description: "A specialized Korean beauty and derma skincare e-commerce platform built for the GCC market (Oman), featuring an algorithmic 4-step skin assessment questionnaire, multi-currency checkout, and high-performance product catalog caching.",
+      description_ar: "منصة تجارة إلكترونية متخصصة في منتجات العناية بالبشرة الكورية لمنطقة الخليج (سلطنة عمان)، تشتمل على محرك تقييم ذكي للبشرة من 4 خطوات لمطابقة المكونات الفعالة، وبوابة دفع متعددة العملات مع كاشينج فائق السرعة للكتالوج.",
+      shortDescription: "Korean skincare e-commerce platform with a 4-step smart skin diagnostic engine, routine matching, and regional logistics.",
+      shortDescription_ar: "متجر إلكتروني للعناية الكورية مع محرك تشخيص وتقييم ذكي للبشرة وتوصيات روتين مخصصة.",
+      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Redis", "REST APIs", "Sanctum", "Stripe"],
+      liveUrl: "https://kcode-pied.vercel.app",
       githubUrl: "https://github.com/Abdelrahman-El-Deisty/kcode-core",
       isPrivate: false,
       metrics: {
@@ -209,31 +213,39 @@ When partnering with founders or engineering teams, my goal is always to deliver
         githubClicks: 145,
         inquiries: 12
       },
-      problem: "Evaluating candidates required manually reviewing submissions or using overly expensive legacy testing tools with inflexible question creation and slow feedback loops.",
-      solution: "Built a decoupled test runner architecture: candidate code submissions are queued in Redis, passed to isolated worker sandboxes, verified against hidden edge-case unit tests, and reported via real-time SSE / WebSockets.",
+      problem: "Customers often struggle to navigate extensive Korean skincare catalogs to find formulas matching their specific skin concerns and active ingredients, causing decision fatigue and cart abandonment.",
+      problem_ar: "يواجه العملاء صعوبة في اختيار منتجات العناية الكورية المناسبة لطبيعة بشرتهم ومكوناتها النشطة، مما يؤدي إلى تردد في الشراء وزيادة معدلات التخلي عن سلة التسوق.",
+      solution: "Engineered a high-performance e-commerce backend integrated with an algorithmic 4-step skin assessment questionnaire that cross-references user concerns against product ingredient matrices, generating instant tailored routines alongside multi-currency GCC checkout.",
+      solution_ar: "بناء نظام خلفي فائق الأداء لمتجر إلكتروني مرتبط باختبار ذكي من 4 خطوات يحلل طبيعة البشرة ويربطها بمصفوفة توافق المكونات النشطة لتقديم روتين مخصص فورياً، مع دعم الدفع الإقليمي والشحن السريع.",
       responsibilities: [
-        "Designed relational database schemas handling challenge blueprints, hidden test assertions, and submission runs.",
-        "Constructed asynchronous evaluation queue with timeout watchdogs to prevent infinite loop execution.",
-        "Designed clean developer-facing API for organizations to invite candidates and receive signed webhook results."
+        "Architected relational product catalog schemas with ingredient tagging, skin-type indexing, and regional currency pricing.",
+        "Constructed a 4-step algorithmic skin evaluation engine matching active ingredients (PDRN, Retinol, Hyaluronic, Exosomes) to user profiles.",
+        "Implemented Redis-cached product query layers achieving sub-45ms catalog response times under peak traffic.",
+        "Integrated secure card payment webhooks and cash-on-delivery order lifecycle tracking across Oman and GCC regions."
       ],
       architecture: [
-        { layer: "Candidate Web UI", desc: "Monaco editor submitting code payloads to REST endpoint" },
-        { layer: "Laravel Queue Dispatcher", desc: "Validates payload, creates submission record, pushes to Redis" },
-        { layer: "Isolated Execution Worker", desc: "Runs code against assertions with strict memory/time bounds" },
-        { layer: "Webhook & Score Engine", desc: "Computes percentile score, dispatches signed HMAC webhook" }
+        { layer: "Client Storefront", desc: "Next.js / Vercel storefront communicating with REST API endpoints" },
+        { layer: "Laravel Commerce Engine", desc: "Handles cart lifecycle, multi-currency pricing, and inventory reservation" },
+        { layer: "Skin Diagnostic API", desc: "Evaluates questionnaire inputs and calculates ingredient suitability scores" },
+        { layer: "Cache & Order Dispatch", desc: "Redis query cache and asynchronous webhook dispatch for payment & SMS notifications" }
       ],
       databaseSchema: [
-        { table: "organizations", relations: "hasMany: assessments, candidates" },
-        { table: "challenges", relations: "hasMany: test_cases (is_hidden boolean)" },
-        { table: "submissions", relations: "belongsTo: candidate, challenge; hasMany: execution_results" }
+        { table: "products", relations: "hasMany: variants, ingredients; belongsTo: brand, category" },
+        { table: "skin_assessments", relations: "hasMany: questions, answers; produces: routine_recommendations" },
+        { table: "orders", relations: "belongsTo: customer; hasMany: order_items, payment_transactions" }
       ],
       challenges: [
         {
-          challenge: "Preventing rogue candidate code from executing harmful system calls or hanging worker processes.",
-          solution: "Enforced strict resource capping (CPU time limit: 2000ms, Memory ceiling: 64MB) and isolated execution environments."
+          challenge: "Calculating instant ingredient suitability across hundreds of catalog SKUs during skin quiz completion.",
+          solution: "Pre-indexed ingredient compatibility matrix in Redis hashes, enabling sub-20ms quiz evaluation without hitting relational database joins."
+        },
+        {
+          challenge: "Preventing inventory race conditions during flash discounts on viral skincare serums.",
+          solution: "Applied pessimistic database locking (`lockForUpdate`) and Redis atomic decrements during checkout confirmation."
         }
       ],
-      results: "Evaluates multi-language code snippets with sub-2-second turnaround time and automated benchmark scoring."
+      results: "Sub-45ms catalog queries, zero overselling incidents, and an automated skin diagnostic funnel that boosts checkout conversion.",
+      results_ar: "سرعة استجابة للكتالوج أقل من 45ms، وانعدام تام لأخطاء تعارض المخزون، مع مضاعفة معدلات التحويل بفضل محرك التقييم الذكي."
     },
     {
       id: "proj_mizan",
@@ -410,8 +422,8 @@ When partnering with founders or engineering teams, my goal is always to deliver
     { id: "tech_vanillajs", name: "Vanilla JavaScript", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "terminal", featured: true, description: "ES6+, asynchronous DOM workflows, custom event buses, and client-side state." },
     { id: "tech_css", name: "Modern CSS", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "palette", featured: false, description: "Flexbox, CSS Grid, custom properties, responsive breakpoints, and animations." },
 
-    // Infrastructure & Hosting
-    { id: "tech_hostinger", name: "Hostinger (hPanel)", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "server", featured: true, description: "Production deployments on Hostinger/hPanel, domain DNS, SSL certificates, MySQL database management, and scheduled cron jobs." },
+    // Infrastructure & Servers
+    { id: "tech_servers", name: "Web & Linux Servers", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "server", featured: true, description: "Server deployment and configuration, Linux environments, DNS management, SSL certificates, MySQL, and scheduled background workers." },
     { id: "tech_git", name: "Git & GitHub", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "git-branch", featured: true, description: "Feature branching, pull requests, rebase workflows, and release tagging." },
     { id: "tech_postman", name: "Postman & OpenAPI", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "check-circle", featured: false, description: "Collection testing, environment variables, pre-request scripts, and API docs." },
     { id: "tech_firebase", name: "Firebase (FCM)", category: "Infrastructure", level: "Strong", experience: "1.5 Years", icon: "bell", featured: true, description: "Push notification dispatching, device token registration, and topic messaging." },
@@ -984,7 +996,7 @@ trait HasSpatialProximityScope
     projectInterest: [
       { slug: "bynona", name: "Bynona E-Commerce", views: 1420, caseStudyOpens: 730, demoClicks: 345, githubClicks: 210, conversionCount: 24 },
       { slug: "wasly", name: "Wasly Delivery Engine", views: 980, caseStudyOpens: 512, demoClicks: 180, githubClicks: 0, conversionCount: 18 },
-      { slug: "kcode", name: "KCODE Assessment SaaS", views: 860, caseStudyOpens: 440, demoClicks: 210, githubClicks: 145, conversionCount: 12 },
+      { slug: "kcode", name: "KCODE E-Commerce", views: 860, caseStudyOpens: 440, demoClicks: 210, githubClicks: 145, conversionCount: 12 },
       { slug: "mizan", name: "Mizan FinTech", views: 740, caseStudyOpens: 390, demoClicks: 160, githubClicks: 0, conversionCount: 14 },
       { slug: "pharmacare-pro", name: "PharmaCare Pro", views: 620, caseStudyOpens: 295, demoClicks: 140, githubClicks: 85, conversionCount: 9 },
       { slug: "aqarmousa", name: "AqarMousa Real Estate", views: 590, caseStudyOpens: 280, demoClicks: 110, githubClicks: 0, conversionCount: 7 }
@@ -1001,23 +1013,23 @@ trait HasSpatialProximityScope
 
   mediaLibrary: [
     { id: "med_1", title: "Bynona Cover", url: "./assets/img/bynona_showcase.webp", type: "Project Cover", dimensions: "1400x900", date: "2026-10-25" },
-    { id: "med_2", title: "Wasly Fleet Cover", url: "https://images.unsplash.com/photo-1526367790999-0150786686a2?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-18" },
-    { id: "med_3", title: "KCODE Sandbox Cover", url: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-20" },
+    { id: "med_2", title: "Wasly Fleet Cover", url: "./assets/img/wasly_showcase.webp", type: "Project Cover", dimensions: "1400x900", date: "2026-10-25" },
+    { id: "med_3", title: "KCODE E-Commerce Cover", url: "./assets/img/kcode_showcase.webp", type: "Project Cover", dimensions: "1400x900", date: "2026-10-25" },
     { id: "med_4", title: "Mizan FinTech Cover", url: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=80", type: "Project Cover", dimensions: "1200x800", date: "2026-10-21" },
     { id: "med_5", title: "Profile Avatar", url: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80", type: "Profile", dimensions: "600x600", date: "2026-10-22" }
   ],
 
   seo: {
     siteTitle: "Abdelrahman El-Deisty — Software Engineer & Backend Developer",
-    siteDescription: "Software Engineer & Backend Developer building production-ready Laravel applications, high-performance REST APIs, and Hostinger (hPanel) server deployments.",
-    keywords: "Software Engineer, Backend Developer, Laravel, PHP, REST API, MySQL, Hostinger, hPanel, SaaS, Cairo, Remote",
+    siteDescription: "Software Engineer & Backend Developer building production-ready Laravel applications, high-performance REST APIs, and reliable server deployments.",
+    keywords: "Software Engineer, Backend Developer, Laravel, PHP, REST API, MySQL, Servers, Deployment, SaaS, E-commerce, Cairo, Remote",
     author: "Abdelrahman El-Deisty",
     ogImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80",
     twitterCard: "summary_large_image"
   }
 };
 
-const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v5';
+const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v8';
 const DB_SESSION_KEY = 'eldeisty_dashboard_auth';
 
 class PortfolioDB {
@@ -1053,6 +1065,18 @@ class PortfolioDB {
     const def = DEFAULT_PORTFOLIO_DATA;
     // Profile
     if (def.profile && data.profile) {
+      if (data.profile.tagline_ar && data.profile.tagline_ar.includes('هوستينجر')) {
+        data.profile.tagline_ar = def.profile.tagline_ar;
+      }
+      if (data.profile.heroSubtitle_ar && data.profile.heroSubtitle_ar.includes('هوستينجر')) {
+        data.profile.heroSubtitle_ar = def.profile.heroSubtitle_ar;
+      }
+      if (data.profile.tagline && data.profile.tagline.includes('Hostinger')) {
+        data.profile.tagline = def.profile.tagline;
+      }
+      if (data.profile.heroSubtitle && data.profile.heroSubtitle.includes('Hostinger')) {
+        data.profile.heroSubtitle = def.profile.heroSubtitle;
+      }
       ['name_ar', 'title_ar', 'tagline_ar', 'heroSubtitle_ar', 'availabilityStatus_ar', 'location_ar', 'bioSummary_ar', 'bioFull_ar'].forEach(f => {
         if (!data.profile[f] && def.profile[f]) data.profile[f] = def.profile[f];
       });
@@ -1060,7 +1084,8 @@ class PortfolioDB {
         data.profile.stats.forEach((s, i) => {
           if (def.profile.stats[i]) {
             if (!s.label_ar) s.label_ar = def.profile.stats[i].label_ar;
-            if (!s.detail_ar) s.detail_ar = def.profile.stats[i].detail_ar;
+            if (!s.detail_ar || s.detail_ar.includes('هوستينجر') || s.id === 'stat_2') s.detail_ar = def.profile.stats[i].detail_ar;
+            if (!s.detail || s.detail.includes('Hostinger') || s.id === 'stat_2') s.detail = def.profile.stats[i].detail;
             if (!s.value_ar) s.value_ar = def.profile.stats[i].value_ar;
           }
         });
