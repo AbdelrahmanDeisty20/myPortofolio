@@ -260,9 +260,9 @@ class PortfolioAPI {
         results.push({
           type: isAr ? 'مشروع' : 'Project',
           title: isAr && p.title_ar ? p.title_ar : p.title,
-          subtitle: isAr && p.subtitle_ar ? p.subtitle_ar : (p.subtitle || p.category),
+          subtitle: (isAr && p.subtitle_ar ? p.subtitle_ar : p.subtitle) || (window.PortfolioDB ? PortfolioDB.getLocalized(p, 'category') : p.category),
           url: `./project-details.html?slug=${p.slug}`,
-          badge: p.category,
+          badge: window.PortfolioDB ? PortfolioDB.getLocalized(p, 'category') : p.category,
           icon: 'box'
         });
       }

@@ -7,7 +7,8 @@ window.LOCALES = window.LOCALES || {};
 window.LOCALES.en = {
   // Brand & Header
   brand: {
-    name: "Abdelrahman El-Deisty",
+    name: "Abdelrahman Deisty",
+    shortName: "Abdelrahman",
     role: "Software Engineer & Backend Developer",
     portalTitle: "Portfolio CMS",
     portalSubtitle: "Content Management Command Center"
@@ -114,10 +115,10 @@ window.LOCALES.en = {
   // Hero Section
   hero: {
     availability: "Available for Remote Work & Projects",
-    title: "Abdelrahman El-Deisty",
+    title: "Abdelrahman Deisty",
     subtitle: "Software Engineer & Backend Developer",
     tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, high-throughput REST APIs, server management, and system deployments.",
-    terminalTitle: "eldeisty@production-server:~",
+    terminalTitle: "abdulrahmaneldeisty@gmail.com",
     ctaPrimary: "View Selected Work",
     ctaContact: "Contact Me",
     ctaResume: "Resume",
@@ -144,11 +145,16 @@ window.LOCALES.en = {
   // Sections Headings
   sections: {
     featuredLabel: "Engineering Portfolio",
+    featuredBadge: "Engineering Portfolio",
     featuredTitle: "Featured & Selected Work",
     featuredDesc: "Real-world systems, SaaS backends, and logistics dispatchers architected for reliability, concurrency, and scale.",
+    viewAllProjects: "Explore All Projects & Case Studies",
     skillsLabel: "Technical Competencies",
+    stackBadge: "Technical Competencies",
     skillsTitle: "Core Technical Stack",
+    stackTitle: "Core Technical Stack",
     skillsDesc: "Technologies I use to build scalable systems. Categorized by honest production proficiency.",
+    stackDesc: "Technologies I use to build scalable systems. Categorized by honest production proficiency.",
     codeLabel: "Code Architecture",
     codeTitle: "Behind the Code",
     codeDesc: "Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.",
@@ -343,7 +349,7 @@ window.LOCALES.en = {
     resourcesTitle: "Resources",
     adminTitle: "Administration",
     dashboardCms: "Portfolio CMS Dashboard",
-    copyright: "© 2026 Abdelrahman El-Deisty. Engineered with clean architecture and vanilla web standards."
+    copyright: "© 2026 Abdelrahman Deisty. Engineered with clean architecture and vanilla web standards."
   },
 
   // Dashboard Translations

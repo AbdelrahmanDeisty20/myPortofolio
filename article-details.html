@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Engineering Note — Abdelrahman El-Deisty</title>
-  <meta name="description" content="Technical article on Laravel, backend systems, database tuning, and API design.">
-  <link rel="stylesheet" href="./assets/css/main.css">
+  <title>Engineering Note — Abdelrahman Deisty</title>
+  <meta name="description" content="Abdelrahman Deisty portfolio">
+  <meta http-equiv="refresh" content="0; url=./index.html">
+  <script>window.location.replace('./index.html');</script>
   <style>
     .article-header {
       padding: 4.5rem 0 2.5rem;
@@ -84,7 +85,10 @@
       <a href="./index.html" class="brand-link">
         <span class="brand-badge">AE</span>
         <div class="brand-text">
-          <span class="brand-name">Abdelrahman El-Deisty</span>
+          <span class="brand-name">
+            <span class="brand-name-full" data-i18n="brand.name">Abdelrahman Deisty</span>
+            <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
+          </span>
           <span class="brand-role" data-i18n="brand.role">Software Engineer & Backend Developer</span>
         </div>
       </a>
@@ -127,7 +131,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <span>&copy; 2026 Abdelrahman El-Deisty. Engineered for scale and maintainability.</span>
+        <span>&copy; 2026 Abdelrahman Deisty. Engineered for scale and maintainability.</span>
       </div>
     </div>
   </footer>
@@ -165,7 +169,7 @@
         return;
       }
 
-      document.title = `${article.title} — Engineering Notes | Abdelrahman El-Deisty`;
+      document.title = `${article.title} — Engineering Notes | Abdelrahman Deisty`;
 
       // Simple Markdown converter for headers, codeblocks, backticks, bold
       const htmlContent = formatMarkdown(article.content || article.excerpt);

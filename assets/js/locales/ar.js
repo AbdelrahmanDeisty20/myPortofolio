@@ -8,6 +8,7 @@ window.LOCALES.ar = {
   // Brand & Header
   brand: {
     name: "عبدالرحمن الديسطي",
+    shortName: "عبدالرحمن",
     role: "مهندس برمجيات ومطور Backend",
     portalTitle: "لوحة تحكم البورتفوليو",
     portalSubtitle: "مركز إدارة المحتوى والأنظمة"
@@ -117,7 +118,7 @@ window.LOCALES.ar = {
     title: "عبدالرحمن الديسطي",
     subtitle: "مهندس برمجيات ومطور Backend",
     tagline: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات REST APIs، والتعامل مع مختلف السيرفرات ونشر وإدارة الأنظمة الإنتاجية.",
-    terminalTitle: "eldeisty@production-server:~",
+    terminalTitle: "abdulrahmaneldeisty@gmail.com",
     ctaPrimary: "استعراض المشاريع",
     ctaContact: "تواصل معي",
     ctaResume: "السيرة الذاتية",
@@ -144,11 +145,16 @@ window.LOCALES.ar = {
   // Sections Headings
   sections: {
     featuredLabel: "معرض الأعمال البرمجية",
+    featuredBadge: "معرض الأعمال البرمجية",
     featuredTitle: "مشاريع مفضلة مختارة",
     featuredDesc: "أنظمة برمجية حقيقية، محركات SaaS، وأنظمة توجيه لوجستي صُممت لتتحمل التزامن وتضمن سلامة العمليات.",
+    viewAllProjects: "استكشف كافة المشاريع ودراسات الحالة",
     skillsLabel: "الكفاءات والمهارات التقنية",
+    stackBadge: "الكفاءات والمهارات التقنية",
     skillsTitle: "حزمة التقنيات الأساسية",
+    stackTitle: "حزمة التقنيات الأساسية",
     skillsDesc: "التقنيات التي أعتمد عليها لبناء أنظمة قابلة للتوسع. مصنفة بمستويات إتقان واقعية بعيداً عن النسب المئوية الوهمية.",
+    stackDesc: "التقنيات التي أعتمد عليها لبناء أنظمة قابلة للتوسع. مصنفة بمستويات إتقان واقعية بعيداً عن النسب المئوية الوهمية.",
     codeLabel: "معمارية الكود",
     codeTitle: "ما وراء الكود البرمجي",
     codeDesc: "أنماط معمارية نظيفة للإنتاج: قفل قواعد البيانات التشاؤمي، آلات الحالة الحتمية، واستعلامات MySQL الجغرافية.",

@@ -187,15 +187,19 @@ ul, ol {
   align-items: center;
   justify-content: space-between;
   height: 4.25rem;
+  width: 100%;
+  gap: 0.65rem;
 }
 
 .brand-link {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.65rem;
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.02em;
+  min-width: 0;
+  flex-shrink: 1;
 }
 
 .brand-badge {
@@ -211,11 +215,13 @@ ul, ol {
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .brand-name {
@@ -223,6 +229,15 @@ ul, ol {
   color: var(--text-primary);
   font-weight: 700;
   line-height: 1.2;
+  white-space: nowrap;
+}
+
+.brand-name-full {
+  display: inline;
+}
+
+.brand-name-short {
+  display: none;
 }
 
 .brand-role {
@@ -231,6 +246,7 @@ ul, ol {
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -256,7 +272,15 @@ ul, ol {
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.search-trigger-btn,
+.theme-toggle-btn,
+.lang-switcher-btn,
+.mobile-nav-toggle {
+  flex-shrink: 0;
 }
 
 /* Command Palette Trigger Button */
@@ -348,6 +372,15 @@ ul, ol {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-toggle:hover {
+  border-color: var(--border-medium);
+  color: var(--accent-cyan);
+  background: var(--bg-surface);
 }
 
 /* ==========================================================================
@@ -1279,12 +1312,27 @@ ul, ol {
   }
   .mobile-nav-toggle {
     display: flex;
+    flex-shrink: 0;
   }
   .search-trigger-btn span {
     display: none;
   }
   .search-shortcut-badge {
     display: none;
+  }
+  .site-header .lang-switcher-btn {
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    flex-shrink: 0;
+  }
+  .site-header .lang-switcher-btn .lang-label-slot {
+    display: none;
+  }
+  .site-header .lang-switcher-btn svg {
+    margin: 0;
   }
   .projects-bento-grid {
     grid-template-columns: 1fr;
@@ -1331,12 +1379,19 @@ ul, ol {
   margin: 0 !important;
   box-sizing: border-box !important;
   transform: translateX(100%);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  visibility: hidden !important;
+  pointer-events: none !important;
+  opacity: 0 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0s linear 0.3s !important;
   overflow: hidden !important;
 }
 
 .mobile-drawer.active {
   transform: translateX(0) !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0s linear 0s !important;
 }
 
 body.drawer-open, html.drawer-open {
@@ -1362,6 +1417,18 @@ body.drawer-open, html.drawer-open {
   align-items: center !important;
   gap: 0.5rem !important;
   flex-shrink: 0 !important;
+}
+
+.mobile-drawer .lang-switcher-btn {
+  width: auto !important;
+  height: 2.35rem !important;
+  padding: 0.45rem 0.75rem !important;
+  gap: 0.45rem !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.mobile-drawer .lang-switcher-btn .lang-label-slot {
+  display: inline !important;
 }
 
 .mobile-drawer-close {
@@ -1484,23 +1551,51 @@ body.drawer-open, html.drawer-open {
 }
 
 /* ==========================================================================
-   Language Switch Transition (moderate speed: not too fast, not too slow)
+   Language Switch Transition (Directional Slide & Smooth Fade)
    ========================================================================== */
 body.lang-transition-out {
   opacity: 0;
-  transition: opacity 0.35s ease-in-out, transform 0.35s ease-in-out;
+  pointer-events: none;
+  transition: opacity 0.28s ease-in, transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
-html[dir="ltr"] body.lang-transition-out { transform: translateX(-30px); }
-html[dir="rtl"] body.lang-transition-out { transform: translateX(30px); }
+/* When leaving LTR, slide out to the left */
+html[dir="ltr"] body.lang-transition-out { 
+  transform: translateX(-40px); 
+}
+/* When leaving RTL, slide out to the right */
+html[dir="rtl"] body.lang-transition-out { 
+  transform: translateX(40px); 
+}
 
-body.lang-transition-in { opacity: 0; }
-html[dir="ltr"] body.lang-transition-in { transform: translateX(30px); }
-html[dir="rtl"] body.lang-transition-in { transform: translateX(-30px); }
+body.lang-transition-in { 
+  opacity: 0; 
+  pointer-events: none;
+}
+/* When entering into LTR (English), slide in from the left */
+html[dir="ltr"] body.lang-transition-in { 
+  transform: translateX(-40px); 
+}
+/* When entering into RTL (Arabic), slide in from the right */
+html[dir="rtl"] body.lang-transition-in { 
+  transform: translateX(40px); 
+}
 
 html body.lang-transition-in.lang-transition-in-active {
   opacity: 1;
   transform: translateX(0);
-  transition: opacity 0.45s ease-out, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: auto;
+  transition: opacity 0.38s ease-out, transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Strictly hide and prevent drawer animations during language transition */
+html.lang-switching .mobile-drawer,
+body.lang-transition-out .mobile-drawer,
+body.lang-transition-in .mobile-drawer {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: none !important;
 }
 
 /* ==========================================================================
@@ -1586,7 +1681,7 @@ html body.lang-transition-in.lang-transition-in-active {
 }
 
 [dir="rtl"] .mobile-drawer.active {
-  transform: translateX(0);
+  transform: translateX(0) !important;
 }
 
 /* ==========================================================================
@@ -1638,6 +1733,7 @@ html body.lang-transition-in.lang-transition-in-active {
   }
   .mobile-nav-toggle {
     display: flex;
+    flex-shrink: 0;
   }
   .hero-grid {
     grid-template-columns: 1fr;
@@ -1660,6 +1756,53 @@ html body.lang-transition-in.lang-transition-in-active {
 
 /* Phablet & Mobile Breakpoint (max-width: 768px) */
 @media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .site-header {
+    padding: 0;
+  }
+  .site-header .container {
+    padding-inline-start: 0.85rem;
+    padding-inline-end: 0.45rem;
+  }
+  .nav-inner {
+    height: 3.75rem;
+    gap: 0.45rem;
+  }
+  .brand-role {
+    display: none;
+  }
+  .brand-name {
+    font-size: 0.95rem;
+  }
+  .nav-actions {
+    gap: 0.35rem;
+    flex-shrink: 0;
+  }
+  .site-header .lang-switcher-btn {
+    width: 2.2rem;
+    height: 2.2rem;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    border-radius: var(--radius-md);
+    flex-shrink: 0;
+  }
+  .site-header .lang-switcher-btn .lang-label-slot {
+    display: none;
+  }
+  .site-header .lang-switcher-btn svg {
+    margin: 0;
+  }
+  .site-header .search-trigger-btn,
+  .site-header .theme-toggle-btn,
+  .site-header .mobile-nav-toggle {
+    width: 2.2rem;
+    height: 2.2rem;
+    flex-shrink: 0;
+  }
   .projects-bento-grid {
     grid-template-columns: 1fr;
   }
@@ -1708,25 +1851,55 @@ html body.lang-transition-in.lang-transition-in-active {
 /* Small Smartphone Breakpoint (max-width: 480px) */
 @media (max-width: 480px) {
   .site-header {
-    padding: 0.65rem 0.75rem;
+    padding: 0 !important;
   }
-  .brand-role {
-    display: none;
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
-  .brand-name {
-    font-size: 0.92rem;
+  .site-header .container {
+    padding-inline-start: 0.55rem !important;
+    padding-inline-end: 0.3rem !important;
+  }
+  .nav-inner {
+    height: 3.5rem;
+    gap: 0.3rem;
+  }
+  .brand-link {
+    gap: 0.35rem;
+    min-width: 0;
+    flex-shrink: 1;
   }
   .brand-badge {
-    width: 2rem;
-    height: 2rem;
-    font-size: 0.82rem;
+    width: 1.95rem;
+    height: 1.95rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  .brand-name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: none;
   }
   .nav-actions {
-    gap: 0.35rem;
+    gap: 0.22rem;
+    flex-shrink: 0;
   }
-  .lang-switcher-btn {
-    padding: 0.4rem 0.55rem;
-    font-size: 0.75rem;
+  .site-header .search-trigger-btn,
+  .site-header .theme-toggle-btn,
+  .site-header .lang-switcher-btn,
+  .site-header .mobile-nav-toggle {
+    width: 2.05rem;
+    height: 2.05rem;
+    flex-shrink: 0;
+  }
+  .site-header .mobile-nav-toggle svg {
+    width: 17px;
+    height: 17px;
   }
   .hero-headline {
     font-size: 2rem;
@@ -1738,6 +1911,75 @@ html body.lang-transition-in.lang-transition-in-active {
     margin-right: 0 !important;
     margin-left: 0 !important;
     padding: 1rem 0.75rem !important;
+  }
+}
+
+/* Brand Name Visibility:
+   - Header (Closed Menu state): Full Name displays cleanly in responsive down to 320px
+   - Drawer (Open Menu state): First Name only to fit alongside drawer action buttons
+*/
+.site-header .brand-name-full {
+  display: inline !important;
+}
+.site-header .brand-name-short {
+  display: none !important;
+}
+
+.mobile-drawer .brand-name-full {
+  display: none !important;
+}
+.mobile-drawer .brand-name-short {
+  display: inline !important;
+}
+
+/* Fallback for ultra-narrow devices <= 320px in top header */
+@media (max-width: 320px) {
+  .site-header .brand-name-full {
+    display: none !important;
+  }
+  .site-header .brand-name-short {
+    display: inline !important;
+  }
+}
+
+/* Extra Small Smartphone Breakpoint (max-width: 340px) */
+@media (max-width: 340px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .site-header .container {
+    padding-inline-start: 0.35rem !important;
+    padding-inline-end: 0.2rem !important;
+  }
+  .nav-inner {
+    gap: 0.2rem;
+  }
+  .brand-link {
+    gap: 0.25rem;
+  }
+  .brand-badge {
+    width: 1.8rem;
+    height: 1.8rem;
+    font-size: 0.75rem;
+  }
+  .brand-name {
+    font-size: 0.8rem;
+  }
+  .nav-actions {
+    gap: 0.16rem;
+    flex-shrink: 0;
+  }
+  .site-header .search-trigger-btn,
+  .site-header .theme-toggle-btn,
+  .site-header .lang-switcher-btn,
+  .site-header .mobile-nav-toggle {
+    width: 1.85rem;
+    height: 1.85rem;
+  }
+  .site-header .mobile-nav-toggle svg {
+    width: 15px;
+    height: 15px;
   }
 }
 

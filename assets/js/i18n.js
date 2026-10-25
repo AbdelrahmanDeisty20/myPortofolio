@@ -28,6 +28,17 @@ class I18nManager {
     return this.currentLang;
   }
 
+  getLocalized(item, field) {
+    if (window.PortfolioDB && typeof window.PortfolioDB.getLocalized === 'function') {
+      return window.PortfolioDB.getLocalized(item, field);
+    }
+    if (!item) return '';
+    const lang = this.currentLang || 'en';
+    if (lang === 'ar' && item[field + '_ar']) return item[field + '_ar'];
+    if (item[field + '_en']) return item[field + '_en'];
+    return item[field] || '';
+  }
+
   setLanguage(lang) {
     if (lang !== 'en' && lang !== 'ar') lang = 'en';
     this.currentLang = lang;
@@ -50,10 +61,11 @@ class I18nManager {
       return;
     }
 
-    // Moderate-speed transition: slide out toward the old reading direction, swap, slide in
-    const OUT_MS = 350;
-    const IN_MS = 450;
+    // Moderate-speed directional transition: slide out toward old reading direction, swap, slide in
+    const OUT_MS = 280;
+    const IN_MS = 380;
     this._switching = true;
+    document.documentElement.classList.add('lang-switching');
     body.classList.add('lang-transition-out');
 
     setTimeout(() => {
@@ -66,6 +78,7 @@ class I18nManager {
 
       setTimeout(() => {
         body.classList.remove('lang-transition-in', 'lang-transition-in-active');
+        document.documentElement.classList.remove('lang-switching');
         this._switching = false;
       }, IN_MS);
     }, OUT_MS);
@@ -98,6 +111,12 @@ class I18nManager {
       const btn = e.target.closest('.lang-switcher-btn');
       if (btn) {
         e.preventDefault();
+        const drawer = document.querySelector('.mobile-drawer');
+        if (drawer && drawer.classList.contains('active')) {
+          drawer.classList.remove('active');
+          document.body.classList.remove('drawer-open');
+          document.documentElement.classList.remove('drawer-open');
+        }
         this.toggleLanguage();
       }
     });

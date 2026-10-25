@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selected Production Work — Abdelrahman El-Deisty</title>
+  <title>Selected Production Work — Abdelrahman Deisty</title>
   <meta name="description" content="Production Laravel applications, SaaS platforms, high-throughput APIs, and database architectures.">
   <!-- Core CSS -->
   <link rel="stylesheet" href="./assets/css/main.css">
@@ -65,7 +65,12 @@
       <a href="./index.html" class="brand-link">
         <span class="brand-badge">AE</span>
         <div class="brand-text">
-          <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
+          <span class="brand-name">
+            <span class="brand-name-full" data-i18n="brand.name">Abdelrahman Deisty</span>
+            <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
+          </span>
+            <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
+          </span>
           <span class="brand-role" data-i18n="brand.role">Software Engineer & Backend Developer</span>
         </div>
       </a>
@@ -76,7 +81,6 @@
         <a href="./experience.html" class="nav-link" data-i18n="nav.experience">Experience</a>
         <a href="./services.html" class="nav-link" data-i18n="nav.services">Services</a>
         <a href="./about.html" class="nav-link" data-i18n="nav.about">About</a>
-        <a href="./articles.html" class="nav-link" data-i18n="nav.articles">Notes</a>
         <a href="./resume.html" class="nav-link" data-i18n="nav.resume">Resume</a>
         <a href="./contact.html" class="nav-link" data-i18n="nav.contact">Contact</a>
       </nav>
@@ -160,7 +164,7 @@
         <div>
           <a href="./index.html" class="brand-link">
             <span class="brand-badge">AE</span>
-            <span class="brand-name">Abdelrahman El-Deisty</span>
+            <span class="brand-name">Abdelrahman Deisty</span>
           </a>
           <p class="footer-brand-desc">
             Backend Developer specializing in production Laravel applications, high-performance REST APIs, and automated business platforms.
@@ -179,7 +183,6 @@
           <h4 class="footer-col-title">Resources</h4>
           <ul class="footer-links-list">
             <li><a href="./resume.html" class="footer-link">Resume / CV</a></li>
-            <li><a href="./articles.html" class="footer-link">Engineering Notes</a></li>
             <li><a href="./search.html" class="footer-link">Global Search</a></li>
           </ul>
         </div>
@@ -188,13 +191,13 @@
           <ul class="footer-links-list">
             <li><a href="https://github.com/Abdelrahman-El-Deisty" target="_blank" rel="noopener" class="footer-link">GitHub</a></li>
             <li><a href="https://linkedin.com/in/abdelrahman-el-deisty" target="_blank" rel="noopener" class="footer-link">LinkedIn</a></li>
-            <li><a href="mailto:contact@eldeisty.dev" class="footer-link">Email</a></li>
+            <li><a href="mailto:abdulrahmaneldeisty@gmail.com" class="footer-link">Email</a></li>
             <li><a href="./contact.html" class="footer-link">Start a Project</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Abdelrahman El-Deisty. All case studies reflect personal production contributions.</span>
+        <span>&copy; 2026 Abdelrahman Deisty. All case studies reflect personal production contributions.</span>
       </div>
     </div>
   </footer>
@@ -307,8 +310,8 @@
           <div class="project-body">
             <div>
               <div class="project-meta-top">
-                <span class="badge badge-cyan">${escapeHtml(p.category)}</span>
-                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(p.year)} • ${escapeHtml(p.status)}</span>
+                <span class="badge badge-cyan">${escapeHtml(PortfolioDB.getLocalized(p, 'category'))}</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">${escapeHtml(p.year)} • ${escapeHtml(PortfolioDB.getLocalized(p, 'status'))}</span>
               </div>
               <h3 class="project-name" style="margin-top: 0.65rem;">
                 <a href="./project-details.html?slug=${encodeURIComponent(p.slug)}">${escapeHtml(title)}</a>
@@ -331,8 +334,7 @@
                   `<span class="private-lock-badge" title="Source code protected under client confidentiality">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
                     ${isAr ? 'كود خاص' : 'Private Code'}
-                  </span>` : 
-                  (p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline">GitHub</a>` : '')
+                  </span>` : ''
                 }
                 ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" rel="noopener" class="btn btn-sm btn-outline">${isAr ? 'تجربة حية' : 'Live Demo'}</a>` : ''}
               </div>

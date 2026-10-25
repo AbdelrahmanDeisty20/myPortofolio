@@ -258,7 +258,10 @@ const App = {
         <div class="mobile-drawer-header">
           <div class="brand-link">
             <span class="brand-badge">AE</span>
-            <span class="brand-name" data-i18n="brand.name">Abdelrahman El-Deisty</span>
+            <span class="brand-name">
+              <span class="brand-name-full" data-i18n="brand.name">Abdelrahman Deisty</span>
+              <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
+            </span>
           </div>
           <div class="mobile-drawer-actions">
             <button class="lang-switcher-btn" aria-label="Switch Language">
@@ -281,7 +284,6 @@ const App = {
             <a href="./experience.html" class="mobile-drawer-link" data-i18n="nav.experience">Experience</a>
             <a href="./services.html" class="mobile-drawer-link" data-i18n="nav.services">Services</a>
             <a href="./about.html" class="mobile-drawer-link" data-i18n="nav.about">About & Philosophy</a>
-            <a href="./articles.html" class="mobile-drawer-link" data-i18n="nav.articles">Engineering Notes</a>
             <a href="./resume.html" class="mobile-drawer-link" data-i18n="nav.resume">Resume</a>
             <a href="./contact.html" class="mobile-drawer-link" data-i18n="nav.contact">Contact</a>
           </nav>
@@ -338,7 +340,7 @@ const App = {
     if (!termBody) return;
 
     const sequence = [
-      { cmd: 'whoami', output: 'Abdelrahman El-Deisty — Software Engineer & Backend Developer' },
+      { cmd: 'whoami', output: 'Abdelrahman Deisty — Software Engineer & Backend Developer' },
       { cmd: 'what_i_do', output: 'Software Engineering, Backend Architecture & REST APIs' },
       { cmd: 'experience', output: '2+ Years in Production Backend Engineering' },
       { cmd: 'response_time', output: 'Fast Response • Available 24/7' }
