@@ -180,7 +180,7 @@
       <div class="section-header">
         <span class="section-label" data-i18n="sections.codeBadge">Code Architecture</span>
         <h2 class="section-title" data-i18n="sections.codeTitle">Behind the Code</h2>
-        <p class="section-desc">Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.</p>
+        <p class="section-desc" data-i18n="sections.codeDesc">Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.</p>
       </div>
 
       <div class="code-showcase-container">
@@ -477,6 +477,22 @@
             </div>
           `;
 
+          const viewerPanel = contentGrid.querySelector('.code-viewer-panel');
+          if (viewerPanel) {
+            viewerPanel.addEventListener('wheel', (e) => {
+              if (viewerPanel.scrollWidth > viewerPanel.clientWidth) {
+                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+                  const isAtStart = viewerPanel.scrollLeft <= 0;
+                  const isAtEnd = viewerPanel.scrollLeft + viewerPanel.clientWidth >= viewerPanel.scrollWidth - 1;
+                  if ((e.deltaY > 0 && !isAtEnd) || (e.deltaY < 0 && !isAtStart)) {
+                    e.preventDefault();
+                    viewerPanel.scrollLeft += e.deltaY;
+                  }
+                }
+              }
+            }, { passive: false });
+          }
+
           tabsHeader.querySelectorAll('.code-tab-btn').forEach(btn => {
             btn.addEventListener('click', () => {
               const nextI = parseInt(btn.getAttribute('data-index'), 10);
@@ -484,6 +500,19 @@
             });
           });
         };
+
+        tabsHeader.addEventListener('wheel', (e) => {
+          if (tabsHeader.scrollWidth > tabsHeader.clientWidth) {
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+              const isAtStart = tabsHeader.scrollLeft <= 0;
+              const isAtEnd = tabsHeader.scrollLeft + tabsHeader.clientWidth >= tabsHeader.scrollWidth - 1;
+              if ((e.deltaY > 0 && !isAtEnd) || (e.deltaY < 0 && !isAtStart)) {
+                e.preventDefault();
+                tabsHeader.scrollLeft += e.deltaY;
+              }
+            }
+          }
+        }, { passive: false });
 
         renderCodeSnippet(0);
       }
