@@ -118,7 +118,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <span>&copy; 2026 Abdelrahman Deisty. Engineered for scale and maintainability.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Abdelrahman Deisty. All case studies reflect personal production contributions.</span>
       </div>
     </div>
   </footer>
@@ -143,7 +143,7 @@
 
       grid.innerHTML = services.map(s => {
         const title = PortfolioDB.getLocalized(s, 'title');
-        const subtitle = PortfolioDB.getLocalized(s, 'subtitle') || (isAr ? 'خدمة برمجية إنتاجية' : 'Production Service');
+        const subtitle = PortfolioDB.getLocalized(s, 'subtitle') || (isAr ? 'خدمة برمجية متكاملة' : 'Production Service');
         const description = PortfolioDB.getLocalized(s, 'description');
         const solved = PortfolioDB.getLocalized(s, 'solvedProblems') || (isAr ? 'تزيل التعطيل التشغيلي وتضمن كفاءة النظام.' : 'Eliminates structural bottlenecks.');
         const quoteLabel = isAr ? 'طلب استشارة / عرض ←' : 'Request Quote →';

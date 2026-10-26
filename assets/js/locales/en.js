@@ -160,7 +160,7 @@ window.LOCALES.en = {
     codeDesc: "Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.",
     philosophyLabel: "Engineering Methodology",
     philosophyTitle: "How I Build Systems",
-    philosophyDesc: "Systems engineering that prioritizes business workflows, data integrity, and maintainability.",
+    philosophyDesc: "Systems engineering that prioritizes lightning-fast response times, data integrity, and high backend performance.",
     notesLabel: "Knowledge Sharing",
     notesTitle: "Engineering Notes",
     notesDesc: "Practical architecture notes on Laravel, database query optimization, and resilient API design.",
@@ -176,12 +176,12 @@ window.LOCALES.en = {
     step2Desc: "Craft 3NF database schemas, enforce foreign key integrity, and establish compound indexes on high-frequency query paths.",
     step3Title: "Architect Decoupled Domain Services",
     step3Desc: "Keep controllers thin. Encapsulate business logic in isolated, single-responsibility services and transactional pipelines.",
-    step4Title: "Build Secure, Versioned REST APIs",
-    step4Desc: "Strict Form Request validation, Sanctum token ability scopes, consistent API Resources, and rate limiting.",
+    step4Title: "Build Fast, Secure & High-Performance APIs",
+    step4Desc: "Prioritizing low-latency response times and lightweight payloads, alongside strict Form Request validation, Sanctum security, and clean API Resources.",
     step5Title: "Handle Edge Cases & Concurrency",
     step5Desc: "Employ database locking, idempotent webhook handling, and deterministic state machine transitions to eliminate race conditions.",
-    step6Title: "Optimize Database & Caching",
-    step6Desc: "Inspect EXPLAIN plans, eliminate N+1 queries with eager loading, and leverage Redis for rate limits and taxonomy caching."
+    step6Title: "Optimize Performance, Database & Caching",
+    step6Desc: "Relentless focus on response speed: query profiling (EXPLAIN), eliminating N+1 queries with eager loading, and leveraging Redis for instant sub-millisecond responses."
   },
 
   // Case Study Page
@@ -342,14 +342,34 @@ window.LOCALES.en = {
     viewWork: "View Selected Work"
   },
 
+  // Conversion CTA Banner
+  cta: {
+    title: "Building a Laravel backend, SaaS, or API platform?",
+    subtitle: "Let's discuss your system architecture, data models, and business logic requirements.",
+    startBtn: "Start a Conversation",
+    resumeBtn: "View Resume"
+  },
+
   // Footer
   footer: {
-    desc: "Software Engineer & Backend Developer specializing in production Laravel applications, REST APIs, and server management & deployment.",
+    desc: "Backend Developer specializing in production Laravel applications, high-performance REST APIs, and automated business platforms.",
     navTitle: "Navigation",
     resourcesTitle: "Resources",
     adminTitle: "Administration",
+    connectTitle: "Connect",
+    navWork: "Selected Work",
+    navSkills: "Tech Stack",
+    navExp: "Experience",
+    navServices: "Services",
+    resResume: "Resume / CV",
+    resSearch: "Global Search",
+    resGithub: "GitHub Profile",
+    resLinkedin: "LinkedIn Profile",
+    adminInquiry: "Send Inquiry",
+    startProject: "Start a Project",
+    email: "Email",
     dashboardCms: "Portfolio CMS Dashboard",
-    copyright: "© 2026 Abdelrahman Deisty. Engineered with clean architecture and vanilla web standards."
+    copyright: "© 2026 Abdelrahman Deisty. All case studies reflect personal production contributions."
   },
 
   // Dashboard Translations

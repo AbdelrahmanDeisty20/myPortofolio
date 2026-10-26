@@ -11,26 +11,26 @@ const DEFAULT_PORTFOLIO_DATA = {
     title: "Software Engineer & Backend Developer",
     title_ar: "مهندس برمجيات ومطور Backend",
     tagline: "Software Engineer & Backend Developer building production-ready Laravel applications, REST APIs, server management, and system deployments.",
-    tagline_ar: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، والتعامل مع مختلف السيرفرات ونشر وإدارة الأنظمة الإنتاجية.",
+    tagline_ar: "مهندس برمجيات ومطور Backend متخصص في بناء تطبيقات لارافيل، وواجهات برمجة التطبيقات، والتعامل مع مختلف السيرفرات ونشر وإدارة الأنظمة البرمجية.",
     heroSubtitle: "I architect reliable backend systems and web applications — from high-throughput REST APIs and database design to server management and reliable production deployments.",
-    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة برمجية وتطبيقات ويب معتمدة — بدءاً من واجهات REST API وقواعد البيانات، وحتى التعامل مع مختلف السيرفرات ونشر وإدارة البيئات الإنتاجية.",
+    heroSubtitle_ar: "أقوم بهندسة وبناء أنظمة برمجية وتطبيقات ويب معتمدة — بدءاً من واجهات REST API وقواعد البيانات، وحتى التعامل مع مختلف السيرفرات ونشر وإدارة البيئات والمشاريع البرمجية.",
     availabilityStatus: "Available for Remote Work & Projects",
     availabilityStatus_ar: "متاح للعمل عن بُعد (Remote) والمشاريع",
     availabilityType: "available", // 'available' | 'busy' | 'selective'
     location: "Cairo, Egypt / Remote Worldwide",
     location_ar: "القاهرة، مصر / متاح للعمل عن بُعد عالمياً",
     email: "abdulrahmaneldeisty@gmail.com",
-    github: "https://github.com/Abdelrahman-El-Deisty",
+    github: "https://github.com/AbdelrahmanDeisty20",
     linkedin: "https://linkedin.com/in/abdelrahman-el-deisty",
     twitter: "https://x.com/eldeisty_dev",
     resumeUrl: "./resume.html",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
     yearsExperience: "2+",
     stats: [
-      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Software & Backend", label_ar: "هندسة البرمجيات والباك إند", detail: "Production Laravel & Server Deployment", detail_ar: "أنظمة إنتاجية بلارافيل وإدارة السيرفرات" },
+      { id: "stat_1", value: "2+ Years", value_ar: "+2 سنة", label: "Software & Backend", label_ar: "هندسة البرمجيات والباك إند", detail: "Production Laravel & Server Deployment", detail_ar: "مشاريع بلارافيل وإدارة السيرفرات" },
       { id: "stat_2", value: "10+", value_ar: "+10", label: "Projects Shipped & Maintained", label_ar: "مشاريع تم إطلاقها وتعديلها", detail: "E-commerce, SaaS & REST APIs", detail_ar: "متاجر E-commerce، منصات SaaS، وواجهات APIs" },
       { id: "stat_3", value: "Laravel", value_ar: "Laravel", label: "Core Backend Stack", label_ar: "حزمة التقنيات الأساسية", detail: "REST APIs, Sanctum, Queues & MySQL", detail_ar: "REST APIs، Sanctum، Queues وقواعد MySQL" },
-      { id: "stat_4", value: "100%", value_ar: "100%", label: "Production Focused", label_ar: "تركيز إنتاجي عملي", detail: "Clean architecture & data integrity", detail_ar: "معمارية برمجية نظيفة ودقة في تكامل البيانات" }
+      { id: "stat_4", value: "100%", value_ar: "100%", label: "Production Focused", label_ar: "تركيز عملي وموثوق", detail: "Clean architecture & data integrity", detail_ar: "معمارية برمجية نظيفة ودقة في تكامل البيانات" }
     ],
     bioSummary: "I'm a backend-focused software engineer with a deep passion for building resilient, maintainable digital products. I specialize in the Laravel ecosystem, clean API design, and robust database architectures that solve tangible operational problems.",
     bioSummary_ar: "أنا مهندس برمجيات متخصص في البنية التحتية والأنظمة الخلفية، ولدي شغف عميق بتطوير منتجات رقمية متينة وقابلة للصيانة والتطوير. أتخصص في بيئة لارافيل، وتصميم واجهات برمجة التطبيقات النظيفة، وهيكلة قواعد بيانات متطورة تحل مشاكل العمل الفعلية.",
@@ -450,8 +450,8 @@ When partnering with founders or engineering teams, my goal is always to deliver
     { id: "tech_vanillajs", name: "Vanilla JavaScript", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "terminal", featured: true, description: "ES6+, asynchronous DOM workflows, custom event buses, and client-side state." },
     { id: "tech_css", name: "Modern CSS", category: "Admin / UI", level: "Strong", experience: "2+ Years", icon: "palette", featured: false, description: "Flexbox, CSS Grid, custom properties, responsive breakpoints, and animations." },
 
-    // Infrastructure & Servers
-    { id: "tech_servers", name: "Web & Linux Servers", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "server", featured: true, description: "Server deployment and configuration, Linux environments, DNS management, SSL certificates, MySQL, and scheduled background workers." },
+    // Infrastructure & Hosting
+    { id: "tech_servers", name: "Web Hosting & Deployment", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "server", featured: true, description: "Website deployment, hosting configuration, DNS management, SSL certificates, MySQL databases, and production environment setup.", description_ar: "نشر وتهيئة مواقع الويب على الاستضافات، إدارة النطاقات (DNS)، شهادات الأمان SSL، وإعداد وتأمين قواعد بيانات MySQL." },
     { id: "tech_git", name: "Git & GitHub", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "git-branch", featured: true, description: "Feature branching, pull requests, rebase workflows, and release tagging." },
     { id: "tech_postman", name: "Postman & OpenAPI", category: "Infrastructure", level: "Primary", experience: "2+ Years", icon: "check-circle", featured: false, description: "Collection testing, environment variables, pre-request scripts, and API docs." },
     { id: "tech_firebase", name: "Firebase (FCM)", category: "Infrastructure", level: "Strong", experience: "1.5 Years", icon: "bell", featured: true, description: "Push notification dispatching, device token registration, and topic messaging." },
@@ -709,46 +709,74 @@ class OrderStateMachine
     },
     {
       id: "code_3",
-      title: "High-Performance Spatial Query Scope",
-      subtitle: "MySQL spatial distance filtering for couriers",
+      title: "Coupon Validation & Discount Engine",
+      subtitle: "Multi-rule promotional code verification and cart calculation",
       language: "php",
-      project: "Wasly Logistics",
-      description: "Encapsulates bounding box pre-filtering and exact spherical distance calculation into an Eloquent query scope.",
+      project: "KCODE E-Commerce",
+      description: "Validates expiration dates, minimum order thresholds, and per-user usage limits before calculating dynamic fixed or percentage discounts.",
       code: `<?php
 
-namespace App\\Models\\Scopes;
+namespace App\\Services;
 
-use Illuminate\\Database\\Eloquent\\Builder;
+use App\\Models\\Coupon;
+use App\\Models\\User;
+use App\\Exceptions\\CouponException;
 
-trait HasSpatialProximityScope
+class CouponService
 {
     /**
-     * Scope query to find couriers within a radial distance in kilometers.
+     * Validate promotional coupon rules and compute the discounted total.
+     *
+     * @throws CouponException
      */
-    public function scopeNearby(Builder $query, float $lat, float $lng, float $radiusKm = 10.0): Builder
+    public function applyCoupon(string $code, float $cartTotal, User $user): array
     {
-        // 1 degree latitude ~ 111.045 km
-        $latDelta = $radiusKm / 111.045;
-        $lngDelta = $radiusKm / (111.045 * cos(deg2rad($lat)));
+        $coupon = Coupon::where('code', strtoupper(trim($code)))
+            ->where('is_active', true)
+            ->first();
 
-        $minLat = $lat - $latDelta;
-        $maxLat = $lat + $latDelta;
-        $minLng = $lng - $lngDelta;
-        $maxLng = $lng + $lngDelta;
+        if (! $coupon) {
+            throw new CouponException('Invalid or expired coupon code.');
+        }
 
-        $envelopeWkt = "POLYGON(({$minLng} {$minLat}, {$maxLng} {$minLat}, {$maxLng} {$maxLat}, {$minLng} {$maxLat}, {$minLng} {$minLat}))";
+        if ($coupon->expires_at && $coupon->expires_at->isPast()) {
+            throw new CouponException('This coupon has already expired.');
+        }
 
-        return $query
-            ->whereRaw("MBRContains(ST_GeomFromText(?), location)", [$envelopeWkt])
-            ->selectRaw(
-                "*, ST_Distance_Sphere(location, ST_GeomFromText(?)) as distance_meters",
-                ["POINT({$lng} {$lat})"]
-            )
-            ->whereRaw("ST_Distance_Sphere(location, ST_GeomFromText(?)) <= ?", [
-                "POINT({$lng} {$lat})",
-                $radiusKm * 1000
-            ])
-            ->orderBy('distance_meters');
+        if ($coupon->min_spend && $cartTotal < $coupon->min_spend) {
+            throw new CouponException("Minimum spend of {$coupon->min_spend} is required.");
+        }
+
+        if ($coupon->usage_limit && $coupon->used_count >= $coupon->usage_limit) {
+            throw new CouponException('Coupon usage limit has been reached.');
+        }
+
+        $userUsageCount = $coupon->usages()
+            ->where('user_id', $user->id)
+            ->count();
+
+        if ($coupon->usage_per_user && $userUsageCount >= $coupon->usage_per_user) {
+            throw new CouponException('You have reached the maximum allowed uses for this coupon.');
+        }
+
+        // Calculate fixed amount or percentage discount
+        $discount = $coupon->type === 'percentage'
+            ? ($cartTotal * ($coupon->value / 100))
+            : $coupon->value;
+
+        // Apply maximum discount cap if specified
+        if ($coupon->max_discount && $discount > $coupon->max_discount) {
+            $discount = $coupon->max_discount;
+        }
+
+        $discount = min($discount, $cartTotal);
+
+        return [
+            'coupon_id' => $coupon->id,
+            'code' => $coupon->code,
+            'discount_amount' => round($discount, 2),
+            'final_total' => round($cartTotal - $discount, 2),
+        ];
     }
 }`
     }
@@ -860,7 +888,7 @@ trait HasSpatialProximityScope
   }
 };
 
-const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v12';
+const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v14';
 const DB_SESSION_KEY = 'eldeisty_dashboard_auth';
 
 class PortfolioDB {
@@ -951,6 +979,9 @@ class PortfolioDB {
 
     // Technologies sync
     data.technologies = JSON.parse(JSON.stringify(def.technologies));
+
+    // Code snippets sync
+    data.codeSnippets = JSON.parse(JSON.stringify(def.codeSnippets));
 
     // Articles cleared
     data.articles = [];

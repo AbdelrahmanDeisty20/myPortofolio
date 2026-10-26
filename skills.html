@@ -150,7 +150,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-bottom">
-        <span>&copy; 2026 Abdelrahman Deisty. Engineered for scale and maintainability.</span>
+        <span data-i18n="footer.copyright">&copy; 2026 Abdelrahman Deisty. All case studies reflect personal production contributions.</span>
       </div>
     </div>
   </footer>
@@ -247,7 +247,7 @@
       const desc = (window.I18n ? window.I18n.getLocalized(tech, 'description') : tech.description) || tech.description;
 
       const profLevelHeading = isAr ? 'مستوى الكفاءة' : 'Proficiency Level';
-      const prodExpHeading = isAr ? 'الخبرة الإنتاجية' : 'Production Experience';
+      const prodExpHeading = isAr ? 'الخبرة العملية' : 'Production Experience';
       const expVal = isAr ? (tech.experience ? tech.experience.replace('Years', 'سنوات').replace('Year', 'سنة') : '٢+ سنوات') : (tech.experience || '2+ Years');
       const projectsBuiltWithHeading = isAr ? `مشاريع نُفذت باستخدام ${escapeHtml(tech.name)} (${usingProjects.length}):` : `Projects Built With ${escapeHtml(tech.name)} (${usingProjects.length}):`;
       const caseStudyLabel = isAr ? 'دراسة الحالة ←' : 'Case Study →';
