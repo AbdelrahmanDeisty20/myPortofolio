@@ -229,6 +229,11 @@
           await openSkillInspector(techName);
         });
       });
+
+      // Trigger slow-motion scroll reveal for skills cards
+      if (window.App && typeof window.App.initScrollReveal === 'function') {
+        window.App.initScrollReveal();
+      }
     }
 
     async function openSkillInspector(techName) {

@@ -155,6 +155,7 @@ window.LOCALES.en = {
     stackTitle: "Core Technical Stack",
     skillsDesc: "Technologies I use to build scalable systems. Categorized by honest production proficiency.",
     stackDesc: "Technologies I use to build scalable systems. Categorized by honest production proficiency.",
+    viewAllSkills: "View Complete Skills Breakdown & Mapping →",
     codeLabel: "Code Architecture",
     codeTitle: "Behind the Code",
     codeDesc: "Clean, production-focused patterns: pessimistic row locking, deterministic state machines, and spatial queries.",

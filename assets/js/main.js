@@ -15,6 +15,7 @@ const App = {
     this.initMobileDrawer();
     this.initTerminal();
     this.initGlobalListeners();
+    this.initScrollAnimations();
   },
 
   // ==========================================
@@ -405,6 +406,155 @@ const App = {
         window.refreshPageData();
       }
     });
+  },
+
+  // ==========================================
+  // Interactive Motion Engine & Scroll Animations
+  // ==========================================
+  initScrollAnimations() {
+    this.initReadingProgress();
+    this.initScrollReveal();
+    this.initBackToTop();
+  },
+
+  initReadingProgress() {
+    let track = document.querySelector('.reading-progress-track');
+    if (!track) {
+      track = document.createElement('div');
+      track.className = 'reading-progress-track';
+      track.innerHTML = '<div class="reading-progress-bar" id="readingProgressBar"></div>';
+      document.body.prepend(track);
+    }
+
+    const bar = document.getElementById('readingProgressBar');
+    if (!bar) return;
+
+    const updateProgress = () => {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = totalHeight > 0 ? (scrollY / totalHeight) * 100 : 0;
+      bar.style.width = Math.min(100, Math.max(0, progress)) + '%';
+    };
+
+    if (this._progressScrollHandler) {
+      window.removeEventListener('scroll', this._progressScrollHandler);
+    }
+    this._progressScrollHandler = updateProgress;
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  },
+
+  initScrollReveal() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+      return;
+    }
+
+    // Auto-setup a single MutationObserver so all dynamically loaded items are captured immediately
+    if (!this._hasMutationObserver && 'MutationObserver' in window) {
+      this._hasMutationObserver = true;
+      let mutDebounce;
+      const mutObserver = new MutationObserver(() => {
+        clearTimeout(mutDebounce);
+        mutDebounce = setTimeout(() => {
+          this.initScrollReveal();
+        }, 60);
+      });
+      mutObserver.observe(document.body, { childList: true, subtree: true });
+    }
+
+    const targetSelectors = [
+      '.section-header',
+      '.proof-card',
+      '.project-card',
+      '.tech-group-card',
+      '.code-browser-card',
+      '.service-card',
+      '.experience-card',
+      '.timeline-card',
+      '.dashboard-feature-card',
+      '.dashboard-gallery-item',
+      '.card',
+      '.case-metric-box',
+      '.arch-step-node',
+      '.db-entity-card',
+      '.contact-card'
+    ];
+
+    // Find and tag targets that haven't been tagged or revealed yet
+    const elements = document.querySelectorAll(targetSelectors.join(', '));
+    elements.forEach(el => {
+      // Do not apply scroll reveal to items inside the hero header (they have page reveal)
+      if (el.closest('.hero-section') || el.closest('.case-study-hero')) {
+        return;
+      }
+
+      if (!el.classList.contains('reveal-on-scroll')) {
+        el.classList.add('reveal-on-scroll');
+
+        // Calculate a per-container stagger delay so items in the same grid/parent glide in sequentially
+        const parent = el.parentElement;
+        if (parent) {
+          const siblings = Array.from(parent.children).filter(child => 
+            child.matches && child.matches(targetSelectors.join(', '))
+          );
+          const indexInParent = siblings.indexOf(el);
+          if (indexInParent > 0) {
+            const delay = (Math.min(indexInParent, 4) * 0.14).toFixed(2);
+            el.style.transitionDelay = `${delay}s`;
+          }
+        }
+      }
+    });
+
+    if (!this._scrollRevealObserver) {
+      this._scrollRevealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            this._scrollRevealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05
+      });
+    }
+
+    document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+      this._scrollRevealObserver.observe(el);
+    });
+  },
+
+  initBackToTop() {
+    let btn = document.querySelector('.back-to-top-btn');
+    if (!btn) {
+      btn = document.createElement('button');
+      btn.className = 'back-to-top-btn';
+      btn.setAttribute('aria-label', 'Back to top');
+      btn.title = 'Back to top';
+      btn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>`;
+      document.body.appendChild(btn);
+
+      btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    const toggleBtn = () => {
+      if (window.pageYOffset > 380) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    };
+
+    if (this._backToTopHandler) {
+      window.removeEventListener('scroll', this._backToTopHandler);
+    }
+    this._backToTopHandler = toggleBtn;
+    window.addEventListener('scroll', toggleBtn, { passive: true });
+    toggleBtn();
   }
 };
 

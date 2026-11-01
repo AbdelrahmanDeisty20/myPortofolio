@@ -33,8 +33,6 @@
             <span class="brand-name-full" data-i18n="brand.name">Abdelrahman Deisty</span>
             <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
           </span>
-            <span class="brand-name-short" data-i18n="brand.shortName">Abdelrahman</span>
-          </span>
           <span class="brand-role" data-i18n="brand.role">Software Engineer & Backend Developer</span>
         </div>
       </a>
@@ -188,6 +186,9 @@
           <!-- Populated from codeSnippets -->
         </div>
         <div class="code-content-grid" id="codeContentGrid">
+          <!-- Populated dynamically -->
+        </div>
+        <div class="code-expand-bar" id="codeExpandBar">
           <!-- Populated dynamically -->
         </div>
       </div>
@@ -449,12 +450,17 @@
       const codeSnippets = await PortfolioAPI.getCodeSnippets();
       const tabsHeader = document.getElementById('codeTabsHeader');
       const contentGrid = document.getElementById('codeContentGrid');
+      const expandBar = document.getElementById('codeExpandBar');
 
       if (tabsHeader && contentGrid && codeSnippets.length) {
         let activeIdx = 0;
+        let isCodeExpanded = false;
 
         const renderCodeSnippet = (idx) => {
+          activeIdx = idx;
           const s = codeSnippets[idx];
+          const linesCount = (s.code || '').split('\n').length;
+
           tabsHeader.innerHTML = codeSnippets.map((item, i) => `
             <button class="code-tab-btn ${i === idx ? 'active' : ''}" data-index="${i}">
               ${escapeHtml(item.title)}
@@ -465,17 +471,83 @@
             <div class="code-info-panel">
               <div>
                 <span class="badge badge-indigo">${escapeHtml(s.project)}</span>
-                <h3 style="font-size: 1.25rem; font-weight: 700; margin-top: 0.75rem; color: var(--text-primary);">${escapeHtml(s.title)}</h3>
-                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.5rem; line-height: 1.6;">${escapeHtml(s.description)}</p>
+                <h3 class="code-info-title">${escapeHtml(s.title)}</h3>
+                <p class="code-info-desc">${escapeHtml(s.description)}</p>
               </div>
-              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted); border-top: 1px solid var(--border-subtle); padding-top: 1rem;">
-                Target: Production-grade concurrency safety
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: #64748B; border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; display: flex; align-items: center; justify-content: space-between;">
+                <span>Target: Concurrency & Safety</span>
+                <span class="badge" style="font-size: 0.7rem; color: var(--accent-cyan); border-color: rgba(56, 189, 248, 0.3);">PHP 8.3</span>
               </div>
             </div>
-            <div class="code-viewer-panel">
+            <div class="code-viewer-panel ${isCodeExpanded ? 'is-expanded' : ''}" id="codeViewerPanel">
               <pre class="code-pre"><code>${escapeHtml(s.code)}</code></pre>
+              <div class="code-viewer-fade" id="codeViewerFade"></div>
             </div>
           `;
+
+          if (expandBar) {
+            expandBar.innerHTML = `
+              <button type="button" class="btn-expand-code ${isCodeExpanded ? 'active' : ''}" id="btnToggleCode">
+                <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <span id="btnToggleCodeLabel">${isCodeExpanded ? (isAr ? 'تصغير الكود' : 'Collapse Code') : (isAr ? 'عرض الكود كاملاً' : 'Expand Full Code')}</span>
+              </button>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="font-size: 0.76rem; color: #64748B; font-family: var(--font-mono);">${linesCount} ${isAr ? 'سطراً' : 'lines'}</span>
+                <button type="button" class="btn-copy-code" id="btnCopyCode" title="${isAr ? 'نسخ الكود' : 'Copy Code'}">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="btnCopyCodeText">${isAr ? 'نسخ الكود' : 'Copy'}</span>
+                </button>
+              </div>
+            `;
+
+            // Toggle Expand / Collapse Handler
+            const btnToggle = expandBar.querySelector('#btnToggleCode');
+            if (btnToggle) {
+              btnToggle.addEventListener('click', () => {
+                isCodeExpanded = !isCodeExpanded;
+                const panel = document.getElementById('codeViewerPanel');
+                const label = document.getElementById('btnToggleCodeLabel');
+                if (panel) panel.classList.toggle('is-expanded', isCodeExpanded);
+                btnToggle.classList.toggle('active', isCodeExpanded);
+                if (label) {
+                  label.textContent = isCodeExpanded ? (isAr ? 'تصغير الكود' : 'Collapse Code') : (isAr ? 'عرض الكود كاملاً' : 'Expand Full Code');
+                }
+                if (!isCodeExpanded) {
+                  const showcase = document.querySelector('.code-showcase-container');
+                  if (showcase) {
+                    const top = showcase.getBoundingClientRect().top + window.pageYOffset - 90;
+                    if (window.pageYOffset > top) {
+                      window.scrollTo({ top, behavior: 'smooth' });
+                    }
+                  }
+                }
+              });
+            }
+
+            // Copy to Clipboard Handler
+            const btnCopy = expandBar.querySelector('#btnCopyCode');
+            if (btnCopy) {
+              btnCopy.addEventListener('click', async () => {
+                try {
+                  await navigator.clipboard.writeText(s.code);
+                  const textSpan = expandBar.querySelector('#btnCopyCodeText');
+                  if (textSpan) textSpan.textContent = isAr ? 'تم النسخ!' : 'Copied!';
+                  btnCopy.style.borderColor = 'var(--accent-emerald)';
+                  btnCopy.style.color = 'var(--accent-emerald)';
+                  setTimeout(() => {
+                    if (textSpan) textSpan.textContent = isAr ? 'نسخ الكود' : 'Copy';
+                    btnCopy.style.borderColor = '';
+                    btnCopy.style.color = '';
+                  }, 2000);
+                  if (window.Toast) {
+                    window.Toast.show(isAr ? 'تم نسخ الكود البرمجي بنجاح!' : 'Code snippet copied to clipboard!', 'success');
+                  }
+                } catch (e) {
+                  console.warn('Clipboard write error', e);
+                }
+              });
+            }
+          }
 
           const viewerPanel = contentGrid.querySelector('.code-viewer-panel');
           if (viewerPanel) {
@@ -517,7 +589,10 @@
         renderCodeSnippet(0);
       }
 
-
+      // Initialize slow-motion scroll reveal for all newly populated sections & cards
+      if (window.App && typeof window.App.initScrollReveal === 'function') {
+        window.App.initScrollReveal();
+      }
     }
   </script>
 </body>

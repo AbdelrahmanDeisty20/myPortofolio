@@ -55,6 +55,20 @@
       font-size: 0.85rem;
       width: 240px;
     }
+    @media (max-width: 768px) {
+      .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1rem;
+      }
+      .filter-bar > div:last-child {
+        flex-wrap: wrap;
+        width: 100%;
+      }
+      .search-filter-input {
+        width: 100% !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -119,6 +133,8 @@
       <div class="filter-bar">
         <div class="filter-pills-list" id="categoryFilterList">
           <button class="filter-pill active" data-category="All" data-i18n="common.filterAll">All Projects</button>
+          <button class="filter-pill" data-category="Services & Delivery">Services & Delivery</button>
+          <button class="filter-pill" data-category="E-Commerce">E-Commerce</button>
           <button class="filter-pill" data-category="SaaS">SaaS</button>
           <button class="filter-pill" data-category="Backend">Backend / API</button>
           <button class="filter-pill" data-category="FinTech">FinTech</button>
@@ -343,6 +359,11 @@
         </div>
       `;
       }).join('');
+
+      // Trigger slow-motion scroll reveal for newly rendered project cards
+      if (window.App && typeof window.App.initScrollReveal === 'function') {
+        window.App.initScrollReveal();
+      }
     }
   </script>
 </body>

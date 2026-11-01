@@ -71,25 +71,25 @@ When partnering with founders or engineering teams, my goal is always to deliver
     {
       id: "proj_bynona",
       slug: "bynona",
-      title: "Bynona",
-      title_ar: "منصة بينونة للتجارة الإلكترونية",
-      subtitle: "Multi-Vendor E-Commerce & Inventory SaaS Engine",
-      subtitle_ar: "محرك تجارة إلكترونية متعدد المتاجر ومعالجة دفع آمنة",
-      category: "SaaS",
-      category_ar: "منصات SaaS",
+      title: "Bynona E-Commerce Platform",
+      title_ar: "منصة بينونة للتجارة والتوزيع (B2B & B2C)",
+      subtitle: "Dual Retail & Wholesale Commerce Engine with Custom-Coded Blade Dashboard & FCM Alerts",
+      subtitle_ar: "محرك تجارة إلكترونية متكامل يدعم البيع بالتجزئة والجملة مع لوحة تحكم برمجية مخصصة (Custom Code)",
+      category: "E-Commerce",
+      category_ar: "تجارة إلكترونية / B2B",
       featured: true,
       status: "Live",
-      status_ar: "يعمل بالإنتاج",
+      status_ar: "مكتمل ويعمل (Live)",
       year: "2024 - 2025",
-      role: "Lead Backend Architect",
-      role_ar: "مهندس برمجيات Backend ومصمم معماري",
+      role: "Backend Architect & Core Developer",
+      role_ar: "مهندس برمجيات Backend ومصمم معمارية النظام",
       coverImage: "./assets/img/bynona_showcase.webp",
       thumbnail: "./assets/img/bynona_showcase.webp",
-      description: "A production multi-store e-commerce platform featuring multi-warehouse inventory tracking, asynchronous order processing pipelines, and a headless REST API for client applications.",
-      description_ar: "بنية تحتية متطورة لمنصة تجارة إلكترونية تدعم تعدد المتاجر، وتتبع المخزون في مستودعات متعددة، ومعالجة الطلبات بشكل غير متزامن، مع واجهة REST API كاملة للتطبيقات والمتاجر.",
-      shortDescription: "Scalable multi-vendor commerce backend with inventory locking and asynchronous checkout pipelines.",
-      shortDescription_ar: "منصة تجارة إلكترونية متعددة المتاجر مع قفل ذكي للمخزون ومسار دفع آمن وغير متزامن.",
-      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Redis", "REST APIs", "Sanctum", "Firebase FCM", "Stripe Webhooks"],
+      description: "A full-scale commercial e-commerce backend built with Laravel, featuring dynamic dual pricing (Retail vs. Wholesale) via custom middleware, a completely custom-coded Blade administrative dashboard with bespoke KPI analytics, an extensible EAV-inspired product attributes and variants engine, recursive hierarchical category trees with cycle protection, transactional checkout pipelines with automated stock decrements, time-sensitive dual discount offers, Firebase Cloud Messaging (FCM HTTP v1) alerts, and bulk Excel/ZIP catalog import tooling.",
+      description_ar: "منصة تجارة إلكترونية متكاملة للبيع بالتجزئة والتوزيع بالجملة (B2B & B2C) مبنية بلارافيل، تتميز بنظام تسعير مزدوج ذكي (قطاعي / جملة) عبر Middleware مخصص، ولوحة تحكم إدارية مخصصة برمجياً بالكامل (Custom Code عبر Blade) بمؤشرات أداء متطورة، ومحرك سمات وخصائص ديناميكية للمنتجات (Variant Attributes)، وشجرة تصنيفات متداخلة هرمية لا نهائية مع منع الحلقات التكرارية، ومسار دفع آمن بمعاملات بنكية مع حسم المخزون اللحظي، ونظام عروض وخصومات زمنية منفصلة لكل قناة بيع، وإشعارات فورية عبر Firebase FCM، واستيراد وتصدير كتالوج المنتجات عبر ملفات Excel وحزم الصور المضغوطة (ZIP).",
+      shortDescription: "Enterprise B2B/B2C commerce backend with dual retail/wholesale pricing, custom-coded Blade dashboard, variant engine, and Firebase FCM.",
+      shortDescription_ar: "نظام تجارة إلكترونية متقدم يدعم البيع بالتجزئة والجملة بنظام تسعير مزدوج، ولوحة تحكم برمجية مخصصة، وخصائص منتجات ديناميكية، ومعاملات دفع آمنة.",
+      technologies: ["Laravel", "PHP 8.3", "Custom Blade Dashboard", "MySQL", "REST APIs", "Laravel Sanctum", "Firebase FCM", "Maatwebsite Excel"],
       liveUrl: "https://bynona.store/",
       githubUrl: "",
       isPrivate: false,
@@ -100,121 +100,465 @@ When partnering with founders or engineering teams, my goal is always to deliver
         githubClicks: 210,
         inquiries: 24
       },
-      problem: "Traditional off-the-shelf commerce backends suffered from race-condition overselling during flash promotions, slow category search queries across nested hierarchies, and unhandled webhook duplicates during payment processing.",
-      problem_ar: "معاناة المتاجر التقليدية من البيع الزائد (Overselling) بسبب تضارب العمليات المتزامنة في العروض الحية، وبطء استعلامات تصنيفات المنتجات المتشعبة، وتكرار عمليات الدفع بسبب تأخر الويب هوك.",
-      solution: "Engineered a custom Laravel service layer utilizing pessimistic database locking for inventory reservation during checkout sessions, Redis caching for category taxonomies, and idempotent webhook handlers that guarantee exact-once financial ledger recording.",
-      solution_ar: "هندسة طبقة خدمات لارافيل متطورة تستخدم القفل المتشائم (Pessimistic Locking) لحجز المخزون أثناء الدفع، والتخزين المؤقت عبر Redis لتصنيفات المنتجات، ومعالجات ويب هوك تضمن عدم التكرار المالي نهائياً.",
+      examplesNotice: "Demo Notice: The screenshots displayed are real operational examples and interactive architecture models captured directly from the production admin console.",
+      examplesNotice_ar: "ملاحظة توضيحية: لقطات الشاشات المعروضة هي نماذج وأمثلة تشغيلية حقيقية مأخوذة مباشرة من بيئة عمل لوحة التحكم الفعلية لإيضاح الواجهات وتدفق العمليات.",
+      screenshots: [
+        {
+          title: "Executive KPIs & Sales Dashboard",
+          title_ar: "لوحة مؤشرات الأداء والتحليلات البيانية والمبيعات",
+          desc_ar: "رسوم بيانية تفاعلية بـ Chart.js ترصد منحنى المبيعات الشهري، وتوزيع الطلبات الأسبوعية، وعدد العملاء والمنتجات الأكثر مبيعاً.",
+          desc: "Interactive Chart.js tracking monthly sales volumes, weekly order distribution, registered customer KPIs, and instant order count.",
+          img: "./assets/img/bynona_dash_overview.webp",
+          tag: "Analytics & KPIs"
+        },
+        {
+          title: "Product Variants & Attribute Specification Engine",
+          title_ar: "محرك خصائص ومتغيرات المنتجات (Variants Engine)",
+          desc_ar: "واجهة إدارية مخصصة لضبط أسعار التجزئة، والمخزون الافتتاحي، ورفع صور المعرض، وإضافة سمات ومواصفات ديناميكية (ألوان ومقاسات وخامات).",
+          desc: "Administrative form enabling retail pricing, opening stock thresholds, main and gallery media uploads, and dynamic custom physical attributes per variant.",
+          img: "./assets/img/bynona_dash_variants.webp",
+          tag: "Dynamic Variants"
+        },
+        {
+          title: "Bilingual Product & Catalog Engine",
+          title_ar: "إدارة الكتالوج وإدخال المنتجات ثنائية اللغة (AR / EN)",
+          desc_ar: "واجهة إدخال وتعديل بيانات المنتجات مع دعم كامل للعناوين والوصف ثنائي اللغة، والربط بالماركات والتصنيفات وتحديد قنوات البيع.",
+          desc: "Full administrative CRUD interface for bilingual product specifications (Arabic & English), brand and category mapping, and sales channel assignment.",
+          img: "./assets/img/bynona_dash_catalog.webp",
+          tag: "Catalog & Bilingual CRUD"
+        },
+        {
+          title: "Category Matrix & Drag-and-Drop Reordering",
+          title_ar: "إدارة شجرة الأقسام وإعادة الترتيب بالسحب والإفلات",
+          desc_ar: "دليل إدارة الأقسام والتصنيفات مع إمكانية التعديل والحذف، وزر مخصص لإعادة ترتيب ظهور الأقسام والبنرات في التطبيق بالسحب والإفلات (AJAX).",
+          desc: "Hierarchical category table with rapid CRUD, activation toggles, and dedicated drag-and-drop sort controller for home store display.",
+          img: "./assets/img/bynona_dash_categories.webp",
+          tag: "Category Tree"
+        }
+      ],
+      problem: "Wholesale and retail businesses often struggle with unified platforms: B2B buyers require tiered bulk pricing and minimum order quantities (MOQs), while retail consumers demand standard single-unit purchases and promotions. Managing complex multi-variant products (sizes, colors, specs) alongside deep nested categories caused query bloat, data inconsistencies, and stock discrepancy errors during concurrent checkouts.",
+      problem_ar: "واجهت الشركات صعوبة في دمج عمليات البيع بالجملة والتجزئة في منصة واحدة: يحتاج تجار الجملة إلى حد أدنى للكميات (MOQ) وأسعار مخفضة مخصصة، بينما يحتاج عملاء التجزئة إلى شراء بالقطعة وعروض ترويجية سريعة. كما أن المنتجات ذات الخصائص المتعددة (الألوان والمقاسات والمواصفات) مع التصنيفات الشجرية العميقة كانت تتسبب في ثقل الاستعلامات (N+1)، وتضارب كميات المخزون عند الدفع المتزامن.",
+      solution: "Engineered a robust Laravel architecture featuring custom `PriceModeMiddleware` that inspects the `Price-Mode` header to seamlessly pivot between retail and wholesale pricing, discounts, and minimum order validation. Built an extensible attribute/property variant model (`properties` and `variantAttributes`), implemented recursive category tree resolution with cycle prevention in `ProductFilterController`, constructed a bespoke custom-coded Blade administration dashboard with 4-table join KPI analytics, wrapped checkout in atomic database transactions (`DB::beginTransaction`) with automated stock decrements and restoration upon order cancellation, and created bulk Excel + ZIP import pipelines.",
+      solution_ar: "تطوير معمارية برمجية متماسكة بلارافيل تعتمد على Middleware مخصص (`PriceModeMiddleware`) للتبديل السلس بين وضعي البيع بالتجزئة والجملة وتطبيق الحد الأدنى والخصومات الخاصة بكل نوع تلقائياً. تصميم محرك خصائص وسمات ديناميكي للمتغيرات، وخوارزمية فك وحل شجرة الأقسام المتداخلة برمجياً مع منع التكرار اللانهائي، وبناء لوحة تحكم إدارية برمجية مخصصة بالكامل (Custom Code عبر Blade) دون الاعتماد على لوحات جاهزة، وتأمين عمليات الدفع وحسم المخزون ضمن معاملات قاعدة بيانات ذرية (DB::beginTransaction) مع الاسترجاع التلقائي للمخزون عند إلغاء الطلب، وبناء أداة استيراد المنتجات الكبيرة عبر ملفات Excel وفك ضغط حزم الصور ZIP.",
       responsibilities: [
-        "Architected clean relational schema with normalized catalogs, polymorphic pricing tiers, and warehouse partition tables.",
-        "Built 40+ RESTful API endpoints secured with Laravel Sanctum token scopes for web and mobile clients.",
-        "Implemented transactional checkout state machine preventing double charges and race conditions.",
-        "Integrated Firebase Cloud Messaging (FCM) for real-time order dispatch notifications to vendor dashboards.",
-        "Constructed automated invoice PDF generator running on queued background jobs to avoid blocking HTTP requests."
+        "Architected and implemented the `PriceModeMiddleware` ensuring transparent dynamic switching between retail and wholesale catalog pricing, cart validation, and order pipelines.",
+        "Designed the dynamic variant attributes data model (`AttributeDefinition`, `AttributeValue`, `Property`) enabling rich multi-variant specs per product with isolated SKU inventory tracking.",
+        "Engineered the recursive category hierarchy algorithm (`getAllCategoryIds`) with visited-node guards to prevent infinite loops during deep catalog filtering.",
+        "Constructed transactional checkout workflows (`DB::beginTransaction`) with live inventory validation, safe decrementing, automated cart pruning, and complete stock restoration upon order cancellation.",
+        "Built a 100% custom-coded Blade administrative dashboard (Custom Code without pre-packaged admin generators) featuring today's sales KPIs, multi-table joins for top-selling products, and dynamic category reordering.",
+        "Integrated Firebase Cloud Messaging (FCM HTTP v1) via Google Service Account authentication for instant order updates and admin broadcast push notifications.",
+        "Developed bulk Excel and ZIP product import/export tools (`ProductExcelController`), extracting zipped product galleries and associating images with newly generated product variants."
       ],
       responsibilities_ar: [
-        "تصميم مخطط قاعدة بيانات علائقي متكامل مع فهارس مركبة وتسعير متعدد الفئات وتقسيم المستودعات.",
-        "بناء أكثر من 40 نقطة نهاية RESTful API مؤمنة بنطاقات صلاحيات Laravel Sanctum لتطبيقات الويب والموبايل.",
-        "تطبيق آلة حالات حتمية لمسار الدفع والطلبات لمنع التكرار المالي وحالات التنافس البرمجية (Race Conditions).",
-        "تكامل Firebase Cloud Messaging (FCM) لإرسال إشعارات فورية بلوحات تحكم التجار عند استلام الطلبات.",
-        "بناء نظام إنشاء وتوليد فواتير PDF عبر طوابير المهام الخلفية لتجنب تعطيل طلبات الـ HTTP."
+        "بناء وتطبيق Middleware مخصص (`PriceModeMiddleware`) لإدارة التسعير المزدوج (قطاعي / جملة) في الفهارس والسلة والدفع والتحقق من الحد الأدنى للطلب (MOQ).",
+        "تصميم وهندسة محرك السمات والمتغيرات (`AttributeDefinition`, `AttributeValue`, `Property`) لدعم منتجات بمواصفات وألوان ومقاسات متعددة بمخزون وأسعار مستقلة.",
+        "تطوير خوارزمية استعلام شجرة الأقسام الهرمية (`getAllCategoryIds`) مع حماية ضد الحلقات التكرارية لتصفية المنتجات في الأقسام الرئيسية والفرعية بكفاءة.",
+        "تنفيذ مسار دفع ذري (`DB::beginTransaction`) يتحقق من المخزون اللحظي، ويخصم الكميات، وينظف السلة، ويعيد المخزون تلقائياً إلى المستودع عند إلغاء الطلب.",
+        "تصميم وبرمجة لوحة تحكم إدارية مخصصة برمجياً بالكامل (Custom Code عبر Blade) تتضمن مؤشرات أداء يومية، واستعلامات متقدمة لأكثر المنتجات مبيعاً، ورسوماً بيانية للإيرادات.",
+        "دمج خدمة إشعارات Firebase Cloud Messaging (FCM HTTP v1) بالاعتماد على Google Service Account لإرسال تنبيهات لحظية بتحديثات حالة الطلبات والحملات الإعلانية.",
+        "بناء نظام استيراد وتصدير المنتجات الجماعي عبر Excel وملفات ZIP المضغوطة (`ProductExcelController`) لمعالجة آلاف المنتجات وربط الصور بمتغيراتها تلقائياً."
       ],
       architecture: [
-        { layer: "Client Apps", desc: "Mobile Application & Web Storefront (Consumes REST API)" },
-        { layer: "API Gateway / Sanctum", desc: "Rate limiting, Bearer authentication, Token capability scopes" },
-        { layer: "Laravel Service Layer", desc: "OrderStateMachine, InventoryReservationService, PaymentWebhookHandler" },
-        { layer: "Queues & Events", desc: "Redis / Database queue workers for invoice dispatch and Firebase push alerts" },
-        { layer: "Persistence (MySQL)", desc: "InnoDB engine, transaction isolation, indexed compound queries" }
+        { layer: "Client Apps & Storefront", layer_ar: "تطبيقات الواجهة والمستخدم", desc: "Mobile Application & Web Storefront consuming RESTful APIs with Price-Mode and Accept-Language headers", desc_ar: "تطبيقات الهواتف الذكية وواجهة المتجر الإلكتروني تتصل بـ REST API مع ترويسات Price-Mode و Accept-Language" },
+        { layer: "Custom Blade Admin Dashboard", layer_ar: "لوحة التحكم الإدارية (Custom Code Blade)", desc: "100% custom-coded administrative dashboard with bespoke KPI joins, drag-and-drop category sorting, and Excel+ZIP media unpacking", desc_ar: "لوحة تحكم إدارية برمجية مخصصة بالكامل (Custom Code عبر Blade) بكود مخصص دون حزم خارجية، تتضمن استعلامات ربط للمبيعات، وإعادة ترتيب الأقسام، واستيراد الإكسل والصور" },
+        { layer: "Security, Auth & Pricing Gateway", layer_ar: "بوابة الأمان والتحقق والتسعير", desc: "Sanctum token scopes, OTP mobile verification, rate limiting, and PriceModeMiddleware context switching", desc_ar: "مصادقة Sanctum، والتحقق عبر OTP للهاتف، ومعدل الطلبات (Rate Limiting)، وتبديل سياق البيع عبر PriceModeMiddleware" },
+        { layer: "Catalog & Recursive Filter Engine", layer_ar: "محرك الكتالوج والفلترة الشجرية", desc: "Recursive category tree resolver, dynamic variant attributes, and multi-facet filtering without N+1 queries", desc_ar: "محلل شجرة التصنيفات المتداخلة، وسمات المتغيرات الديناميكية، وفلترة متعددة الأبعاد خالية من مشاكل N+1" },
+        { layer: "Transactional Checkout & Inventory", layer_ar: "مسار الدفع الذري وإدارة المخزون", desc: "Atomic DB transactions for order placement, instant stock decrements, and automated rollback upon cancellations", desc_ar: "معاملات ذرية (DB::beginTransaction) لإنشاء الطلبات وحسم المخزون فورياً مع استرجاعه تلقائياً عند الإلغاء" },
+        { layer: "Integration & Persistence (MySQL)", layer_ar: "التكاملات وقاعدة البيانات (MySQL)", desc: "Firebase Cloud Messaging (FCM HTTP v1), normalized schema with compound indexes, and media storage paths", desc_ar: "إشعارات Firebase FCM الفورية، ومخطط علائقي منضبط مع مفاتيح خارجية وفهارس مركبة ومسارات تخزين الصور" }
       ],
       databaseSchema: [
-        { table: "stores", relations: "hasMany: products, orders, warehouses" },
-        { table: "products", relations: "belongsTo: store; hasMany: variants, stocks" },
-        { table: "orders", relations: "belongsTo: user, store; hasMany: order_items, transactions" },
-        { table: "order_items", relations: "belongsTo: order, product_variant" },
-        { table: "transactions", relations: "belongsTo: order; polymorphic ledger entry" },
-        { table: "webhook_logs", relations: "idempotency_key UNIQUE, payload JSON" }
+        { table: "categories", relations: "self-referencing tree (parent_id), hasMany: products, sort_order", relations_ar: "شجرة أقسام هرمية ذاتية المرجع (parent_id)؛ متعدد: المنتجات، ترتيب العرض" },
+        { table: "products", relations: "belongsTo: brand; hasMany: properties (variants)", relations_ar: "ينتمي إلى: العلامة التجارية (brand)؛ متعدد: خصائص ومتغيرات المنتج (properties)" },
+        { table: "properties", relations: "belongsTo: product; hasMany: variantAttributes, offers; stock, retail_price, wholesale_price", relations_ar: "متغيرات المنتج: ينتمي إلى المنتج؛ متعدد: السمات، العروض؛ المخزون، وسعر التجزئة، وسعر الجملة" },
+        { table: "attribute_definitions", relations: "hasMany: attribute_values (e.g. Color, Size, Storage)", relations_ar: "تعريف السمات الأساسية (اللون، المقاس، السعة التخزينية)؛ متعدد: القيم" },
+        { table: "attribute_values", relations: "belongsTo: attribute_definition; belongsToMany: properties", relations_ar: "قيم السمات (أحمر، XL، 256GB)؛ علاقة متعدد لمتعدد مع المتغيرات" },
+        { table: "orders", relations: "belongsTo: user, governorate; hasMany: items; status, total_price", relations_ar: "الطلبات: ينتمي إلى المستخدم والمحافظة؛ متعدد: عناصر الطلب؛ الحالة، إجمالي السعر" },
+        { table: "orders_items", relations: "belongsTo: order, property; quantity, price, sale_type (retail/wholesale)", relations_ar: "عناصر الطلب: ينتمي للطلب والمتغير؛ الكمية، السعر، ونوع البيع (تجزئة/جملة)" },
+        { table: "carts & cart_items", relations: "active cart per user; items track quantity and sale_type with live stock checks", relations_ar: "السلات النشطة لكل مستخدم مع تتبع الكميات ونوع البيع والتحقق اللحظي من المخزون" },
+        { table: "offers", relations: "belongsTo: property/product; discount_retail, discount_wholesale, start, end dates", relations_ar: "العروض الترويجية: خصومات مخصصة للقطاعي والجملة مع تواريخ بدء وانتهاء زمنية" },
+        { table: "user_fcm_tokens", relations: "belongsTo: user; device push notification tokens for Firebase v1", relations_ar: "توكنات أجهزة المستخدمين لإرسال إشعارات Firebase Cloud Messaging الفورية" }
       ],
       challenges: [
         {
-          challenge: "Preventing race conditions when multiple users purchase the last inventory item simultaneously.",
-          solution: "Implemented pessimistic row locking (`DB::transaction` with `lockForUpdate()`) combined with a 10-minute Redis reservation lease before committing the transaction."
+          challenge: "Unified Catalog Serving Both Retail (B2C) and Wholesale (B2B) Channels with Distinct Business Rules.",
+          challenge_ar: "توحيد منصة الكتالوج لتخدم عملاء التجزئة والتجار بالجملة في آن واحد بقواعد تسعير مختلفة.",
+          solution: "Architected a custom `PriceModeMiddleware` that dynamically inspects the `Price-Mode` header, binding the active mode to the container. The cart and checkout engines enforce minimum order quantities (MOQ) for wholesale buyers while adjusting prices and applying dedicated wholesale discount campaigns.",
+          solution_ar: "بناء `PriceModeMiddleware` يفحص ترويسة الطلب ويحقن نوع البيع في سياق التطبيق. يضبط النظام أسعار المنتجات ويطبق الحد الأدنى للطلب (MOQ) وحملات خصومات الجملة للتجار، مع إتاحة الشراء الفردي الحر لعملاء التجزئة."
         },
         {
-          challenge: "Heavy catalog filtering (attributes, brands, price ranges, in-stock status) causing high database latency.",
-          solution: "Restructured query builder pipelines with composite indexes (`store_id`, `is_active`, `category_id`, `price`) and cached top-level facet aggregations."
+          challenge: "Navigating and Filtering Complex Multi-Level Hierarchical Categories without Performance Degradation or Recursive Loops.",
+          challenge_ar: "تصفية المنتجات داخل تصنيفات شجرية عميقة متعددة المستويات دون استنزاف موارد السيرفر أو الوقوع في حلقات تكرار.",
+          solution: "Implemented an optimized recursive category resolution algorithm (`getAllCategoryIds`) guarded with a visited-node tracker in `ProductFilterController`. Combined this with clean Eloquent eager loading (`with(['brand', 'variants.variantAttributes', 'variants.offers'])`) ensuring sub-75ms response times across deep category trees.",
+          solution_ar: "هندسة خوارزمية تتبعية (`getAllCategoryIds`) بمصفوفة حماية ضد الحلقات التكرارية لجلب جميع المنتجات في القسم المطلوب وأقسامه الفرعية بدقة، مع دمج التحميل المسبق (Eager Loading) للعلامات التجارية والسمات والعروض للقضاء على بطء الاستعلامات."
+        },
+        {
+          challenge: "Maintaining Strict Stock Integrity During Concurrent Checkouts and Handling Order Cancellations.",
+          challenge_ar: "ضمان دقة وسلامة المخزون عند الدفع المتزامن واسترجاع الكميات تلقائياً عند إلغاء الطلبات.",
+          solution: "Enforced atomic database transactions (`DB::beginTransaction`) during checkout with immediate inventory decrements on variant records (`Property::decrement('stock')`). Implemented automated stock reversal and Soft-Delete restoration in `OrderController::cancelOrder` alongside instant Firebase push alerts.",
+          solution_ar: "تأمين دورة الدفع بمعاملات ذرية (`DB::beginTransaction`) تخصم كميات المخزون فورياً من متغيرات المنتجات، مع برمجة آلية استرجاع المخزون واستعادة السجلات المحذوفة تلقائياً عند إلغاء المسؤول للطلب وإشعار العميل فورياً عبر Firebase."
         }
       ],
-      results: "Successfully handled concurrent flash traffic with zero duplicate orders and reduced average API response time from 380ms to under 65ms on standard cloud instances.",
-      results_ar: "معالجة آلاف الطلبات المتزامنة بنجاح بدون أي تكرار أو بيع زائد، وخفض متوسط زمن استجابة الـ API من 380ms إلى أقل من 65ms على الخوادم السحابية."
+      results: "Delivered a high-performance commercial backend powering dual retail and wholesale commerce, with zero inventory discrepancy incidents, sub-75ms API response times, and automated catalog spreadsheet management.",
+      results_ar: "تسليم بنية تحتية تجارية متكاملة وفعالة تدعم البيع بالتجزئة والجملة، بدون أي تضارب في المخزون، وبزمن استجابة فائق للـ API أقل من 75ms، مع أتمتة كاملة لإدارة الكتالوج والطلبات.",
+      dashboard: {
+        badge: "Custom-Coded Blade Engine",
+        badge_ar: "كود Blade مخصص 100%",
+        title: "Bynona Operations & Wholesale Management Dashboard",
+        title_ar: "لوحة تحكم بينونة الإدارية المخصصة (Custom-Coded Blade Engine)",
+        summary: "A 100% bespoke administrative control center engineered from scratch with native Laravel Blade, Bootstrap, and Chart.js without third-party admin generator bloat. Built specifically for high-speed wholesale arithmetic, dynamic category tree sorting, and raw 4-table SQL joins.",
+        summary_ar: "لوحة تحكم إدارية برمجية مبنية ومصممة من الصفر بنسبة 100% باستخدام Laravel Blade وBootstrap وChart.js دون الاعتماد على أي حزم جاهزة أو مولدات لوحات تحكم. صُممت لتحقيق أعلى سرعة استجابة، وحسابات أرباح وتخفيضات الجملة المخصصة، ومعالجة حزم الصور والميديا مباشرة.",
+        framework: "Laravel 11 + Blade Templates + Chart.js + MySQL Joins",
+        framework_ar: "لارافيل 11 + قوالب Blade مخصصة + Chart.js + استعلامات MySQL مركبة",
+        mockupImage: "./assets/img/bynona_dash_showcase.webp",
+        modules: [
+          {
+            title: "Product Catalog Management (CRUD & Variants)",
+            title_ar: "إدارة المنتجات والكتالوج (إضافة، تعديل، حذف، خصائص، مخزون)",
+            desc: "Full administrative control over product creation, multi-image gallery uploads, category linking, and Soft Delete protection so historical order references remain intact.",
+            desc_ar: "تحكم إداري كامل في إضافة وتعديل وحذف المنتجات، ورفع صور المعارض، وربطها بالتصنيفات، مع الحذف الآمن (Soft Deletes) للحفاظ على سلامة سجلات وفواتير الطلبات السابقة.",
+            actions: [
+              "إضافة منتجات جديدة مع تفاصيل الوصف والصور والمواصفات",
+              "تعديل وتحديث بيانات المنتجات والأسعار والمخزون لحظياً",
+              "حذف المنتجات بأمان (Soft Delete) لحماية سجلات وفواتير الطلبات السابقة",
+              "إدارة السمات الديناميكية (الألوان، المقاسات، الخامات) لكل متغير مستقل",
+              "ضبط مستويات المخزون وتعيين تنبيهات تلقائية عند اقتراب النفاد"
+            ]
+          },
+          {
+            title: "Dual-Pricing & Wholesale Margins",
+            title_ar: "إدارة التسعير المزدوج وهوامش ربح الجملة",
+            desc: "Dedicated control screens allowing operations managers to configure retail prices versus wholesale discount tiers and minimum order quantities (MOQ) per variant.",
+            desc_ar: "شاشات تحكم مخصصة تتيح لمدير العمليات ضبط أسعار التجزئة مقابل أسعار الجملة المخفضة، وتحديد الحد الأدنى للكميات (MOQ) لكل متغير مستقل.",
+            actions: [
+              "تحديد سعر بيع القطاعي وسعر بيع الجملة لكل منتج ومتغير مستقل",
+              "تعيين الحد الأدنى للكمية (MOQ) المطلوب شراؤها للاستفادة من أسعار الجملة",
+              "إدارة فترات وهوامش الخصم لعملاء B2B والتجار"
+            ]
+          },
+          {
+            title: "Categories & Drag-and-Drop Sorting",
+            title_ar: "إدارة شجرة الأقسام والترتيب بالسحب والإفلات",
+            desc: "Hierarchical category tree management supporting unlimited sub-levels, category activation/deactivation, and interactive drag-and-drop homepage reordering via AJAX.",
+            desc_ar: "إدارة شجرة التصنيفات الهرمية (رئيسية وفرعية) بلا حدود، وتفعيل أو إخفاء أي قسم، وإعادة ترتيب ظهور الأقسام والبنرات بالسحب والإفلات وحفظ فوري عبر AJAX.",
+            actions: [
+              "إضافة وتعديل وحذف التصنيفات الرئيسية والفرعية",
+              "إعادة ترتيب ظهور الأقسام والبنرات في التطبيق بالسحب والإفلات فورياً",
+              "تفعيل وتعطيل ظهور الأقسام والماركات التجارية بضغطة زر واحدة"
+            ]
+          },
+          {
+            title: "Orders & Fulfillment Pipeline",
+            title_ar: "إدارة الطلبات والمبيعات والمخزون الراجع",
+            desc: "Real-time order processing lifecycle from pending to delivered, distinguishing retail from wholesale invoices with automatic inventory reversal upon cancellation.",
+            desc_ar: "متابعة دورة حياة الطلبات (جديد، قيد التجهيز، مشحون، مكتمل)، والتمييز بين فواتير التجزئة وفواتير الجملة، مع الاسترجاع التلقائي للمخزون عند الإلغاء.",
+            actions: [
+              "استعراض وتصفية الطلبات حسب الحالة (جديد، قيد التنفيذ، مكتمل، ملغي)",
+              "تعديل حالة الشحن وتحديث مسار التوصيل للعميل فورياً",
+              "طباعة فواتير البيع وبوالص الشحن",
+              "إلغاء الطلب مع استرجاع كميات المخزون المحسومة تلقائياً إلى المستودع"
+            ]
+          },
+          {
+            title: "Bulk Excel Ingestion & ZIP Extraction",
+            title_ar: "إدارة الاستيراد الجماعي بـ Excel وفك حزم الصور (ZIP)",
+            desc: "Batch processing pipeline to import or bulk-update thousands of catalog products via Maatwebsite Excel spreadsheets while unzipping media bundles on the fly.",
+            desc_ar: "معالجة جماعية لاستيراد وتحديث آلاف المنتجات والأسعار دفعة واحدة عبر ملفات Excel، وفك حزم الصور المضغوطة (ZIP) على السيرفر وربطها تلقائياً.",
+            actions: [
+              "رفع ملفات Excel لاستيراد أو تحديث آلاف الأصناف والأسعار دفعة واحدة",
+              "رفع ملفات ZIP المضغوطة للصور وفكها وربطها بمتغيرات المنتجات تلقائياً",
+              "سجل أخطاء تفاعلي لتصحيح الصفوف غير المكتملة في ملفات الإكسل"
+            ]
+          },
+          {
+            title: "Live KPI Analytics & Top Sellers",
+            title_ar: "مؤشرات الأداء اللحظية وأكثر الأصناف مبيعاً",
+            desc: "Interactive Chart.js visualizations tracking daily gross revenues, comparing retail vs. wholesale revenue split, with 4-table SQL joins for top seller items.",
+            desc_ar: "رسوم بيانية تفاعلية بـ Chart.js تحسب إيرادات اليوم والشهر بدقة، وتفصل مبيعات التجزئة عن الجملة، مع تقارير للأصناف الأكثر مبيعاً باستعلامات SQL مركبة.",
+            actions: [
+              "رسوم بيانية للإيرادات اليومية والشهرية مفصولة بين قطاعي وجملة",
+              "مؤشرات الأصناف الأكثر مبيعاً ومعدلات نفاد المخزون (4-Table Joins)",
+              "إحصائيات إجمالية للطلبات المكتملة ومتوسط قيمة السلة الشرائية"
+            ]
+          }
+        ],
+        screenshots: [
+          {
+            title: "Executive KPIs & Sales Dashboard",
+            title_ar: "لوحة مؤشرات الأداء والتحليلات البيانية والمبيعات",
+            desc_ar: "رسوم بيانية تفاعلية بـ Chart.js ترصد منحنى المبيعات الشهري، وتوزيع الطلبات الأسبوعية، وعدد العملاء والمنتجات الأكثر مبيعاً.",
+            desc: "Interactive Chart.js tracking monthly sales volumes, weekly order distribution, registered customer KPIs, and instant order count.",
+            img: "./assets/img/bynona_dash_overview.webp",
+            tag: "Analytics & KPIs"
+          },
+          {
+            title: "Product Variants & Attribute Specification Engine",
+            title_ar: "محرك خصائص ومتغيرات المنتجات (Variants Engine)",
+            desc_ar: "واجهة إدارية مخصصة لضبط أسعار التجزئة، والمخزون الافتتاحي، ورفع صور المعرض، وإضافة سمات ومواصفات ديناميكية (ألوان ومقاسات وخامات).",
+            desc: "Administrative form enabling retail pricing, opening stock thresholds, main and gallery media uploads, and dynamic custom physical attributes per variant.",
+            img: "./assets/img/bynona_dash_variants.webp",
+            tag: "Dynamic Variants"
+          },
+          {
+            title: "Bilingual Product & Catalog Engine",
+            title_ar: "إدارة الكتالوج وإدخال المنتجات ثنائية اللغة (AR / EN)",
+            desc_ar: "واجهة إدخال وتعديل بيانات المنتجات مع دعم كامل للعناوين والوصف ثنائي اللغة، والربط بالماركات والتصنيفات وتحديد قنوات البيع.",
+            desc: "Full administrative CRUD interface for bilingual product specifications (Arabic & English), brand and category mapping, and sales channel assignment.",
+            img: "./assets/img/bynona_dash_catalog.webp",
+            tag: "Catalog & Bilingual CRUD"
+          },
+          {
+            title: "Category Matrix & Drag-and-Drop Reordering",
+            title_ar: "إدارة شجرة الأقسام وإعادة الترتيب بالسحب والإفلات",
+            desc_ar: "دليل إدارة الأقسام والتصنيفات مع إمكانية التعديل والحذف، وزر مخصص لإعادة ترتيب ظهور الأقسام والبنرات في التطبيق بالسحب والإفلات (AJAX).",
+            desc: "Hierarchical category table with rapid CRUD, activation toggles, and dedicated drag-and-drop sort controller for home store display.",
+            img: "./assets/img/bynona_dash_categories.webp",
+            tag: "Category Tree"
+          }
+        ]
+      }
     },
     {
       id: "proj_wasly",
       slug: "wasly",
-      title: "Wasly Delivery Engine",
-      title_ar: "محرك وصلي للتوصيل والخدمات اللوجستية",
-      subtitle: "On-Demand Logistics & Spatial Driver Dispatch API",
-      subtitle_ar: "نظام توجيه جغرافي ومطابقة السائقين وإدارة أساطيل التوصيل الفوري",
-      category: "Backend",
-      category_ar: "أنظمة لوجستية",
+      title: "Wasly Platform",
+      title_ar: "منصة وصلي للخدمات المنزلية والتوصيل الفوري",
+      subtitle: "On-Demand Home Services Booking Engine, Marketplace Delivery & Filament v5 Admin Dashboard",
+      subtitle_ar: "منصة حجز خدمات وصيانة منزلية وتوصيل طلبات مع لوحة تحكم إدارية متقدمة بـ Filament",
+      category: "Services & Delivery",
+      category_ar: "خدمات وتوصيل فوري",
       featured: true,
       status: "Live",
-      status_ar: "يعمل بالإنتاج",
-      year: "2024",
-      role: "Backend Engineer",
-      role_ar: "مهندس برمجيات Backend",
+      status_ar: "مكتمل ويعمل (Live)",
+      year: "2024 - 2025",
+      role: "Lead Backend Developer & System Architect",
+      role_ar: "مهندس برمجيات Backend ومصمم معمارية النظام",
       coverImage: "./assets/img/wasly_showcase.webp",
       thumbnail: "./assets/img/wasly_showcase.webp",
-      description: "A high-performance logistics backend coordinating delivery dispatches, dynamic driver radius matching using MySQL spatial queries, and real-time state synchronization.",
-      description_ar: "نظام خلفي لمنصة توصيل فورية تربط العملاء بالسائقين ومقدمي الخدمات عبر استعلامات الإحداثيات الجغرافية (Spatial Queries) وآلة حالات متقدمة لمتابعة مسار الطلب بدقة وتزامن آني.",
-      shortDescription: "High-throughput delivery dispatcher API with spatial radius driver matching and SMS verification.",
-      shortDescription_ar: "محرك لوجستي عالي الأداء لتوجيه وتوزيع طلبات التوصيل بالاعتماد على الموقع الجغرافي الفعلي ومطابقة السائقين والتحقق عبر SMS.",
-      technologies: ["Laravel 11", "PHP 8.3", "MySQL Spatial", "REST APIs", "Twilio SMS", "Firebase", "Queue Workers"],
+      description: "An enterprise on-demand super-app backend combining scheduled home services booking (plumbing, electrical, cleaning, maintenance) with a multi-vendor delivery marketplace. Features an interactive Filament v5 Admin Panel with Filament Shield (RBAC) and Spatie Activitylog audit trails, a bidirectional appointment reschedule negotiation engine, shopping cart and checkout pipelines with dynamic coupon vouchers, and real-time Firebase Cloud Messaging (FCM) notifications.",
+      description_ar: "منصة وتطبيق متكامل (Super-App) يدمج بين حجز الخدمات والصيانة المنزلية المجدولة (سباكة، كهرباء، نظافة، صيانة فنية) ومتجر إلكتروني متعدد التجار لطلب وتوصيل المنتجات. تتميز المنصة بلوحة تحكم إدارية متطورة مبنية بـ Filament v5 مع صلاحيات Filament Shield وسجلات تدقيق كاملة بـ Spatie Activitylog، ومحرك تفاوض ثنائي ذكي لإعادة جدولة المواعيد بين العميل ومقدم الخدمة، ومسار سلة ودفع إلكتروني متكامل مع نظام كوبونات الخصم، وتنبيهات فورية عبر Firebase FCM.",
+      shortDescription: "On-demand home services booking and multi-vendor delivery engine featuring Filament v5 Admin Panel, reschedule negotiation, and Firebase FCM alerts.",
+      shortDescription_ar: "محرك حجز خدمات وصيانة منزلية وتوصيل طلبات مع لوحة تحكم إدارية شاملة بـ Filament، ونظام إعادة جدولة ذكي، وإشعارات Firebase.",
+      technologies: ["Laravel 12/13", "PHP 8.3", "Filament v5", "Filament Shield", "MySQL", "REST APIs", "Laravel Sanctum", "Firebase FCM", "Spatie Permissions", "Spatie Activitylog"],
       liveUrl: "https://wasly-two.vercel.app/",
       githubUrl: "",
       isPrivate: true,
       privateNotice: "Source code is private due to client commercial agreement. Technical architecture and case study details available below.",
       privateNotice_ar: "الكود المصدري محمي باتفاقية سرية تجارية للعميل. التفاصيل المعمارية ودراسة الحالة التقنية معروضة بالأسفل.",
       metrics: {
-        views: 980,
-        caseStudyOpens: 512,
-        liveDemoClicks: 180,
+        views: 1150,
+        caseStudyOpens: 620,
+        liveDemoClicks: 290,
         githubClicks: 0,
-        inquiries: 18
+        inquiries: 22
       },
-      problem: "Dispatching courier drivers required real-time geographic distance calculations across hundreds of active drivers without choking database CPU, alongside rigid order lifecycle validation.",
-      problem_ar: "توزيع طلبات الشحن على مندوبي التوصيل كان يتطلب حساب المسافات الجغرافية لمئات السائقين النشطين في الوقت الفعلي مما يسبب إجهاداً كبيراً لمعالج قواعد البيانات، مع الحاجة لضبط دورة حياة الطلبات بدقة.",
-      solution: "Employed MySQL Spatial Point columns (`ST_Distance_Sphere`) indexed with spatial R-trees, coupled with a deterministic Order State Machine ensuring courier orders can only transition through validated states (Created -> Dispatched -> In Transit -> Delivered).",
-      solution_ar: "استخدام أعمدة MySQL Spatial Point مع فهارس R-tree الجغرافية ودوال ST_Distance_Sphere، بالتكامل مع آلة حالات حتمية (Finite State Machine) لضمان تسلسل الحالات بدقة ومنع أي تعديل غير مصرح به.",
+      problem: "Managing simultaneous on-demand services (electricians, plumbers, cleaners) alongside physical e-commerce delivery requires two completely distinct operational models: time-slotted calendar appointments with provider availability versus immediate product inventory dispatch. Previous systems suffered from appointment scheduling collisions, difficult reschedule negotiations between customers and providers, and a lack of granular administrative control over multi-role permissions and audit logs.",
+      problem_ar: "إدارة الحجوزات المنزلية الفورية (سباكة، كهرباء، صيانة) بالتزامن مع متجر إلكتروني لتوصيل السلع يتطلب نموذجين تشغيليين مختلفين تماماً: مواعيد تقويمية مجدولة حسب توفر الفنيين، مقابل مسار شراء فوري للسلع من المستودعات. كانت الأنظمة السابقة تعاني من تضارب مواعيد الفنيين، وصعوبة إعادة الجدولة والتفاوض على المواعيد البديلة، وغياب لوحة تحكم مركزية متطورة لإدارة الصلاحيات وتدقيق العمليات التشغيلية.",
+      solution: "Architected a unified Laravel backend leveraging a decoupled Domain Service Layer (20+ dedicated service classes). Engineered a dynamic provider calendar engine (`AvailableDay` / `AvailableTime`) paired with a bidirectional reschedule negotiation state machine (`suggestReschedule` and `acceptReschedule`). Implemented a comprehensive Filament v5 Admin Control Center equipped with Filament Shield (Spatie RBAC), Filament Language Switch (AR/EN), Spatie Activitylog audit tracking, and real-time KPI overview widgets. Delivered instant Firebase Cloud Messaging push alerts for appointment updates and order dispatches.",
+      solution_ar: "هندسة معمارية متكاملة بلارافيل تعتمد على طبقة خدمات مستقلة (أكثر من 20 Service مخصصة). برمجة محرك تقويم ومواعيد ديناميكي لمقدمي الخدمات مع آلة حالات ذكية للتفاوض الثنائي على إعادة جدولة المواعيد مع التحقق التلقائي من المواعيد البديلة. بناء لوحة تحكم مركزية متطورة بـ Filament v5 مدعومة بـ Filament Shield للصلاحيات الدقيقة، وتبديل اللغات الفوري، وسجلات Spatie Activitylog لتتبع كل حركة في النظام مع بطاقات إحصائيات حية، بالإضافة لدمج إشعارات Firebase FCM الفورية لكافة أطراف المنصة.",
       responsibilities: [
-        "Engineered proximity-based driver assignment algorithms with configurable maximum radius search fallbacks.",
-        "Constructed finite state machine preventing invalid order updates (e.g. delivering an unpicked package).",
-        "Created secure webhook endpoints processing SMS verification status from Twilio.",
-        "Built responsive dispatcher management portal for operations teams."
+        "Architected a modular Domain Service Layer with 20+ specialized domain services isolating business logic from API controllers.",
+        "Built the Home Services Booking Engine with dynamic calendar availability (`AvailableDay`, `AvailableTime`) and live slot allocation.",
+        "Engineered the bidirectional appointment reschedule negotiation workflow (`suggestReschedule` and `acceptReschedule`) with state guards and automatic push alerts.",
+        "Developed the comprehensive Filament v5 Admin Dashboard with custom KPI widgets (`StatsOverview`, `BookingsChart`, `OrdersChart`), multi-language toggle (Arabic/English), and granular role-based permissions via Filament Shield.",
+        "Integrated Spatie Activitylog to maintain a tamper-proof audit trail of booking status transitions, order dispatches, and administrative overrides.",
+        "Built the multi-vendor marketplace pipeline featuring product catalog management, cart handling, checkout with coupon validation, and regional delivery fee calculation (Governorates & Centers).",
+        "Implemented Firebase Cloud Messaging (`kreait/firebase-php`) sending immediate push alerts for booking confirmations, reschedule proposals, and order lifecycle changes."
       ],
       responsibilities_ar: [
-        "برمجة خوارزمية إسناد السائقين بناءً على القرب الجغرافي الفعلي مع نطاقات بحث متدرجة تلقائياً.",
-        "بناء آلة حالات حتمية (State Machine) تمنع التحديثات الخاطئة لمسار الشحنات (مثل تسليم طرد لم يُستلم بعد).",
-        "إنشاء نقاط نهاية آمنة لمعالجة إشعارات الويب هوك لحالات رسائل التحقق النصية عبر Twilio SMS.",
-        "تطوير لوحة إدارة متجاوبة لفريق العمليات لمتابعة توزيع المهام ومسارات التوصيل لحظياً."
+        "بناء وتصميم معمارية طبقة الخدمات (Domain Service Layer) بأكثر من 20 خدمة مستقلة لعزل منطق الأعمال تماماً عن الـ Controllers.",
+        "تطوير محرك حجز الخدمات المنزلية بجدولة زمنية ديناميكية للمواعيد (`AvailableDay`, `AvailableTime`) وتخصيص المواعيد المتاحة لكل مقدم خدمة.",
+        "برمجة دورة تفاوض ذكية لإعادة جدولة المواعيد (`suggestReschedule` و `acceptReschedule`) بين العميل ومقدم الخدمة مع حماية مسار الحالات وإشعارات فورية.",
+        "تطوير لوحة تحكم إدارية متكاملة بـ Filament v5 مع بطاقات مؤشرات أداء حية (`StatsOverview`, `BookingsChart`, `OrdersChart`) وتبديل فوري للغات، ونظام صلاحيات متقدم بـ Filament Shield.",
+        "دمج Spatie Activitylog لتسجيل وتدقيق كافة التغييرات على الحجوزات والطلبات والتدخلات الإدارية لحظة بلحظة.",
+        "بناء مسار التجارة والتوصيل للمنتجات مع إدارة السلة، والتحقق من كوبونات الخصم، واحتساب رسوم التوصيل وفق المحافظات والمراكز الجغرافية.",
+        "تكامل إشعارات Firebase Cloud Messaging الفورية عبر حزمة kreait لإرسال تنبيهات لحظية بتأكيد الحجوزات ومقترحات المواعيد وتحديثات الطلبات."
       ],
       architecture: [
-        { layer: "Mobile Driver & Client", desc: "Sends periodic GPS coordinate pings via authenticated REST" },
-        { layer: "Spatial Query Engine", desc: "MySQL ST_Distance_Sphere + Bounding Box optimizations" },
-        { layer: "Order State Machine", desc: "Guarantees linear state transitions and audit logging" },
-        { layer: "SMS / Notification Gateway", desc: "Twilio OTP verification & Firebase push alerts" }
+        { layer: "Mobile Client & API Gateway", layer_ar: "تطبيقات الهواتف وبوابة الـ API", desc: "Customer & Provider Mobile Apps consuming Sanctum-authenticated REST APIs with SetLang middleware and multi-device session control", desc_ar: "تطبيقات العملاء ومقدمي الخدمة تتصل بواجهات REST مؤمنة بـ Sanctum مع ترويسة اللغة وإدارة الجلسات على أجهزة متعددة" },
+        { layer: "Filament v5 Admin Panel", layer_ar: "لوحة التحكم الإدارية (Filament v5)", desc: "Enterprise operations center with Filament Shield RBAC, Filament Language Switch, and live KPI analytics widgets", desc_ar: "مركز إدارة العمليات مبني بـ Filament v5 مع صلاحيات Filament Shield وتبديل اللغات وبطاقات مؤشرات الأداء الحية" },
+        { layer: "Domain Service Layer", layer_ar: "طبقة خدمات النطاق (Service Layer)", desc: "20+ single-responsibility domain services (BookingService, ProviderService, OrderService, CheckoutService, CouponService)", desc_ar: "أكثر من 20 كلاس خدمة مستقل يعزل منطق العمليات للحجوزات، والطلبات، والأسعار، والكوبونات" },
+        { layer: "Booking & Reschedule Engine", layer_ar: "محرك الحجوزات وإعادة الجدولة", desc: "Calendar availability slot matching and bidirectional reschedule proposal negotiation state machine", desc_ar: "تخصيص المواعيد في التقويم وآلة حالات تفاوضية ثنائية لاقتراح وقبول المواعيد البديلة بين الطرفين" },
+        { layer: "Audit Logging & Firebase FCM", layer_ar: "سجلات التدقيق وإشعارات Firebase", desc: "Spatie Activitylog event tracking and Firebase Cloud Messaging (FCM) live push alerts across mobile devices", desc_ar: "تسجيل كافة التغييرات والتدخلات بـ Spatie Activitylog وإرسال تنبيهات Firebase اللحظية على الأجهزة" },
+        { layer: "Persistence (MySQL)", layer_ar: "قاعدة البيانات (MySQL)", desc: "Relational schema linking users, providers, home services, time slots, orders, coupons, and regional delivery zones", desc_ar: "مخطط علائقي منضبط يربط المستخدمين، ومقدمي الخدمات، والمواعيد، والطلبات، والكوبونات، والمناطق الجغرافية" }
       ],
       databaseSchema: [
-        { table: "drivers", relations: "hasOne: current_location (POINT), hasMany: trips" },
-        { table: "orders", relations: "belongsTo: customer; belongsTo: driver; hasMany: status_logs" },
-        { table: "geofences", relations: "polygon geometry with surge pricing multipliers" }
+        { table: "users & providers", relations: "User accounts, provider profiles, working hours, and operational center links", relations_ar: "حسابات المستخدمين، وملفات مقدمي الخدمات مع ساعات العمل ومناطق التغطية" },
+        { table: "services & service_images", relations: "Catalog of home and technical services with base pricing and media previews", relations_ar: "كتالوج الخدمات المنزلية والصيانة مع الأسعار الأساسية ومعرض الصور" },
+        { table: "available_days & available_times", relations: "Dynamic calendar slots per provider and service with time allocations", relations_ar: "مواعيد وأيام العمل المتاحة لكل مقدم خدمة مع الفترات الزمنية المحددة" },
+        { table: "bookings", relations: "Appointments tracking status (pending, accepted, reschedule states, cancelled) and notes", relations_ar: "حجوزات الخدمات ومتابعة الحالات (معلق، مقبول، مقترح جدولة، ملغي) وملاحظات المشكلة" },
+        { table: "products & product_images", relations: "Marketplace merchandise catalog associated with vendors and categories", relations_ar: "كتالوج منتجات المتاجر ومقدمي الخدمة مع التصنيفات والصور" },
+        { table: "orders & order_items", relations: "Product delivery purchases with governorate routing and delivery addresses", relations_ar: "طلبات توصيل المنتجات مع تفاصيل العنوان والمحافظة وحالة الشحن" },
+        { table: "carts & cart_items", relations: "Active user shopping carts with real-time quantity calculations", relations_ar: "سلات التسوق النشطة للمستخدمين مع حساب الإجماليات والكميات لحظياً" },
+        { table: "coupons", relations: "Discount codes with expiry dates, minimum spend, and usage count limits", relations_ar: "كوبونات الخصم الترويجية مع تواريخ الصلاحية والحد الأدنى وحدود الاستخدام" },
+        { table: "governorates & centers", relations: "Geographic routing hierarchy for delivery fee calculations and hub dispatching", relations_ar: "المحافظات والمراكز الجغرافية لتحديد نطاقات التغطية ورسوم الشحن والتوصيل" },
+        { table: "reviews", relations: "4-tier rating model supporting reviews on Products, Services, Providers, and App", relations_ar: "نظام تقييم رباعي يدعم تقييم المنتجات، الخدمات، مقدمي الخدمة، وتجربة التطبيق" },
+        { table: "activity_log", relations: "Spatie audit log tracking actor IDs, mutated fields, and event timelines", relations_ar: "سجل التدقيق البرمجي Spatie Activitylog لتتبع معرف المنفذ والحقول المعدلة" },
+        { table: "app_notifications", relations: "In-app notification ledger and user device tokens for Firebase FCM alerts", relations_ar: "سجل الإشعارات الداخلي وتوكنات Firebase FCM لإرسال التنبيهات الفورية" }
       ],
       challenges: [
         {
-          challenge: "Calculating distance between customer and dozens of drivers per second overloaded query execution.",
-          solution: "Applied bounding-box pre-filtering (`MBRContains`) to eliminate out-of-range candidates before computing exact spherical trigonometric distances."
+          challenge: "Two-Way Reschedule Negotiation & Schedule Conflicts in On-Demand Home Services",
+          challenge_ar: "التفاوض الثنائي على إعادة جدولة المواعيد ومنع تضارب الفترات الزمنية في الخدمات المنزلية",
+          description: "Customers and technicians frequently encounter sudden schedule conflicts. Rigid booking systems force outright cancellations, creating operational friction and lost revenue.",
+          challenge_ar: "يواجه العملاء والفنيون تغييرات طارئة في المواعيد؛ وتجبر الأنظمة الجامدة الأطراف على إلغاء الحجز بالكامل مما يسبب فقداناً للأرباح وتجربة سيئة.",
+          solution: "Architected a stateful reschedule proposal engine in `BookingService`. Either party can suggest an alternate time slot (`AvailableTime::firstOrCreate`). The booking transitions into `reschedule_by_provider` or `reschedule_by_customer` without cancelling, and upon mutual acceptance, atomically commits the new slot within a DB transaction and dispatches an instant FCM notification.",
+          solution_ar: "هندسة محرك اقتراح وإعادة جدولة ذكي داخل `BookingService`. يمكن لأي طرف اقتراح موعد بديل يدخل حالة تفاوض (`reschedule_by_provider` أو `reschedule_by_customer`) دون إلغاء الحجز، وعند موافقة الطرف الآخر يتم تحديث الموعد ذرياً في معاملة بنكية وإرسال إشعار فوري عبر Firebase."
+        },
+        {
+          challenge: "Unifying High-Frequency Service Bookings with Physical E-Commerce Product Deliveries",
+          challenge_ar: "دمج حجوزات الخدمات الفورية مع متجر إلكتروني لبيع وتوصيل السلع في منصة موحدة",
+          description: "Service bookings require dynamic technician time-slot validation and problem descriptions, whereas product orders require cart mechanics, stock limits, coupon discounts, and regional delivery routing.",
+          challenge_ar: "تتطلب حجوزات الخدمات مطابقة مواعيد الفنيين ووصف الأعطال، بينما تتطلب طلبات السلع سلة تسوق ومخزوناً، وحساب كوبونات الخصم، وتحديد رسوم الشحن حسب المحافظات والمراكز.",
+          solution: "Decoupled logic into 20+ specialized domain services (`BookingService` vs. `CartService`, `CheckoutService`, and `CouponService`). This separation of concerns maintains clean architecture while allowing customer carts to checkout product orders seamlessly alongside service appointments.",
+          solution_ar: "فصل منطق العمليات إلى أكثر من 20 خدمة مستقلة (`BookingService` منفصلة عن `CartService` و `CheckoutService` و `CouponService`). هذا العزل ضمن معمارية نظيفة تتيح للعميل طلب المنتجات وتطبيق الكوبونات وحجز الفنيين في نفس التطبيق بسلاسة تامة."
+        },
+        {
+          challenge: "Building a Multi-Tenant Administrative Control Center with Granular RBAC and Complete Auditability",
+          challenge_ar: "بناء لوحة تحكم إدارية متعددة الأدوار مع صلاحيات دقيقة وسجل تدقيق شامل للعمليات",
+          description: "Operations teams needed complete visibility into orders, service bookings, provider approvals, and support messages, while enforcing strict permission barriers between team roles and logging every administrative action.",
+          challenge_ar: "احتاج فريق العمليات إلى رؤية كاملة للحجوزات، والطلبات، واعتماد مقدمي الخدمات، مع ضرورة فرض حواجز صلاحيات صارمة بين الأدوار وتوثيق كل تغيير إداري.",
+          solution: "Implemented an enterprise administrative dashboard using Filament v5 with Filament Shield (Spatie RBAC) for role-based permission matrices, Filament Language Switch for instant Arabic/English localization, Spatie Activitylog to record every model change and status mutation, and custom KPI widgets (`StatsOverview`, `BookingsChart`, `OrdersChart`).",
+          solution_ar: "تطوير لوحة تحكم إدارية متقدمة بـ Filament v5 بالاعتماد على Filament Shield لإدارة صلاحيات الأدوار بدقة، وتبديل اللغات الفوري، وربطها بـ Spatie Activitylog لتسجيل كل تعديل إداري مع مؤشرات أداء ورسوم بيانية حية للإيرادات والحجوزات."
         }
       ],
-      results: "Reduced driver match dispatch latency to < 120ms with 99.8% on-time assignment rates during trial runs.",
-      results_ar: "تقليص زمن مطابقة وإسناد السائقين إلى أقل من 120ms مع تحقيق نسبة تسليم في الموعد بلغت 99.8% خلال فترات الذروة."
+      results: "Delivered an all-in-one on-demand platform managing hundreds of monthly home service appointments and marketplace deliveries with an intuitive Filament v5 control center, zero appointment collision errors, and instantaneous FCM push updates.",
+      results_ar: "إطلاق ناجح لمنصة شاملة تدير مئات الحجوزات المنزلية ومبيعات المنتجات شهرياً، مع لوحة تحكم إدارية فائقة الكفاءة بـ Filament v5، وانعدام تام لتضارب المواعيد بفضل آلة التفاوض الذكية، وإشعارات فورية متزامنة عبر Firebase.",
+      dashboard: {
+        badge: "Filament v5 Panel",
+        badge_ar: "لوحة Filament v5",
+        title: "Wasly Enterprise Operations Center (Filament v5)",
+        title_ar: "لوحة تحكم وصلي المركزية للعمليات (Filament v5 Admin Panel)",
+        summary: "A high-performance operations and dispatch control center architected using Filament v5 on the modern TALL stack (Tailwind, Alpine, Laravel, Livewire). Designed for high concurrency service monitoring, technician calendar scheduling, and granular role-based security.",
+        summary_ar: "مركز عمليات متقدم لإدارة وتوجيه الخدمات مبني باستخدام Filament v5 على بيئة TALL المتطورة. صُممت اللوحة للتعامل مع كثافة العمليات التشغيلية، ومراقبة تقويم الفنيين، والتفاوض على مواعيد الصيانة، مع نظام صلاحيات أمني دقيق متعدد المستويات.",
+        framework: "Filament v5 + Filament Shield + Filament Language Switch + Spatie Activitylog",
+        framework_ar: "لارافيل + Filament v5 + Filament Shield (RBAC) + Spatie Activitylog",
+        mockupImage: "./assets/img/wasly_dash_showcase.webp",
+        modules: [
+          {
+            title: "Marketplace & Products Catalog (CRUD & Inventory)",
+            title_ar: "إدارة المنتجات والمتاجر (إضافة، تعديل، حذف، صور، مخزون)",
+            desc: "Complete administrative control over marketplace merchandise, merchant assignments, dynamic price tags, and inventory replenishment with Soft Delete protection.",
+            desc_ar: "تحكم إداري كامل في إضافة وتعديل وحذف المنتجات والمستلزمات، وربطها بالمتاجر والتصنيفات، مع الحذف الآمن (Soft Deletes) لحماية سجلات وفواتير الطلبات.",
+            actions: [
+              "إضافة منتجات ومستلزمات جديدة مع المواصفات والأسعار والأقسام",
+              "تعديل وتحديث بيانات السلع والمخزون المتاح والخصومات لحظياً",
+              "حذف السلع بأمان (Soft Delete) لمنع فقدان بيانات الطلبات والفواتير السابقة",
+              "رفع وإدارة معارض صور المنتجات وتعيين الصورة الرئيسية",
+              "متابعة وإدارة تقييمات ومراجعات العملاء للمنتجات مع إمكانية الحجب أو النشر"
+            ]
+          },
+          {
+            title: "Home Services & Technician Booking Hub",
+            title_ar: "إدارة حجوزات الخدمات الفورية ومحرك إعادة الجدولة",
+            desc: "Comprehensive scheduling and dispatch command center for home maintenance (plumbing, electricity, cleaning) with real-time slot locking and bidirectional reschedule negotiation.",
+            desc_ar: "مركز عمليات متكامل لحجوزات الخدمات الفورية والصيانة المنزلية، وتعيين الفنيين، وإدارة دورة التفاوض الثنائي على المواعيد البديلة مع إشعارات FCM فورية.",
+            actions: [
+              "استعراض وفرز الحجوزات حسب الحالة (معلق، مقبول، قيد التنفيذ، مكتمل، ملغي)",
+              "تعيين وتوجيه الفنيين المتخصصين للحجوزات وفق التوفر المكاني والزمني",
+              "إدارة مقترحات إعادة الجدولة وقبول أو رفض المواعيد البديلة دون إلغاء الحجز",
+              "إلغاء الحجوزات مع تدوين الأسباب وإشعار الأطراف تلقائياً عبر Firebase"
+            ]
+          },
+          {
+            title: "Service Providers & Technicians Directory",
+            title_ar: "إدارة الفنيين ومقدمي الخدمات وساعات العمل",
+            desc: "Full credentialing and availability management for technicians, covering KYC verification, working day/hour rules, and geographic dispatch zones.",
+            desc_ar: "إدارة ملفات الفنيين والتحقق من الهويات، وضبط ساعات وأيام العمل (AvailableDay / AvailableTime)، وتحديد مراكز ونطاقات التغطية الجغرافية.",
+            actions: [
+              "إضافة واعتماد حسابات الفنيين ومراجعة تراخيص مزاولة المهنة",
+              "تعديل وضبط جداول وأوقات الدوام المتاحة لكل فني أسبوعياً",
+              "تحديد وتعديل مناطق ومراكز التغطية الجغرافية للفنيين",
+              "إيقاف أو تجميد حسابات مقدمي الخدمات المخالفين للشروط التشغيلية"
+            ]
+          },
+          {
+            title: "Promotional Coupons & Discount Engine",
+            title_ar: "إدارة كوبونات الخصم والعروض الترويجية",
+            desc: "Rule-based coupon creation engine supporting percentage/fixed discounts, minimum basket thresholds, expiration triggers, and maximum usage counters.",
+            desc_ar: "محرك ديناميكي لإنشاء وضبط كوبونات الخصم الترويجية بنسب مئوية أو مبالغ ثابتة مع قيود الاستخدام وصلاحية زمنية محددة.",
+            actions: [
+              "إنشاء كوبونات خصم جديدة وتحديد كود الخصم (Promo Code)",
+              "تعديل وتحديد نوع الخصم (نسبة مئوية أو خصم مالي ثابت)",
+              "ضبط شروط الكوبون: تاريخ البداية والانتهاء، والحد الأدنى للإنفاق، وحد أقصى للاستخدام",
+              "حذف أو تعطيل الكوبونات المنتهية ومتابعة تقارير الاستخدام الفعلي"
+            ]
+          },
+          {
+            title: "Orders & Regional Delivery Dispatch",
+            title_ar: "إدارة طلبات التوصيل والتوجيه الجغرافي",
+            desc: "End-to-end merchandise order lifecycle from checkout to regional hub fulfillment, with dynamic delivery fee calculations based on governorates and centers.",
+            desc_ar: "متابعة شاملة لطلبات الشراء من السلة حتى التوصيل، وتعيين مسؤولي التوصيل، وتحديث مسارات الشحن واحتساب رسوم التوصيل الجغرافية.",
+            actions: [
+              "متابعة وفرز طلبات الشراء وتعديل حالات الشحن والتسليم",
+              "تحديد وتعديل تسعيرة التوصيل حسب المحافظات والمراكز الجغرافية",
+              "طباعة الفواتير وبوالص الشحن وتتبع معلومات استلام العميل",
+              "إلغاء الطلبات ومعالجة استرداد المبالغ وتحديث المخزون"
+            ]
+          },
+          {
+            title: "Role-Based Access Control (Filament Shield) & Audit Trails",
+            title_ar: "منظومة الصلاحيات (Filament Shield) وسجلات التدقيق (Activitylog)",
+            desc: "Granular multi-role security matrices isolating super-admins, service dispatchers, store managers, and accountants, combined with tamper-proof event logs.",
+            desc_ar: "عزل صلاحيات دقيق بين المشرفين العامين ومسؤولي التوجيه ومدراء المتاجر والمحاسبين، مع سجل تدقيق يوثق كل تغيير بدقة ومقارنة Before/After.",
+            actions: [
+              "إنشاء وتعديل الأدوار والصلاحيات (Roles & Permissions) بمصفوفة Filament Shield",
+              "تخصيص صلاحيات الوصول لكل مستخدم إداري بدقة (عرض فقط، إنشاء، تعديل، حذف)",
+              "تتبع سجل النشاط والتدقيق (Spatie Activitylog) مع توثيق قيم ما قبل وما بعد التعديل",
+              "تبديل فوري لواجهة لوحة التحكم بين العربية (RTL) والإنجليزية بنقرة واحدة"
+            ]
+          }
+        ],
+        screenshots: [
+          {
+            title: "Operations Hub & Real-time KPI Widgets",
+            title_ar: "مركز العمليات وبطاقات مؤشرات الأداء الحية (StatsOverview)",
+            desc_ar: "إحصائيات حية للمبيعات المكتملة، ومبيعات اليوم، وإجمالي الطلبات قيد الانتظار، وإجمالي الحجوزات بالجنيه المصري.",
+            desc: "Real-time statistics covering completed sales, today's revenue, pending orders, and total service bookings in EGP.",
+            img: "./assets/img/wasly_dash_overview.webp",
+            tag: "Overview"
+          },
+          {
+            title: "Marketplace Catalog & Excel Import/Export",
+            title_ar: "إدارة كتالوج المنتجات والاستيراد والتصدير بـ Excel",
+            desc_ar: "جدول المنتجات والمستلزمات مع التصفية بين منتجات الأدمن ومقدمي الخدمات، وخيارات الاستيراد والتصدير الجماعي بـ Excel/CSV.",
+            desc: "Merchandise catalog data-table with multi-source filtering across admin & provider products and bulk Excel import/export.",
+            img: "./assets/img/wasly_dash_products.webp",
+            tag: "Products"
+          },
+          {
+            title: "Home Services & Marketplace Categories",
+            title_ar: "هيكل شجرة الأقسام وتصنيفات الخدمات والمنتجات",
+            desc_ar: "تصنيف الخدمات (سوبر ماركت، خدمات منزلية، خضروات وفواكه، إلكترونيات) مع عداد الأقسام الفرعية ومؤشر الحالة النشطة.",
+            desc: "Hierarchical category taxonomy for maintenance services and retail merchandise with subcategory counts and active switches.",
+            img: "./assets/img/wasly_dash_categories.webp",
+            tag: "Categories"
+          },
+          {
+            title: "Verified Service Providers & Technicians Roster",
+            title_ar: "دليل واعتماد مقدمي الخدمات والشركات والفنيين",
+            desc_ar: "إدارة واعتماد مراكز السباكة والتكييف والنظافة والكهرباء، مع الصور التوضيحية وساعات العمل والمناطق التشغيلية.",
+            desc: "Verified technician and service center registry managing credentialing, photo galleries, working hours, and operational dispatch hubs.",
+            img: "./assets/img/wasly_dash_providers.webp",
+            tag: "Providers"
+          },
+          {
+            title: "Home Services Bookings & Appointments Hub",
+            title_ar: "إدارة حجوزات الخدمات الفورية والمواعيد التقويمية",
+            desc_ar: "متابعة وتوجيه طلبات الحجز الفورية برقم الطلب واسم العميل، وتعيين الفنيين، والتعامل مع مقترحات إعادة الجدولة.",
+            desc: "Interactive appointments ledger monitoring booking status, customer identities, and technician schedule dispatching.",
+            img: "./assets/img/wasly_dash_bookings.webp",
+            tag: "Bookings"
+          },
+          {
+            title: "Marketplace Orders & Regional Dispatch",
+            title_ar: "إدارة وتتبع طلبات الشراء والتوصيل الفوري",
+            desc_ar: "متابعة دورة حياة الطلبات (ORD)، وإجماليات الأسعار بالجنيه المصري، وتوجيه الشحن حسب المحافظات والمراكز.",
+            desc: "Order processing pipeline with order codes, financial totals in EGP, delivery tracking, and regional dispatch fulfillment.",
+            img: "./assets/img/wasly_dash_orders.webp",
+            tag: "Orders"
+          }
+        ]
+      }
     },
     {
       id: "proj_kcode",
@@ -227,18 +571,19 @@ When partnering with founders or engineering teams, my goal is always to deliver
       category_ar: "تجارة إلكترونية",
       featured: true,
       status: "Live",
-      status_ar: "يعمل بالإنتاج",
-      year: "2025",
+      status_ar: "مكتمل ويعمل (Live)",
+      year: "2026",
       role: "Full-Stack Backend Architect",
-      role_ar: "مهندس معماري ومطور Backend",
+      role_ar: "مطور Backend ومصمم النظام (System Architect)",
       coverImage: "./assets/img/kcode_showcase.webp",
       thumbnail: "./assets/img/kcode_showcase.webp",
       description: "A specialized Korean beauty and derma skincare e-commerce platform built for the GCC market (Oman), featuring an algorithmic 4-step skin assessment questionnaire, multi-currency checkout, and high-performance product catalog caching.",
       description_ar: "منصة تجارة إلكترونية متخصصة في منتجات العناية بالبشرة الكورية لمنطقة الخليج (سلطنة عمان)، تشتمل على محرك تقييم ذكي للبشرة من 4 خطوات لمطابقة المكونات الفعالة، وبوابة دفع متعددة العملات مع كاشينج فائق السرعة للكتالوج.",
       shortDescription: "Korean skincare e-commerce platform with a 4-step smart skin diagnostic engine, routine matching, and regional logistics.",
       shortDescription_ar: "متجر إلكتروني للعناية الكورية مع محرك تشخيص وتقييم ذكي للبشرة وتوصيات روتين مخصصة.",
-      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Redis", "REST APIs", "Sanctum", "Stripe"],
+      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Filament V3", "Redis", "REST APIs", "Sanctum", "Stripe", "AI Assistant", "Excel Sync"],
       liveUrl: "https://kcode-pied.vercel.app/",
+      adminUrl: "https://kcodeskin.com/admin",
       githubUrl: "",
       isPrivate: false,
       metrics: {
@@ -265,28 +610,164 @@ When partnering with founders or engineering teams, my goal is always to deliver
         "تكامل بوابات الدفع الإلكتروني بالبطاقات ومعالجة طلبات الدفع عند الاستلام مع دورة حياة تتبع الشحن في سلطنة عمان والخليج."
       ],
       architecture: [
-        { layer: "Client Storefront", desc: "Next.js / Vercel storefront communicating with REST API endpoints" },
-        { layer: "Laravel Commerce Engine", desc: "Handles cart lifecycle, multi-currency pricing, and inventory reservation" },
-        { layer: "Skin Diagnostic API", desc: "Evaluates questionnaire inputs and calculates ingredient suitability scores" },
-        { layer: "Cache & Order Dispatch", desc: "Redis query cache and asynchronous webhook dispatch for payment & SMS notifications" }
+        { layer: "Client Storefront", layer_ar: "واجهة المتجر الأمامية", desc: "Next.js / Vercel storefront communicating with REST API endpoints", desc_ar: "متجر مبني بـ Next.js يتصل بنقاط نهاية الـ REST API في الباك إند" },
+        { layer: "Laravel Commerce Engine", layer_ar: "محرك تجارة لارافيل", desc: "Handles cart lifecycle, multi-currency pricing, and inventory reservation", desc_ar: "إدارة دورة حياة سلة الشراء، التسعير متعدد العملات، وحجز المخزون" },
+        { layer: "Skin Diagnostic API", layer_ar: "واجهة تقييم وتشخيص البشرة", desc: "Evaluates questionnaire inputs and calculates ingredient suitability scores", desc_ar: "تحليل إجابات الاستبيان وحساب درجات توافق المكونات النشطة فورياً" },
+        { layer: "Cache & Order Dispatch", layer_ar: "الكاش وإسناد الطلبات", desc: "Redis query cache and asynchronous webhook dispatch for payment & SMS notifications", desc_ar: "كاشينج استعلامات Redis وإرسال إشعارات الدفع والرسائل النصية بالخلفية" }
       ],
       databaseSchema: [
-        { table: "products", relations: "hasMany: variants, ingredients; belongsTo: brand, category" },
-        { table: "skin_assessments", relations: "hasMany: questions, answers; produces: routine_recommendations" },
-        { table: "orders", relations: "belongsTo: customer; hasMany: order_items, payment_transactions" }
+        { table: "products", relations: "hasMany: variants, ingredients; belongsTo: brand, category", relations_ar: "متعدد: المتغيرات، المكونات الفعالة؛ ينتمي إلى: البراند، التصنيف" },
+        { table: "skin_assessments", relations: "hasMany: questions, answers; produces: routine_recommendations", relations_ar: "متعدد: الأسئلة، الإجابات؛ ينتج: توصيات روتين العناية المخصص" },
+        { table: "orders", relations: "belongsTo: customer; hasMany: order_items, payment_transactions", relations_ar: "ينتمي إلى: العميل؛ متعدد: عناصر الطلب، معاملات الدفع" }
       ],
       challenges: [
         {
           challenge: "Calculating instant ingredient suitability across hundreds of catalog SKUs during skin quiz completion.",
-          solution: "Pre-indexed ingredient compatibility matrix in Redis hashes, enabling sub-20ms quiz evaluation without hitting relational database joins."
+          challenge_ar: "حساب درجات التوافق بين المكونات ومئات المنتجات فور إكمال اختبار البشرة دون بطء في الاستجابة.",
+          solution: "Pre-indexed ingredient compatibility matrix in Redis hashes, enabling sub-20ms quiz evaluation without hitting relational database joins.",
+          solution_ar: "فهرسة مصفوفة توافق المكونات مسبقاً في هياكل Redis Hashes مما أتاح تقييم الاختبار في أقل من 20ms دون الحاجة لعمليات Join معقدة بقاعدة البيانات."
         },
         {
           challenge: "Preventing inventory race conditions during flash discounts on viral skincare serums.",
-          solution: "Applied pessimistic database locking (`lockForUpdate`) and Redis atomic decrements during checkout confirmation."
+          challenge_ar: "منع حالات التعارض في المخزون أثناء الخصومات الخاطفة على المنتجات الأكثر طلباً.",
+          solution: "Applied pessimistic database locking (`lockForUpdate`) and Redis atomic decrements during checkout confirmation.",
+          solution_ar: "استخدام القفل المتشائم لقواعد البيانات (lockForUpdate) مع عمليات الخصم الذري في Redis أثناء تأكيد الدفع."
         }
       ],
       results: "Sub-45ms catalog queries, zero overselling incidents, and an automated skin diagnostic funnel that boosts checkout conversion.",
-      results_ar: "سرعة استجابة للكتالوج أقل من 45ms، وانعدام تام لأخطاء تعارض المخزون، مع مضاعفة معدلات التحويل بفضل محرك التقييم الذكي."
+      results_ar: "سرعة استجابة للكتالوج أقل من 45ms، وانعدام تام لأخطاء تعارض المخزون، مع مضاعفة معدلات التحويل بفضل محرك التقييم الذكي.",
+      dashboard: {
+        badge: "Filament V3 Commerce Panel",
+        badge_ar: "لوحة تحكم Filament V3",
+        title: "KCODE Skincare Commerce & AI Diagnostic Engine",
+        title_ar: "لوحة تحكم متجر KCODE ومحرك الاستشارات والتشخيص الذكي (Filament Panel)",
+        summary: "An advanced Korean skincare e-commerce control panel built on Laravel 11 and Filament V3, orchestrating a 218+ product catalog with SKU pricing in OMR, intelligent 4-step skin assessment quiz routines, AI skincare diagnostic consultations, promo coupon vouchers, customer rating matrices, and bi-directional Excel sync.",
+        summary_ar: "لوحة تحكم متقدمة لمتجر العناية الكورية مبنية على Laravel 11 وFilament V3، تدير كتالوجاً يضم أكثر من 218 منتجاً بأسعار الريال العماني (OMR)، ونظام تقييم واختبار البشرة الذكي (Skin Assessment Quiz)، وسجلات استشارات الذكاء الاصطناعي لتشخيص الروتين المخصص، ومحرك أكواد الخصم والكوبونات، ومصفوفة تقييمات العملاء (2967+ تقييم)، والمزامنة ثنائية الاتجاه مع Excel.",
+        framework: "Laravel 11 + Filament V3 + Livewire + Redis + OpenAI Engine",
+        framework_ar: "لارافيل 11 + Filament V3 + Livewire + Redis + محرك الذكاء الاصطناعي",
+        mockupImage: "./assets/img/kcode_dash_showcase.webp",
+        url: "https://kcodeskin.com/admin",
+        stats: [
+          { label: "Active Derma Products", label_ar: "منتجات العناية الكورية", val: "218+", icon: "ri-shopping-bag-3-line" },
+          { label: "AI Consultations", label_ar: "استشارات الذكاء الاصطناعي", val: "29+", icon: "ri-robot-2-line" },
+          { label: "Customer Ratings", label_ar: "تقييمات ومراجعات العملاء", val: "2,967 (4/5 ⭐)", icon: "ri-star-smile-line" },
+          { label: "Active Promo Coupons", label_ar: "أكواد الخصم النشطة", val: "16 Codes", icon: "ri-coupon-3-line" },
+          { label: "Excel & Image Sync", label_ar: "مزامنة الكتالوج والصور", val: "Bi-directional", icon: "ri-file-excel-line" }
+        ],
+        modules: [
+          {
+            title: "218+ SKU Catalog with Excel Pipeline & Image Mapper",
+            title_ar: "إدارة كتالوج المنتجات الكورية (218+ منتج) وربط الصور والإكسل",
+            desc: "Comprehensive skincare catalog with SKU indexing, pricing in OMR, stock alerts (14 low stock warnings), best-seller flags, multi-image mapping, and bulk Excel import/export.",
+            desc_ar: "كتالوج متكامل لمنتجات العناية بالبشرة الكورية مع فهارس الـ SKU، والتسعير بالريال العماني (OMR)، وتنبيهات نواقص المخزون (14 منتجاً أوشك على النفاد)، وعلامات المنتجات الأكثر مبيعاً، ومولد ربط الصور، واستيراد وتصدير جماعي عبر Excel.",
+            actions: [
+              "إدارة 218 منتج عناية كورية مع الأسعار الرسمية بالريال العماني وأكواد SKU والمخزون",
+              "استيراد وتصدير بيانات المنتجات بالكامل عبر ملفات Excel وCSV بنقرة واحدة",
+              "أداة ربط وتعيين الصور (Image Mapper) للربط التلقائي بين صور المنتجات وأكوادها",
+              "مفتاح تحكم فوري (Toggle) لتمييز المنتجات الأكثر مبيعاً (Best Seller) في المتجر",
+              "رصد فوري لمنتجات المخزون المنخفض (Low Stock) لمنع نفاد المنتجات الأكثر طلباً"
+            ]
+          },
+          {
+            title: "AI Skincare Diagnostic Engine & Consultation Logs",
+            title_ar: "محرك استشارات وتشخيص البشرة بالذكاء الاصطناعي وسجلات المحادثة",
+            desc: "Smart diagnostic logs tracking 29+ active AI consultations, analyzing customer skin profiles, concerns (dryness, acne, hyperpigmentation), and generating personalized day/night routine suggestions.",
+            desc_ar: "سجل متقدم لإدارة استشارات الذكاء الاصطناعي (29+ جلسة استشارية)، يحلل مشاكل العملاء (جفاف الشتاء، روتين النضارة، الحبوب) ويقترح فورياً روتيناً صباحياً ومسائياً مخصصاً بمنتجات المتجر.",
+            actions: [
+              "استعراض وتحليل جلسات المحادثة الذكية بين العملاء ومساعد الذكاء الاصطناعي للبشرة",
+              "تتبع استجابات الذكاء الاصطناعي والتوصيات الطبية بالمنتجات المتوافقة مع طبيعة البشرة",
+              "الربط المباشر مع استبيان تقييم البشرة (87 اختباراً مكتملاً) لربط المكونات النشطة بالروتين",
+              "تحليل شكاوى واحتياجات العملاء الأكثر تكراراً لتوجيه حملات المتجر والمنتجات الجديدة"
+            ]
+          },
+          {
+            title: "Order Lifecycle Ledger & Express Regional Dispatch",
+            title_ar: "إدارة دورة حياة الطلبات ومعالجة الشحن الإقليمي السريع",
+            desc: "Complete order management ledger tracking order codes (KCODE-20260820), customer contact numbers, order statuses (Accepted, Processing, Delivered), totals in OMR, and exportable financial logs.",
+            desc_ar: "سجل متكامل لإدارة ومتابعة طلبات المتجر مع أرقام التتبع الرسمية (KCODE-20260820)، وبيانات الاتصال بالعملاء، وتحديث الحالات (مقبول، قيد التنفيذ، تم التوصيل)، والمبالغ الإجمالية، وتصدير السجلات إلى Excel.",
+            actions: [
+              "تتبع تفاصيل وفواتير طلبات العملاء بالريال العماني وإجمالي المبالغ المدفوعة",
+              "تحديث حالات الطلب اللحظية (Approved، Processing، In Transit، Delivered)",
+              "تصدير كشوفات الطلبات الإجمالية إلى ملفات Excel للتنسيق مع شركات الشحن والتوصيل",
+              "متابعة خيارات الدفع الإلكتروني والدفع عند الاستلام مع مطابقة المبالغ المالية"
+            ]
+          },
+          {
+            title: "Promo Codes & Discount Vouchers Engine (16 Active)",
+            title_ar: "محرك الكوبونات وأكواد الخصم والعروض الترويجية (16 كود فعال)",
+            desc: "Flexible promotion engine managing 16 promo codes with percentage discounts, fixed OMR deductions, minimum spend conditions, usage quotas, and customer targeting.",
+            desc_ar: "نظام عروض ترويجية متطور يدير 16 كود خصم نشط بنوعين: خصم نسبي مئوي (Percentage) أو خصم مالي محدد بالريال العماني (Fixed Amount)، مع حدود الاستخدام والتواريخ المستهدفة.",
+            actions: [
+              "إنشاء وإدارة أكواد الخصم الترويجية وتحديد نسبة الخصم أو القيمة الثابتة بالريال العماني",
+              "تحديد فترات صلاحية الكوبونات والحدود القصوى لعدد مرات الاستخدام للعميل الواحد",
+              "تفعيل وإيقاف الكوبونات فورياً عبر مفاتيح التحكم السريعة (Status Switch)",
+              "ربط الخصومات بمنتجات محددة أو ماركات معينة أو تطبيقه على إجمالي سلة المشتريات"
+            ]
+          },
+          {
+            title: "Brand Directory & Verified Customer Rating Matrix (2,967+ Reviews)",
+            title_ar: "دليل الماركات الكورية (22 براند) ومصفوفة مراجعات العملاء (4/5 ⭐)",
+            desc: "Directory managing 22 premium Korean derma brands (ANUA, COSRX, Medicube, Beauty of Joseon...) paired with a social proof rating system containing 2,967+ verified reviews averaging 4/5 stars.",
+            desc_ar: "إدارة دليل يضم 22 براند كوري رائد (مثل ANUA، COSRX، Medicube، Beauty of Joseon) مع شعاراتها ومنتجاتها، مدعوماً بنظام تقييمات موثق يضم 2,967 مراجعة بمعدل 4 من 5 نجوم.",
+            actions: [
+              "إدارة وتحديث بيانات وشعارات 22 علامة تجارية كورية متخصصة في مستحضرات العناية",
+              "مراقبة تقييمات العملاء الموثقة (2,967 تقييم بمعدل 4/5) وفحص آراء المستخدمين",
+              "ربط الماركات بالتصنيفات الرئيسية العشرة (غسول، سيروم، تونر، واقي شمس، كريمات)",
+              "تصفية وفرز المنتجات بحسب البراند الأكثر مبيعاً والأعلى تقييماً من العملاء"
+            ]
+          }
+        ],
+        screenshots: [
+          {
+            title: "KCODE Operations Command Center & KPI Overview",
+            title_ar: "مركز قيادة عمليات KCODE وبطاقات مؤشرات الأداء الحية",
+            desc_ar: "لوحة مؤشرات متقدمة تعرض إجمالي الطلبات (19)، واستشارات الذكاء الاصطناعي (29)، والمنتجات (218)، والمخزون المنخفض، والعملاء، والكوبونات، ومتوسط التقييم (4/5 عبر 2,967 مراجعة).",
+            desc: "Executive KPI dashboard highlighting orders (19), AI skincare consultations (29), products (218), low stock alerts (14), customer reviews (2,967 ratings at 4/5 stars), and coupons.",
+            img: "./assets/img/kcode_dash_overview.webp",
+            tag: "Overview"
+          },
+          {
+            title: "Products Catalog & Bulk Excel/Image Mapping Tools",
+            title_ar: "كتالوج المنتجات الكورية (218 منتج) وأدوات الإكسل والصور",
+            desc_ar: "جدول بيانات تفصيلي لإدارة 218 منتج عناية كورية بالريال العماني (OMR) مع أكواد SKU وحالة المخزون، والمنتجات الأكثر مبيعاً، واستيراد وتصدير Excel، ومولد تعيين الصور.",
+            desc: "High-density catalog managing 218 skincare items with OMR pricing, SKU tracking, stock quantities, best-seller toggles, Excel import/export, and image mapper tool.",
+            img: "./assets/img/kcode_dash_products.webp",
+            tag: "Products"
+          },
+          {
+            title: "Orders Management & Regional Fulfillment Ledger",
+            title_ar: "إدارة سجل الطلبات والشحن الإقليمي في سلطنة عمان",
+            desc_ar: "سجل الطلبات المتكامل مع أكواد KCODE التتبعية، وأرقام هواتف العملاء، والحالات التشغيلية (Accepted، Pending)، والقيم المالية بالريال العماني، وأزرار التصدير.",
+            desc: "Comprehensive order ledger with KCODE tracking numbers, customer phone contacts, fulfillment states, OMR order totals, and instant export tools.",
+            img: "./assets/img/kcode_dash_orders.webp",
+            tag: "Orders"
+          },
+          {
+            title: "AI Skincare Diagnostic Consultations & Chat Histories",
+            title_ar: "استشارات وتشخيص البشرة بالذكاء الاصطناعي وسجلات المحادثة",
+            desc_ar: "سجل 29 جلسة استشارية ذكية أجراها العملاء مع مساعد الذكاء الاصطناعي، متضمناً تحليل طبيعة البشرة (جفاف، حبوب، نضارة) واقتراح الروتين المخصص بالمنتجات المتوافقة.",
+            desc: "Logs of 29 AI skincare consultations analyzing customer concerns (winter barrier, acne, routines) and recommending active ingredient regimens.",
+            img: "./assets/img/kcode_dash_ai_consultations.webp",
+            tag: "AI Assistant"
+          },
+          {
+            title: "Promo Codes & Discount Vouchers Engine (16 Active)",
+            title_ar: "إدارة الكوبونات وأكواد الخصم والعروض الترويجية (16 كود فعال)",
+            desc_ar: "جدول التحكم في 16 كود خصم نشط يدعم الخصومات المئوية والمبالغ الثابتة بالريال العماني مع حدود الاستخدام وتواريخ الصلاحية ومفاتيح التفعيل اللحظية.",
+            desc: "Promotion management table orchestrating 16 active coupons with percentage or fixed OMR discounts, usage limits, validity schedules, and status switches.",
+            img: "./assets/img/kcode_dash_coupons.webp",
+            tag: "Coupons"
+          },
+          {
+            title: "Korean Beauty Brands Directory (22 Brands)",
+            title_ar: "دليل العلامات التجارية الكورية المعتمدة (22 براند كوري)",
+            desc_ar: "دليل 22 علامة تجارية كورية رائدة (ANUA، COSRX، Medicube، Beauty of Joseon، Haruharu Wonder...) مع شعاراتها وتصنيفاتها ومنتجاتها المرتبطة.",
+            desc: "Directory of 22 top Korean derma brands with brand logos, website linkages, and associated catalog SKU counts.",
+            img: "./assets/img/kcode_dash_brands.webp",
+            tag: "Brands"
+          }
+        ]
+      }
     },
     {
       id: "proj_aqarmousa",
@@ -299,7 +780,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
       category_ar: "عقارات",
       featured: true,
       status: "Live",
-      status_ar: "يعمل بالإنتاج",
+      status_ar: "مكتمل ويعمل (Live)",
       year: "2024",
       role: "Backend Developer",
       role_ar: "مطور Backend",
@@ -309,8 +790,9 @@ When partnering with founders or engineering teams, my goal is always to deliver
       description_ar: "نظام خلفي لمنصة وساطة وإدارة عقارات تدعم تعدد الوسطاء، والبحث المركب المتقدم (الميزانية، الموقع، المزايا، نوع العقار)، مع أتمتة توزيع العملاء عبر WhatsApp Business API.",
       shortDescription: "High-volume property search backend with compound indexes and automated agent lead assignment.",
       shortDescription_ar: "محرك بحث عقاري عالي الأداء مع فهارس مركبة ونظام ذكي لأتمتة توزيع العملاء على الوسطاء.",
-      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "REST APIs", "Redis Queues", "WhatsApp API"],
+      technologies: ["Laravel 11", "PHP 8.3", "MySQL 8.0", "Filament V3", "REST APIs", "Redis Queues", "WhatsApp API", "Excel Sync"],
       liveUrl: "https://aqar-mousa.vercel.app/",
+      adminUrl: "https://aqarmousa.com/admin/",
       githubUrl: "",
       isPrivate: true,
       privateNotice: "Commercial client project. Code private; technical case study provided.",
@@ -339,26 +821,160 @@ When partnering with founders or engineering teams, my goal is always to deliver
         "بناء نظام صلاحيات للوسطاء وتتبع مسار تعيين وتوزيع العملاء المحتملين تلقائياً."
       ],
       architecture: [
-        { layer: "Public Search API", desc: "Facet-filtered property queries with cursor pagination" },
-        { layer: "Media Worker", desc: "Queued background thumbnail generation and progressive WebP compression" },
-        { layer: "Lead Routing Service", desc: "Round-robin distribution with instant WhatsApp alert trigger" }
+        { layer: "Public Search API", layer_ar: "واجهة البحث العامة", desc: "Facet-filtered property queries with cursor pagination", desc_ar: "استعلامات البحث العقاري متعدد الفلاتر مع الترقيم المستمر (Cursor Pagination)" },
+        { layer: "Media Worker", layer_ar: "معالج الوسائط والصور", desc: "Queued background thumbnail generation and progressive WebP compression", desc_ar: "طابور مهام خلفي لإنشاء الصور المصغرة والضغط التلقائي لصيغة WebP" },
+        { layer: "Lead Routing Service", layer_ar: "خدمة توجيه العملاء", desc: "Round-robin distribution with instant WhatsApp alert trigger", desc_ar: "توزيع دوري آلي (Round-Robin) مع تنبيهات فورية عبر واتساب" }
       ],
       databaseSchema: [
-        { table: "properties", relations: "belongsTo: agent, location; hasMany: images, features" },
-        { table: "leads", relations: "belongsTo: property, assigned_agent; hasMany: interaction_logs" }
+        { table: "properties", relations: "belongsTo: agent, location; hasMany: images, features", relations_ar: "ينتمي إلى: الوسيط، المنطقة؛ متعدد: الصور، المزايا والمرافق" },
+        { table: "leads", relations: "belongsTo: property, assigned_agent; hasMany: interaction_logs", relations_ar: "ينتمي إلى: العقار، الوسيط المعين؛ متعدد: سجلات التفاعل" }
       ],
       challenges: [
         {
           challenge: "Large unoptimized gallery uploads crashed web requests on mobile submissions.",
-          solution: "Offloaded image processing to background queue workers with progressive WebP compression."
+          challenge_ar: "رفع الصور الكبيرة غير المحسنة من الهواتف كان يسبب تعطل طلبات الويب للمستخدمين.",
+          solution: "Offloaded image processing to background queue workers with progressive WebP compression.",
+          solution_ar: "ترحيل معالجة الصور إلى طوابير مهام خلفية غير متزامنة مع ضغط تصاعدي WebP."
         },
         {
           challenge: "High-concurrency facet filtering under peak campaign traffic caused table scan contention.",
-          solution: "Designed compound B-Tree indexes covering (status, city_id, property_type, price) to execute queries entirely within index memory."
+          challenge_ar: "عمليات التصفية المتزامنة بكثافة أثناء الحملات الإعلانية كانت تسبب بطء فحص الجداول (Table Scans).",
+          solution: "Designed compound B-Tree indexes covering (status, city_id, property_type, price) to execute queries entirely within index memory.",
+          solution_ar: "تصميم فهارس B-Tree مركبة تغطي معايير البحث الأكثر استخداماً لتنفيذ الاستعلام بالكامل داخل ذاكرة الفهرس."
         }
       ],
       results: "Search query duration dropped by 70%, and lead response time decreased from 4 hours to under 3 minutes.",
-      results_ar: "انخفاض زمن استجابة استعلامات البحث بنسبة 70%، وتقلص زمن الرد على العملاء المحتملين من 4 ساعات إلى أقل من 3 دقائق."
+      results_ar: "انخفاض زمن استجابة استعلامات البحث بنسبة 70%، وتقلص زمن الرد على العملاء المحتملين من 4 ساعات إلى أقل من 3 دقائق.",
+      dashboard: {
+        badge: "Filament V3 Admin Panel",
+        badge_ar: "لوحة تحكم Filament V3",
+        title: "Aqar Mousa Real Estate & Operations Control Center",
+        title_ar: "لوحة تحكم عقار موسى المركزية لإدارة العقارات والمحتوى (Filament Panel)",
+        description: "An enterprise-grade real estate management portal built on Laravel and Filament, orchestrating 108+ active properties and land parcels, field inspection booking requests, multi-lingual amenities taxonomy, user permission matrices, and Excel bi-directional data synchronization.",
+        description_ar: "منصة إدارية متكاملة لإدارة الاستثمار والتطوير العقاري مبنية على Laravel وFilament، تدير أكثر من 108 وحدة وأرض مسجلة، وطلبات المعاينة الميدانية وحجوزات العقارات، وشجرة مرافق الأراضي والعقارات ثنائية اللغة، وصلاحيات المستخدمين، ومزامنة واستيراد/تصدير بيانات الكتالوج عبر Excel.",
+        mockupImage: "./assets/img/aqarmousa_dash_showcase.webp",
+        url: "https://aqarmousa.com/admin/",
+        stats: [
+          { label: "Registered Units", label_ar: "الوحدات المسجلة", val: "108+", icon: "ri-home-line" },
+          { label: "Inspection Bookings", label_ar: "طلبات المعاينة", val: "3 Active", icon: "ri-calendar-check-line" },
+          { label: "Property Amenities", label_ar: "مرافق الأراضي والعقارات", val: "10 Types", icon: "ri-sparkling-line" },
+          { label: "Unique Visitors", label_ar: "الزوار الفعليين", val: "450+", icon: "ri-user-star-line" },
+          { label: "Excel Pipeline", label_ar: "مزامنة البيانات", val: "Bi-directional", icon: "ri-file-excel-line" }
+        ],
+        modules: [
+          {
+            title: "Units & Properties Catalog with Bi-Directional Excel Pipeline",
+            title_ar: "إدارة كتالوج الأراضي والوحدات العقارية والمزامنة مع Excel",
+            desc: "Comprehensive catalog for residential, commercial, industrial, and agricultural properties with instant live switches, governorate filters, price breakdowns in EGP, and bulk Excel import/export.",
+            desc_ar: "كتالوج متكامل لإدارة الأراضي والوحدات (سكنية، تجارية، صناعية، زراعية) مع فلاتر المحافظات، وتحديد نوع العرض (بيع/إيجار)، والأسعار بالجنيه المصري، ومفاتيح ظهور الوحدة الفورية، واستيراد وتصدير البيانات عبر Excel.",
+            actions: [
+              "إضافة وتعديل بيانات الأراضي والوحدات العقارية بمعرض صور كامل وأسعار دقيقة بالجنيه",
+              "تحديد نوع العرض (بيع أو إيجار) وحالة الوحدة (متاحة، مباعة) وتصنيف القسم الجغرافي",
+              "استيراد بيانات العقارات جماعياً عبر Excel (Import) وتحميل قالب الإكسيل المعتمد",
+              "تصدير بيانات الكتالوج بالكامل إلى ملفات Excel بنقرة واحدة لأغراض التحليل والأرشفة",
+              "مفتاح تحكم فوري (Live Toggle) لتفعيل أو إخفاء أي وحدة عقارية من الموقع مباشرة"
+            ]
+          },
+          {
+            title: "Field Inspection Bookings & Approval Management",
+            title_ar: "إدارة طلبات المعاينة الميدانية ومواعيد زيارة العقارات",
+            desc: "Interactive inspections ledger tracking customer visit appointments, assigned locations, and approval workflows for prospective property buyers.",
+            desc_ar: "نظام تفاعلي متقدم لمتابعة وإدارة طلبات المعاينة الميدانية للوحدات والأراضي، وتحديد مواعيد الزيارات للعملاء المهتمين، وتحديث حالات الموافقة والاعتماد.",
+            actions: [
+              "استقبال طلبات المعاينة الميدانية وتتبع مواعيد الزيارات المحددة لكل عميل",
+              "تحديد ومعاينة الوحدة العقارية المطلوبة وربطها ببيانات العميل الراغب في الشراء/الإيجار",
+              "تحديث ومراجعة حالة طلب المعاينة (بانتظار الموافقة، معتمدة، مكتملة) مع التنبيهات",
+              "متابعة مؤشرات المعاينات قيد الانتظار والمعاينات الإجمالية من بطاقات لوحة التحكم الحية"
+            ]
+          },
+          {
+            title: "Bilingual Land & Property Amenities Taxonomy",
+            title_ar: "إدارة شجرة مرافق الأراضي والعقارات ثنائية اللغة (Arabic/English)",
+            desc: "Taxonomy management for infrastructure and amenities (Water Network, Agricultural Irrigation, Security, Paved Roads, Building Permits, Fenced Land) with visual icon badges.",
+            desc_ar: "إدارة شاملة لشجرة المرافق والمزايا الميدانية للعقارات والأراضي (شبكة مياه، مياه ري، أمن وحراسة، طريق ممهد، ترخيص بناء، سور محيط) مع الأسماء الإنجليزية والأيقونات التوضيحية.",
+            actions: [
+              "إنشاء وتعديل مرافق العقارات والأراضي مع دعم كامل للاسم العربي والاسم الإنجليزي",
+              "ربط كل مرفق عقاري بأيقونة بصرية معتمدة تظهر في تفاصيل العقار على الموقع",
+              "تخصيص المرافق وربطها بالوحدات العقارية لتسهيل الفلترة والبحث المتقدم للعملاء",
+              "تعديل وحذف المرافق مع التحقق من ترابط قواعد البيانات وسلامة السجلات"
+            ]
+          },
+          {
+            title: "Real-time Operations KPI Widgets & Activity Monitoring",
+            title_ar: "بطاقات مؤشرات الأداء الحية ومراقبة زيارات وسجلات الموقع",
+            desc: "Executive dashboard widgets displaying registered units, user registrations, review health checks, inspection backlogs, and real-time visitor web traffic analytics.",
+            desc_ar: "لوحة إحصائيات متقدمة تعرض إجمالي الوحدات (108 وحدة)، والمستخدمين المسجلين، والمراجعات، وطلبات المعاينة المعلقة، مع عدادات فورية للزوار الفعليين (450+) وإجمالي زيارات الصفحات (2260+).",
+            actions: [
+              "متابعة إجمالي الوحدات المسجلة والوحدات المعروضة في الوقت الفعلي",
+              "مراقبة مؤشرات زوار الموقع الفعليين وزيارات الصفحات وسجلات نشاط العمليات",
+              "رصد فوري لطلبات المعاينات قيد الانتظار لاعتمادها وتوجيه الوسطاء لمرافقة العميل",
+              "فحص صحة التقييمات ورصد المراجعات الضعيفة لاتخاذ الإجراءات التشغيلية الفورية"
+            ]
+          },
+          {
+            title: "User Management & Role-Based Access Control (RBAC)",
+            title_ar: "إدارة دليل المستخدمين والصلاحيات والأدوار الإدارية",
+            desc: "Granular user roster managing administrators, sales agents, and prospective buyers with phone verification status, governorates, and role assignment matrices.",
+            desc_ar: "سجل مستخدمين متكامل يدير حسابات المشرفين، والوسطاء، والمشترين، مع التحقق من أرقام الهواتف وتحديد المحافظات والصلاحيات الإدارية وتصدير البيانات.",
+            actions: [
+              "إدارة حسابات المستخدمين والمشرفين (Super Admin، مشتري، وسيط عقاري)",
+              "تتبع أرقام الهواتف وحالة تفعيل الحسابات والبريد الإلكتروني والمحافظات المسجلة",
+              "إسناد وتعديل الأدوار والصلاحيات لحماية العمليات الإدارية الحساسة",
+              "تصدير سجل المستخدمين المعتمد إلى ملفات Excel بنقرة زر واحدة"
+            ]
+          }
+        ],
+        screenshots: [
+          {
+            title: "Operations Hub & Real-time Real Estate KPI Widgets",
+            title_ar: "مركز العمليات وبطاقات مؤشرات الأداء العقاري الحية",
+            desc_ar: "إحصائيات حية لعدد الوحدات المسجلة (108 وحدة)، والمستخدمين المسجلين، وطلبات المعاينة قيد الانتظار، وزوار الموقع الفعليين، وإجمالي زيارات الصفحات.",
+            desc: "Real-time statistics covering registered property units (108 units), users, pending inspection requests, unique site visitors, and total page impressions.",
+            img: "./assets/img/aqarmousa_dash_overview.webp",
+            tag: "Overview"
+          },
+          {
+            title: "Real Estate Units Catalog & Excel Bulk Pipeline",
+            title_ar: "إدارة كتالوج الوحدات والعقارات واستيراد/تصدير Excel",
+            desc_ar: "جدول بيانات تفصيلي لإدارة الأراضي السكنية والتجارية والصناعية والزراعية مع فلاتر المحافظة، ونوع العرض (بيع/إيجار)، والأسعار بالجنيه، ومفتاح ظهور الوحدة، وقوالب Excel.",
+            desc: "Full property units ledger managing residential, commercial, industrial, and agricultural lands with governorate filters, pricing in EGP, status toggles, and Excel sync.",
+            img: "./assets/img/aqarmousa_dash_units.webp",
+            tag: "Units"
+          },
+          {
+            title: "Property Inspections & Booking Management",
+            title_ar: "إدارة طلبات المعاينة الميدانية وحجوزات العقارات",
+            desc_ar: "متابعة وإدارة طلبات المعاينة الميدانية للوحدات والأراضي، وتحديد مواعيد الزيارات للعملاء المهتمين، وتحديث حالة الموافقة والاعتماد.",
+            desc: "On-site property inspection appointments workflow tracking customer schedules, assigned unit details, and real-time approval status.",
+            img: "./assets/img/aqarmousa_dash_inspections.webp",
+            tag: "Inspections"
+          },
+          {
+            title: "Land & Property Amenities Taxonomy",
+            title_ar: "هيكل وتصنيف مرافق الأراضي والعقارات ثنائي اللغة",
+            desc_ar: "إدارة شجرة المرافق والمزايا الميدانية (شبكة مياه، مياه ري، أمن وحراسة، طريق ممهد، ترخيص بناء، سور محيط) مع الترجمة الإنجليزية والأيقونات المخصصة.",
+            desc: "Bilingual infrastructure facilities taxonomy (Water Network, Agricultural Irrigation, Security, Paved Roads, Building Permits) with custom badge icons.",
+            img: "./assets/img/aqarmousa_dash_amenities.webp",
+            tag: "Amenities"
+          },
+          {
+            title: "Property Classification & Unit Types Taxonomy",
+            title_ar: "هيكل تصنيف أنواع الوحدات وتصنيفات العقارات",
+            desc_ar: "إدارة أنواع العقارات (أراضي سكنية، تجارية، زراعية، صناعية، فلل، شقق) وضبط خصائص العرض والفرز عبر النظام.",
+            desc: "Property taxonomy hierarchy categorizing residential, commercial, agricultural, and industrial property archetypes.",
+            img: "./assets/img/aqarmousa_dash_types.webp",
+            tag: "Unit Types"
+          },
+          {
+            title: "User Accounts & Role-Based Access Control",
+            title_ar: "دليل المستخدمين وإدارة الصلاحيات والأدوار الإدارية",
+            desc_ar: "إدارة حسابات المشرفين والوسطاء والمشترين، وتتبع أرقام الهواتف والمحافظات، مع صلاحيات الوصول وتصدير البيانات.",
+            desc: "User management ledger managing administrators, buyers, phone verifications, governorates, and role assignment matrices with Excel export.",
+            img: "./assets/img/aqarmousa_dash_users.webp",
+            tag: "Users & Roles"
+          }
+        ]
+      }
     },
     {
       id: "proj_pharmacare",
@@ -371,7 +987,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
       category_ar: "رعاية صحية ومخازن",
       featured: false,
       status: "Live",
-      status_ar: "يعمل بالإنتاج",
+      status_ar: "مكتمل ويعمل (Live)",
       year: "2024",
       role: "Backend & Internal Dashboard Developer",
       role_ar: "مطور Backend ولوحات تحكم",
@@ -407,19 +1023,21 @@ When partnering with founders or engineering teams, my goal is always to deliver
         "برمجة واجهة برمجة تطبيقات لمسح الباركود بزمن استجابة أقل من 30ms."
       ],
       architecture: [
-        { layer: "Barcode POS Endpoint", desc: "High-speed cached lookup by EAN-13 barcode" },
-        { layer: "FIFO Inventory Engine", desc: "Selects nearest expiry batch for dispensing" },
-        { layer: "Stock Alert Cron", desc: "Daily evaluation of expiration windows (30/60/90 days)" }
+        { layer: "Barcode POS Endpoint", layer_ar: "واجهة مسح الباركود ونقاط البيع", desc: "High-speed cached lookup by EAN-13 barcode", desc_ar: "استعلام فائق السرعة عبر كاش الذاكرة باستخدام باركود EAN-13" },
+        { layer: "FIFO Inventory Engine", layer_ar: "محرك مخزون الوارد أولاً يُصرف أولاً (FIFO)", desc: "Selects nearest expiry batch for dispensing", desc_ar: "اختيار وصرف التشغيلة الأقرب لتاريخ انتهاء الصلاحية تلقائياً" },
+        { layer: "Stock Alert Cron", layer_ar: "مجدول مهام تنبيهات المخزون (Cron)", desc: "Daily evaluation of expiration windows (30/60/90 days)", desc_ar: "فحص يومي مؤتمت لنوافذ انتهاء الصلاحية (خلال 30 و 60 و 90 يوماً)" }
       ],
       databaseSchema: [
-        { table: "medicines", relations: "hasMany: batches" },
-        { table: "batches", relations: "batch_number, expiry_date, quantity, cost_price" },
-        { table: "dispensations", relations: "belongsTo: batch, prescription" }
+        { table: "medicines", relations: "hasMany: batches", relations_ar: "متعدد (hasMany): التشغيلات (batches)" },
+        { table: "batches", relations: "batch_number, expiry_date, quantity, cost_price", relations_ar: "رقم التشغيلة، تاريخ الصلاحية، الكمية، سعر التكلفة" },
+        { table: "dispensations", relations: "belongsTo: batch, prescription", relations_ar: "ينتمي إلى: التشغيلة، الروشتة الطبية" }
       ],
       challenges: [
         {
           challenge: "Rapid checkout during peak clinic hours required near-zero latency barcode scans.",
-          solution: "Cached active inventory lookups in memory, batch-updating sales in atomic background DB transactions."
+          challenge_ar: "البيع السريع في ساعات الذروة كان يتطلب استجابة فورية لمسح الباركود بزمن يقترب من الصفر.",
+          solution: "Cached active inventory lookups in memory, batch-updating sales in atomic background DB transactions.",
+          solution_ar: "تخزين بيانات الأدوية النشطة في الذاكرة المؤقتة، وتحديث المبيعات كحزم مجمعة ضمن معاملات بنكية ذرية في الخلفية."
         }
       ],
       results: "Virtually eliminated expired stock losses and reduced prescription fulfillment time by 45%.",
@@ -472,7 +1090,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
       location: "Remote",
       description: "Architecting and shipping tailored backend solutions, SaaS platforms, and custom REST APIs for regional founders, agencies, and businesses.",
       responsibilities: [
-        "Built complete backend systems for multi-vendor commerce (Bynona) and logistics dispatching (Wasly).",
+        "Built complete backend systems for dual-pricing retail & wholesale commerce (Bynona) and on-demand logistics dispatching (Wasly).",
         "Engineered secure payment webhook pipelines handling multi-currency transactions with zero duplicate ledger records.",
         "Refactored legacy database schemas, introducing compound indexes and eager-loading optimizations to eliminate N+1 latency bottlenecks.",
         "Designed comprehensive Postman and OpenAPI documentation facilitating seamless integration with mobile and frontend engineering teams."
@@ -606,104 +1224,192 @@ When partnering with founders or engineering teams, my goal is always to deliver
   codeSnippets: [
     {
       id: "code_1",
-      title: "Pessimistic Locking & Inventory Reservation",
-      subtitle: "Preventing race-condition overselling during concurrent checkouts",
+      title: "Dual-Pricing & Transactional Checkout Pipeline",
+      subtitle: "Dynamic Retail/Wholesale resolution, live stock checks & atomic inventory decrement",
       language: "php",
-      project: "Bynona E-Commerce",
-      description: "Uses DB transaction locking (`lockForUpdate`) combined with atomic inventory verification to guarantee that two simultaneous shoppers cannot purchase the final stock unit.",
+      project: "Bynona E-Commerce Platform",
+      description: "Inspects the `Price-Mode` header to dynamically pivot pricing, wholesale minimum order quantities (MOQ), and dual discounts, executing checkout in an atomic database transaction (`DB::beginTransaction`) with instant variant stock decrements.",
       code: `<?php
 
-namespace App\\Services;
+namespace App\\Http\\Controllers\\API;
 
-use App\\Models\\ProductVariant;
-use App\\Exceptions\\InsufficientStockException;
-use Illuminate\\Support\\Facades\\DB;
+use App\\Http\\Controllers\\Controller;
+use App\\Http\\Requests\\API\\CheckoutRequest;
+use App\\Models\\{Cart, Order, Setting, Property};
+use Illuminate\\Support\\Facades\\{Auth, DB};
+use Illuminate\\Support\\Str;
 
-class InventoryReservationService
+class CheckoutController extends Controller
 {
     /**
-     * Atomically reserves requested quantities with pessimistic database locking.
-     *
-     * @throws InsufficientStockException
+     * Executes atomic multi-item checkout with dynamic dual pricing (Retail / Wholesale)
+     * and immediate inventory decrement across variant properties.
      */
-    public function reserve(array $items): void
+    public function checkout(CheckoutRequest $request)
     {
-        DB::transaction(function () use ($items) {
-            foreach ($items as $item) {
-                // Lock the variant record for update to prevent concurrent read race
-                $variant = ProductVariant::where('id', $item['variant_id'])
-                    ->lockForUpdate()
-                    ->firstOrFail();
+        $data = $request->validated();
+        $user = Auth::user();
+        $priceMode = app('price_mode'); // 'retail' or 'wholesale'
 
-                if ($variant->stock_quantity < $item['quantity']) {
-                    throw new InsufficientStockException(
-                        "Variant [{$variant->sku}] has only {$variant->stock_quantity} units available."
-                    );
-                }
+        // Retrieve active cart with variants, attributes and active offers
+        $cart = Cart::with(['items' => function ($q) use ($priceMode) {
+            $q->withTrashed()
+              ->where('sale_type', $priceMode)
+              ->with(['offers', 'product', 'variantAttributes']);
+        }])->where('user_id', $user->id)->where('status', 'active')->first();
 
-                // Decrement stock and assign to pending reservation
-                $variant->decrement('stock_quantity', $item['quantity']);
-                $variant->increment('reserved_quantity', $item['quantity']);
+        if (!$cart || $cart->items->isEmpty()) {
+            return response()->json(['message' => 'Cart is empty'], 400);
+        }
+
+        $subtotal = 0;
+        $productsToAdd = [];
+        $now = now();
+
+        foreach ($cart->items as $item) {
+            $originalPrice = ($priceMode === 'wholesale') 
+                ? ($item->wholesale_price ?? $item->price) 
+                : ($item->retail_price ?? $item->price);
+
+            // Channel-specific discount calculation (retail vs wholesale offer)
+            $discountedPrice = $originalPrice;
+            $offer = $item->offers->where('start', '<=', $now)->where('end', '>=', $now)->first();
+            if ($offer) {
+                $discount = ($priceMode === 'wholesale' && $offer->discount_wholesale > 0)
+                    ? $offer->discount_wholesale
+                    : ($offer->discount_retail ?? 0);
+                $discountedPrice = round($originalPrice * (1 - $discount / 100), 2);
             }
-        });
+
+            // Real-time stock verification
+            if ($item->stock < $item->pivot->quantity) {
+                return response()->json(['message' => "Insufficient stock for {$item->product->name}"], 422);
+            }
+
+            // Minimum order quantity enforcement for wholesale buyers
+            if ($priceMode === 'wholesale' && $item->pivot->quantity < $item->min_quantity) {
+                return response()->json(['message' => "Minimum quantity for wholesale is {$item->min_quantity}"], 422);
+            }
+
+            $productsToAdd[] = [
+                'id'       => $item->id,
+                'quantity' => $item->pivot->quantity,
+                'price'    => $discountedPrice,
+            ];
+            $subtotal += $discountedPrice * $item->pivot->quantity;
+        }
+
+        // Atomic transaction to guarantee inventory and financial integrity
+        DB::beginTransaction();
+        try {
+            $order = Order::create([
+                'order_number'   => 'ORD-' . now()->format('YmdHis') . '-' . strtoupper(Str::random(4)),
+                'user_id'        => $user->id,
+                'user_name'      => $data['user_name'],
+                'user_phone'     => $data['user_phone'],
+                'user_address'   => $data['user_address'],
+                'subtotal'       => $subtotal,
+                'total_price'    => $subtotal,
+                'status'         => 'pending',
+                'governorate_id' => $data['governorate_id'],
+            ]);
+
+            foreach ($productsToAdd as $product) {
+                $order->items()->syncWithoutDetaching([
+                    $product['id'] => [
+                        'quantity'  => $product['quantity'],
+                        'price'     => $product['price'],
+                        'sale_type' => $priceMode,
+                    ]
+                ]);
+
+                // Atomically decrement live variant stock
+                Property::withTrashed()->find($product['id'])->decrement('stock', $product['quantity']);
+            }
+
+            // Prune cart items for active channel
+            DB::table('cart_items')
+                ->where('cart_id', $cart->id)
+                ->where('sale_type', $priceMode)
+                ->delete();
+
+            DB::commit();
+            return response()->json(['message' => 'Order created successfully', 'order' => $order]);
+        } catch (\\Throwable $e) {
+            DB::rollBack();
+            throw $e;
+        }
     }
 }`
     },
     {
       id: "code_2",
-      title: "Deterministic Order State Machine",
-      subtitle: "Strict lifecycle transitions with transition audit logging",
+      title: "Bidirectional Appointment Reschedule Negotiation Engine",
+      subtitle: "Stateful reschedule proposal workflow between customer and provider",
       language: "php",
-      project: "Wasly Logistics",
-      description: "Guarantees that delivery orders cannot bypass valid sequential states (e.g. transitioning directly from Pending to Delivered without assigned driver).",
+      project: "Wasly Platform",
+      description: "Enables customers or technicians to suggest alternate time slots without cancelling appointments. Validates role permissions, transitions through negotiation states (`reschedule_by_customer` / `reschedule_by_provider`), and atomically commits approved dates in DB transactions.",
       code: `<?php
 
-namespace App\\StateMachines;
+namespace App\\Services\\API\\General;
 
-use App\\Models\\Order;
-use App\\Enums\\OrderStatus;
-use InvalidArgumentException;
+use App\\Models\\{Booking, AvailableTime};
+use App\\Http\\Resources\\API\\GENERAL\\BookingResource;
+use Illuminate\\Support\\Facades\\DB;
 
-class OrderStateMachine
+class BookingService
 {
-    protected array $allowedTransitions = [
-        OrderStatus::PENDING->value => [
-            OrderStatus::DISPATCHED->value,
-            OrderStatus::CANCELLED->value
-        ],
-        OrderStatus::DISPATCHED->value => [
-            OrderStatus::PICKED_UP->value,
-            OrderStatus::CANCELLED->value
-        ],
-        OrderStatus::PICKED_UP->value => [
-            OrderStatus::IN_TRANSIT->value
-        ],
-        OrderStatus::IN_TRANSIT->value => [
-            OrderStatus::DELIVERED->value,
-            OrderStatus::FAILED->value
-        ]
-    ];
-
-    public function transition(Order $order, OrderStatus $targetStatus, ?string $actorId = null): void
+    /**
+     * Proposes an alternate appointment slot without canceling the booking.
+     * Accessible by both customer and technician with role-based state guards.
+     */
+    public function suggestReschedule(array $data): array
     {
-        $current = $order->status->value;
-        $target = $targetStatus->value;
+        DB::beginTransaction();
+        try {
+            $user = auth()->user();
+            $booking = Booking::with('service.provider')->findOrFail($data['booking_id']);
 
-        if (! in_array($target, $this->allowedTransitions[$current] ?? [], true)) {
-            throw new InvalidArgumentException(
-                "Invalid transition: Cannot move order from [{$current}] to [{$target}]."
-            );
+            $provider = $user->providers()->first();
+            $isProvider = $provider && $provider->id == $booking->provider_id;
+            $isCustomer = $user->id == $booking->user_id;
+
+            if (!$isProvider && !$isCustomer) {
+                return ['status' => false, 'message' => __('messages.unauthorized_action')];
+            }
+
+            // Ensure booking is in a state that permits reschedule negotiations
+            $negotiableStates = ['accepted', 'pending', 'reschedule_by_provider', 'reschedule_by_customer'];
+            if (!in_array($booking->status, $negotiableStates, true)) {
+                return ['status' => false, 'message' => __('messages.cannot_reschedule_in_current_status')];
+            }
+
+            // Create or resolve slot record for proposed time
+            $suggestedTime = AvailableTime::firstOrCreate([
+                'available_day_id' => $data['suggested_day_id'],
+                'service_id'       => $booking->service_id,
+                'time'             => $data['suggested_time'],
+            ]);
+
+            // Transition booking to proposal state
+            $booking->update([
+                'suggested_date_id' => $data['suggested_date_id'] ?? null,
+                'suggested_day_id'  => $data['suggested_day_id'],
+                'suggested_time_id' => $suggestedTime->id,
+                'reschedule_note'   => $data['reschedule_note'] ?? null,
+                'status'            => $isProvider ? 'reschedule_by_provider' : 'reschedule_by_customer',
+            ]);
+
+            DB::commit();
+            return [
+                'status'  => true,
+                'message' => __('messages.reschedule_suggested_successfully'),
+                'data'    => BookingResource::make($booking->fresh())
+            ];
+        } catch (\\Throwable $e) {
+            DB::rollBack();
+            return ['status' => false, 'message' => $e->getMessage()];
         }
-
-        $order->status = $targetStatus;
-        $order->save();
-
-        $order->statusLogs()->create([
-            'from_status' => $current,
-            'to_status' => $target,
-            'actor_id' => $actorId,
-            'transitioned_at' => now(),
-        ]);
     }
 }`
     },
@@ -888,7 +1594,7 @@ class CouponService
   }
 };
 
-const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v14';
+const DB_STORAGE_KEY = 'eldeisty_portfolio_db_v17';
 const DB_SESSION_KEY = 'eldeisty_dashboard_auth';
 
 class PortfolioDB {
@@ -910,6 +1616,9 @@ class PortfolioDB {
         // Ensure all top-level keys exist by shallow merging with defaults
         const merged = Object.assign({}, DEFAULT_PORTFOLIO_DATA, parsed);
         this.migrateArabicFields(merged);
+        try {
+          localStorage.setItem(DB_STORAGE_KEY, JSON.stringify(merged));
+        } catch (e) {}
         return merged;
       }
     } catch (e) {
@@ -957,7 +1666,7 @@ class PortfolioDB {
       def.projects.forEach(defProj => {
         let p = data.projects.find(x => x.id === defProj.id || x.slug === defProj.slug);
         if (p) {
-          ['title_ar', 'subtitle_ar', 'category_ar', 'shortDescription_ar', 'description_ar', 'role_ar', 'problem_ar', 'solution_ar', 'results_ar', 'status_ar', 'privateNotice_ar'].forEach(f => {
+          ['title_ar', 'subtitle_ar', 'category_ar', 'shortDescription_ar', 'description_ar', 'role_ar', 'problem_ar', 'solution_ar', 'results_ar', 'status_ar', 'privateNotice_ar', 'status', 'year'].forEach(f => {
             if (defProj[f]) {
               p[f] = defProj[f];
             }
@@ -965,10 +1674,25 @@ class PortfolioDB {
           if (Array.isArray(defProj.responsibilities_ar)) {
             p.responsibilities_ar = defProj.responsibilities_ar;
           }
+          if (Array.isArray(defProj.architecture)) {
+            p.architecture = defProj.architecture;
+          }
+          if (Array.isArray(defProj.databaseSchema)) {
+            p.databaseSchema = defProj.databaseSchema;
+          }
+          if (Array.isArray(defProj.challenges)) {
+            p.challenges = defProj.challenges;
+          }
           if (defProj.coverImage) p.coverImage = defProj.coverImage;
           if (defProj.thumbnail) p.thumbnail = defProj.thumbnail;
           if (defProj.featured !== undefined) p.featured = defProj.featured;
           if (defProj.liveUrl) p.liveUrl = defProj.liveUrl;
+          if (defProj.adminUrl) p.adminUrl = defProj.adminUrl;
+          if (defProj.technologies) p.technologies = JSON.parse(JSON.stringify(defProj.technologies));
+          if (defProj.dashboard) p.dashboard = JSON.parse(JSON.stringify(defProj.dashboard));
+          if (defProj.screenshots) p.screenshots = JSON.parse(JSON.stringify(defProj.screenshots));
+          if (defProj.examplesNotice_ar) p.examplesNotice_ar = defProj.examplesNotice_ar;
+          if (defProj.examplesNotice) p.examplesNotice = defProj.examplesNotice;
           p.githubUrl = defProj.githubUrl || '';
         } else {
           data.projects.push(JSON.parse(JSON.stringify(defProj)));

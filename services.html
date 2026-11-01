@@ -189,6 +189,11 @@
         </div>
       `;
       }).join('');
+
+      // Trigger slow-motion scroll reveal for services cards
+      if (window.App && typeof window.App.initScrollReveal === 'function') {
+        window.App.initScrollReveal();
+      }
     }
   </script>
 </body>
