@@ -450,6 +450,8 @@ const App = {
       return;
     }
 
+    const isMobile = window.innerWidth <= 768;
+
     // Auto-setup a single MutationObserver so all dynamically loaded items are captured immediately
     if (!this._hasMutationObserver && 'MutationObserver' in window) {
       this._hasMutationObserver = true;
@@ -458,56 +460,107 @@ const App = {
         clearTimeout(mutDebounce);
         mutDebounce = setTimeout(() => {
           this.initScrollReveal();
-        }, 60);
+        }, 50);
       });
       mutObserver.observe(document.body, { childList: true, subtree: true });
     }
 
     const targetSelectors = [
+      // Headers & Section Titles across all pages
       '.section-header',
+      '.case-section-title',
+      '.proof-banner',
+
+      // Home & Work Cards
       '.proof-card',
       '.project-card',
       '.tech-group-card',
       '.code-browser-card',
+      '.terminal-card',
+      '.code-info-panel',
+      '.code-viewer-panel',
+      '.philosophy-step-card',
+      '.work-filter-bar',
+
+      // Services & Skills Cards
       '.service-card',
+      '.skills-filter-row',
+      '.skill-card-detailed',
+
+      // Experience & Timeline Cards
       '.experience-card',
       '.timeline-card',
-      '.dashboard-feature-card',
-      '.dashboard-gallery-item',
-      '.card',
+      '.timeline-item',
+
+      // About & Contact Boxes
+      '.about-card',
+      '.contact-card-box',
+      '.contact-info-box',
+      '.contact-form-box',
+      '.contact-card',
+
+      // Case Study & Project Details Sections & Dashboard
+      '.case-article > div',
+      '.case-sidebar-card',
+      '.case-specs-card',
       '.case-metric-box',
       '.arch-step-node',
       '.db-entity-card',
-      '.contact-card'
+      '.dashboard-mockup-frame',
+      '.dashboard-gallery-item',
+      '.dashboard-feature-card',
+      '.case-next-card',
+      '.case-cta-banner',
+
+      // Generic Cards & Elements
+      '.card',
+      '[data-animate="reveal"]'
     ];
 
     // Find and tag targets that haven't been tagged or revealed yet
     const elements = document.querySelectorAll(targetSelectors.join(', '));
+    const winHeight = window.innerHeight;
+
     elements.forEach(el => {
-      // Do not apply scroll reveal to items inside the hero header (they have page reveal)
-      if (el.closest('.hero-section') || el.closest('.case-study-hero')) {
+      // Do not apply scroll reveal to top-level hero sections directly (they have page entrance)
+      if (el.closest('.hero-section') || el.closest('.case-header-section') || el.closest('.case-study-hero') || el.closest('.site-header')) {
         return;
       }
 
       if (!el.classList.contains('reveal-on-scroll')) {
+        // Check if element is already within the initial viewport (above the fold)
+        const rect = el.getBoundingClientRect();
+        if (rect.top < winHeight && rect.bottom > 0) {
+          // Element is already visible above the fold on page enter:
+          // Mark revealed directly so it smoothly animates with the page entrance without snapping
+          el.classList.add('reveal-on-scroll', 'revealed');
+          return;
+        }
+
         el.classList.add('reveal-on-scroll');
 
-        // Calculate a per-container stagger delay so items in the same grid/parent glide in sequentially
-        const parent = el.parentElement;
-        if (parent) {
-          const siblings = Array.from(parent.children).filter(child => 
-            child.matches && child.matches(targetSelectors.join(', '))
-          );
-          const indexInParent = siblings.indexOf(el);
-          if (indexInParent > 0) {
-            const delay = (Math.min(indexInParent, 4) * 0.14).toFixed(2);
-            el.style.transitionDelay = `${delay}s`;
+        // On Desktop only: calculate subtle, calm stagger delay for siblings in the same grid/row
+        if (!isMobile) {
+          const parent = el.parentElement;
+          if (parent) {
+            const siblings = Array.from(parent.children).filter(child => 
+              child.matches && child.matches(targetSelectors.join(', '))
+            );
+            const indexInParent = siblings.indexOf(el);
+            if (indexInParent > 0) {
+              const delay = (Math.min(indexInParent, 3) * 0.07).toFixed(2);
+              el.style.transitionDelay = `${delay}s`;
+            }
           }
         }
       }
     });
 
     if (!this._scrollRevealObserver) {
+      // Calm, smooth triggering: on mobile starts 40px before viewport bottom; on desktop at -20px
+      const rootMarginVal = isMobile ? '0px 0px 40px 0px' : '0px 0px -20px 0px';
+      const thresholdVal = 0.02;
+
       this._scrollRevealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -516,14 +569,24 @@ const App = {
           }
         });
       }, {
-        rootMargin: '0px 0px -40px 0px',
-        threshold: 0.05
+        rootMargin: rootMarginVal,
+        threshold: thresholdVal
       });
     }
 
     document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
       this._scrollRevealObserver.observe(el);
     });
+
+    // Safety timeout: Ensure all elements are revealed eventually (prevent any stuck state)
+    if (!this._safetyTimeoutSet) {
+      this._safetyTimeoutSet = true;
+      setTimeout(() => {
+        document.querySelectorAll('.reveal-on-scroll:not(.revealed)').forEach(el => {
+          el.classList.add('revealed');
+        });
+      }, 2000);
+    }
   },
 
   initBackToTop() {

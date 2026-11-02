@@ -28,24 +28,87 @@ class PortfolioAPI {
     await this.simulateDelay(80);
     let projects = window.PortfolioDB.get('projects') || [];
     
+    // Tier 1: Engineering Role
+    if (filter.role && filter.role !== 'All') {
+      const r = filter.role.toLowerCase();
+      projects = projects.filter(p => {
+        if (Array.isArray(p.roleTypes)) {
+          return p.roleTypes.map(x => x.toLowerCase()).includes(r);
+        }
+        if (r === 'backend') return p.role && p.role.toLowerCase().includes('backend');
+        if (r === 'fullstack') return (p.role && p.role.toLowerCase().includes('full-stack')) || p.technologies.some(t => t.toLowerCase().includes('blade'));
+        if (r === 'engine') return (p.technologies && p.technologies.some(t => t.toLowerCase().includes('engine') || t.toLowerCase().includes('spatial'))) || (p.subtitle && p.subtitle.toLowerCase().includes('engine'));
+        return true;
+      });
+    }
+
+    // Tier 2: Domain / Industry
+    if (filter.domain && filter.domain !== 'All') {
+      const d = filter.domain.toLowerCase();
+      projects = projects.filter(p => {
+        if (Array.isArray(p.domainTypes)) {
+          return p.domainTypes.map(x => x.toLowerCase()).includes(d);
+        }
+        const cat = (p.category || '').toLowerCase();
+        const catAr = p.category_ar || '';
+        if (d === 'ecommerce') return cat.includes('commerce') || catAr.includes('تجارة');
+        if (d === 'logistics') return cat.includes('delivery') || cat.includes('logistics') || catAr.includes('توصيل') || catAr.includes('خدمات');
+        if (d === 'saas') return cat.includes('saas') || (p.title && p.title.toLowerCase().includes('saas')) || (p.description && p.description.toLowerCase().includes('saas'));
+        if (d === 'realestate') return cat.includes('estate') || catAr.includes('عقار');
+        if (d === 'health') return cat.includes('health') || catAr.includes('صحية') || catAr.includes('بشرة') || (p.description && p.description.toLowerCase().includes('skincare'));
+        return true;
+      });
+    }
+
+    // Tier 3: Dashboard Architecture
+    if (filter.dashboard && filter.dashboard !== 'All') {
+      const b = filter.dashboard.toLowerCase();
+      projects = projects.filter(p => {
+        if (Array.isArray(p.dashboardTypes)) {
+          return p.dashboardTypes.map(x => x.toLowerCase()).includes(b);
+        }
+        const techs = (p.technologies || []).map(t => t.toLowerCase());
+        if (b === 'custom-blade') return techs.some(t => t.includes('blade') || t.includes('custom'));
+        if (b === 'filament') return techs.some(t => t.includes('filament'));
+        if (b === 'multi-tenant') return techs.some(t => t.includes('multi-tenant') || t.includes('rbac') || t.includes('shield')) || (p.description && p.description.toLowerCase().includes('multi-branch'));
+        if (b === 'dispatch') return techs.some(t => t.includes('spatial') || t.includes('haversine')) || (p.title && p.title.toLowerCase().includes('dispatch')) || (p.subtitle && p.subtitle.toLowerCase().includes('dispatch'));
+        return true;
+      });
+    }
+
+    // Legacy Category filter compatibility (if passed via URL query)
     if (filter.category && filter.category !== 'All') {
       projects = projects.filter(p => p.category.toLowerCase() === filter.category.toLowerCase());
     }
-    if (filter.status) {
+
+    // Status filter
+    if (filter.status && filter.status !== 'All') {
       projects = projects.filter(p => p.status.toLowerCase() === filter.status.toLowerCase());
     }
+
+    // Technology filter
     if (filter.technology) {
       projects = projects.filter(p => p.technologies.some(t => t.toLowerCase().includes(filter.technology.toLowerCase())));
     }
+
+    // Featured only
     if (filter.featuredOnly) {
       projects = projects.filter(p => p.featured === true);
     }
+
+    // Full-Text Search Query
     if (filter.query) {
-      const q = filter.query.toLowerCase();
+      const q = filter.query.toLowerCase().trim();
       projects = projects.filter(p => 
-        p.title.toLowerCase().includes(q) ||
-        p.description.toLowerCase().includes(q) ||
-        p.technologies.some(t => t.toLowerCase().includes(q))
+        (p.title && p.title.toLowerCase().includes(q)) ||
+        (p.title_ar && p.title_ar.includes(q)) ||
+        (p.description && p.description.toLowerCase().includes(q)) ||
+        (p.description_ar && p.description_ar.includes(q)) ||
+        (p.technologies && p.technologies.some(t => t.toLowerCase().includes(q))) ||
+        (p.category && p.category.toLowerCase().includes(q)) ||
+        (p.category_ar && p.category_ar.includes(q)) ||
+        (p.role && p.role.toLowerCase().includes(q)) ||
+        (p.role_ar && p.role_ar.includes(q))
       );
     }
     return projects;

@@ -1788,6 +1788,15 @@
             tocBackend.forEach(t => t.style.display = '');
             tocDashboard.forEach(t => t.style.display = '');
           }
+
+          // Immediately reveal elements inside newly visible section
+          const targetVisible = view === 'backend' ? backendSecs : (view === 'dashboard' ? dashboardSecs : [...backendSecs, ...dashboardSecs]);
+          targetVisible.forEach(sec => {
+            sec.querySelectorAll('.reveal-on-scroll').forEach(el => el.classList.add('revealed'));
+          });
+          if (window.App && typeof window.App.initScrollReveal === 'function') {
+            window.App.initScrollReveal();
+          }
           
           // Smooth scroll to top of content if scrolled past tab bar
           const mainGrid = container.querySelector('.case-main-grid');

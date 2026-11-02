@@ -83,6 +83,9 @@ When partnering with founders or engineering teams, my goal is always to deliver
       year: "2024 - 2025",
       role: "Backend Architect & Core Developer",
       role_ar: "مهندس برمجيات Backend ومصمم معمارية النظام",
+      roleTypes: ["backend", "fullstack", "engine"],
+      domainTypes: ["ecommerce"],
+      dashboardTypes: ["custom-blade"],
       coverImage: "./assets/img/bynona_showcase.webp",
       thumbnail: "./assets/img/bynona_showcase.webp",
       description: "A full-scale commercial e-commerce backend built with Laravel, featuring dynamic dual pricing (Retail vs. Wholesale) via custom middleware, a completely custom-coded Blade administrative dashboard with bespoke KPI analytics, an extensible EAV-inspired product attributes and variants engine, recursive hierarchical category trees with cycle protection, transactional checkout pipelines with automated stock decrements, time-sensitive dual discount offers, Firebase Cloud Messaging (FCM HTTP v1) alerts, and bulk Excel/ZIP catalog import tooling.",
@@ -332,6 +335,9 @@ When partnering with founders or engineering teams, my goal is always to deliver
       year: "2024 - 2025",
       role: "Lead Backend Developer & System Architect",
       role_ar: "مهندس برمجيات Backend ومصمم معمارية النظام",
+      roleTypes: ["backend", "engine"],
+      domainTypes: ["logistics", "saas"],
+      dashboardTypes: ["filament", "dispatch"],
       coverImage: "./assets/img/wasly_showcase.webp",
       thumbnail: "./assets/img/wasly_showcase.webp",
       description: "An enterprise on-demand super-app backend combining scheduled home services booking (plumbing, electrical, cleaning, maintenance) with a multi-vendor delivery marketplace. Features an interactive Filament v5 Admin Panel with Filament Shield (RBAC) and Spatie Activitylog audit trails, a bidirectional appointment reschedule negotiation engine, shopping cart and checkout pipelines with dynamic coupon vouchers, and real-time Firebase Cloud Messaging (FCM) notifications.",
@@ -575,6 +581,9 @@ When partnering with founders or engineering teams, my goal is always to deliver
       year: "2026",
       role: "Full-Stack Backend Architect",
       role_ar: "مطور Backend ومصمم النظام (System Architect)",
+      roleTypes: ["backend", "engine"],
+      domainTypes: ["health", "ecommerce"],
+      dashboardTypes: ["filament"],
       coverImage: "./assets/img/kcode_showcase.webp",
       thumbnail: "./assets/img/kcode_showcase.webp",
       description: "A specialized Korean beauty and derma skincare e-commerce platform built for the GCC market (Oman), featuring an algorithmic 4-step skin assessment questionnaire, multi-currency checkout, and high-performance product catalog caching.",
@@ -784,6 +793,9 @@ When partnering with founders or engineering teams, my goal is always to deliver
       year: "2024",
       role: "Backend Developer",
       role_ar: "مطور Backend",
+      roleTypes: ["fullstack", "backend"],
+      domainTypes: ["realestate"],
+      dashboardTypes: ["filament"],
       coverImage: "./assets/img/aqarmousa_showcase.webp",
       thumbnail: "./assets/img/aqarmousa_showcase.webp",
       description: "A property portal backend supporting multi-agent listings, compound query filtering (budget, location, amenities, property type), and automated lead distribution via WhatsApp Business API.",
@@ -975,73 +987,6 @@ When partnering with founders or engineering teams, my goal is always to deliver
           }
         ]
       }
-    },
-    {
-      id: "proj_pharmacare",
-      slug: "pharmacare-pro",
-      title: "PharmaCare Pro",
-      title_ar: "نظام فارما كير لإدارة الصيدليات",
-      subtitle: "Pharmacy Inventory & Batch Expiry Tracking System",
-      subtitle_ar: "إدارة مخزون الأدوية وتتبع تواريخ الصلاحية والتشغيلات",
-      category: "Healthcare",
-      category_ar: "رعاية صحية ومخازن",
-      featured: false,
-      status: "Live",
-      status_ar: "مكتمل ويعمل (Live)",
-      year: "2024",
-      role: "Backend & Internal Dashboard Developer",
-      role_ar: "مطور Backend ولوحات تحكم",
-      coverImage: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80",
-      thumbnail: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80",
-      description: "A pharmacy management backend handling batch number tracking, expiry date alerts, barcode scanning integration, and automated low-stock reorder triggers.",
-      description_ar: "نظام خلفي لإدارة سلاسل الصيدليات يتعامل مع تتبع أرقام التشغيلات، وتنبيهات انتهاء الصلاحية المبكرة، وتكامل مسح الباركود، وإعادة الطلب التلقائي للأدوية التي قاربت على النفاد.",
-      shortDescription: "Healthcare inventory system tracking batch numbers, expiration alerts, and barcode sales.",
-      shortDescription_ar: "نظام مخزون صيدلاني لتتبع أرقام التشغيلات (Batches)، وتنبيهات انتهاء الصلاحية، والمبيعات بالباركود.",
-      technologies: ["Laravel", "PHP", "MySQL", "REST APIs", "Filament-inspired UI", "Barcode Integration"],
-      liveUrl: "https://pharmacare-demo.eldeisty.dev",
-      githubUrl: "",
-      isPrivate: false,
-      metrics: {
-        views: 620,
-        caseStudyOpens: 295,
-        liveDemoClicks: 140,
-        githubClicks: 85,
-        inquiries: 9
-      },
-      problem: "Pharmacies losing revenue from expired medication batches and dispensing errors due to manual stock entry.",
-      problem_ar: "خسارة الصيدليات لإيرادات كبيرة بسبب انتهاء صلاحية الأدوية على الأرفف وتكرار أخطاء الصرف اليدوي للأدوية المشابهة.",
-      solution: "Engineered batch-level stock allocation (FIFO: First-In-First-Out) where POS checkouts automatically deduct from the earliest expiring batch.",
-      solution_ar: "هندسة تخصيص المخزون وفق سياسة الوارد أولاً يُصرف أولاً (FIFO) بحيث يتم تلقائياً خصم المبيعات من التشغيلة الأقرب لانتهاء الصلاحية، مع واجهة فحص باركود فائقة السرعة.",
-      responsibilities: [
-        "Designed batch tracking schema linking barcodes to specific supplier shipments and expiration dates.",
-        "Built low-stock threshold watcher dispatching automated reorder drafts to pharmacy managers.",
-        "Implemented high-speed barcode lookup API averaging under 30ms response time."
-      ],
-      responsibilities_ar: [
-        "تصميم هيكل بيانات لتتبع التشغيلات وربط الباركود بشحنات الموردين وتواريخ الصلاحية.",
-        "بناء مراقب تلقائي للحد الأدنى من المخزون يرسل مسودات إعادة الطلب لمديري الصيدليات.",
-        "برمجة واجهة برمجة تطبيقات لمسح الباركود بزمن استجابة أقل من 30ms."
-      ],
-      architecture: [
-        { layer: "Barcode POS Endpoint", layer_ar: "واجهة مسح الباركود ونقاط البيع", desc: "High-speed cached lookup by EAN-13 barcode", desc_ar: "استعلام فائق السرعة عبر كاش الذاكرة باستخدام باركود EAN-13" },
-        { layer: "FIFO Inventory Engine", layer_ar: "محرك مخزون الوارد أولاً يُصرف أولاً (FIFO)", desc: "Selects nearest expiry batch for dispensing", desc_ar: "اختيار وصرف التشغيلة الأقرب لتاريخ انتهاء الصلاحية تلقائياً" },
-        { layer: "Stock Alert Cron", layer_ar: "مجدول مهام تنبيهات المخزون (Cron)", desc: "Daily evaluation of expiration windows (30/60/90 days)", desc_ar: "فحص يومي مؤتمت لنوافذ انتهاء الصلاحية (خلال 30 و 60 و 90 يوماً)" }
-      ],
-      databaseSchema: [
-        { table: "medicines", relations: "hasMany: batches", relations_ar: "متعدد (hasMany): التشغيلات (batches)" },
-        { table: "batches", relations: "batch_number, expiry_date, quantity, cost_price", relations_ar: "رقم التشغيلة، تاريخ الصلاحية، الكمية، سعر التكلفة" },
-        { table: "dispensations", relations: "belongsTo: batch, prescription", relations_ar: "ينتمي إلى: التشغيلة، الروشتة الطبية" }
-      ],
-      challenges: [
-        {
-          challenge: "Rapid checkout during peak clinic hours required near-zero latency barcode scans.",
-          challenge_ar: "البيع السريع في ساعات الذروة كان يتطلب استجابة فورية لمسح الباركود بزمن يقترب من الصفر.",
-          solution: "Cached active inventory lookups in memory, batch-updating sales in atomic background DB transactions.",
-          solution_ar: "تخزين بيانات الأدوية النشطة في الذاكرة المؤقتة، وتحديث المبيعات كحزم مجمعة ضمن معاملات بنكية ذرية في الخلفية."
-        }
-      ],
-      results: "Virtually eliminated expired stock losses and reduced prescription fulfillment time by 45%.",
-      results_ar: "القضاء شبه التام على خسائر الأدوية المنتهية الصلاحية وخفض زمن تجهيز وصرف الروشتات بنسبة 45%."
     }
   ],
 
@@ -1096,7 +1041,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
         "Designed comprehensive Postman and OpenAPI documentation facilitating seamless integration with mobile and frontend engineering teams."
       ],
       technologies: ["Laravel", "PHP", "MySQL", "REST APIs", "Redis", "Firebase", "Sanctum"],
-      projects: ["Bynona", "Wasly", "AqarMousa", "PharmaCare Pro"]
+      projects: ["Bynona", "Wasly", "AqarMousa", "KCODE"]
     },
     {
       id: "exp_2",
@@ -1112,7 +1057,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
         "Conducted code reviews emphasizing clean architecture, Form Request validation, and Eloquent model isolation."
       ],
       technologies: ["PHP", "Laravel", "MySQL", "Blade", "Filament", "Git", "Twilio"],
-      projects: ["AqarMousa", "PharmaCare Pro"]
+      projects: ["AqarMousa", "KCODE"]
     }
   ],
 
@@ -1175,7 +1120,7 @@ When partnering with founders or engineering teams, my goal is always to deliver
       ],
       solvedProblems: "Removes reliance on manual spreadsheets, prevents unauthorized data edits, and gives leadership real-time operational clarity.",
       solvedProblems_ar: "الاستغناء عن جداول البيانات اليدوية المعرضة للخطأ، ومنع التعديلات غير المصرح بها، وتوفير رؤية تشغيلية واضحة للإدارة.",
-      relatedProjects: ["PharmaCare Pro", "AqarMousa", "Wasly"]
+      relatedProjects: ["KCODE", "AqarMousa", "Wasly"]
     },
     {
       id: "srv_database",
@@ -1563,8 +1508,7 @@ class CouponService
       { slug: "bynona", name: "Bynona E-Commerce", views: 1420, caseStudyOpens: 730, demoClicks: 345, githubClicks: 210, conversionCount: 24 },
       { slug: "wasly", name: "Wasly Delivery Engine", views: 980, caseStudyOpens: 512, demoClicks: 180, githubClicks: 0, conversionCount: 18 },
       { slug: "kcode", name: "KCODE E-Commerce", views: 860, caseStudyOpens: 440, demoClicks: 210, githubClicks: 145, conversionCount: 12 },
-      { slug: "aqarmousa", name: "AqarMousa Real Estate", views: 890, caseStudyOpens: 420, demoClicks: 175, githubClicks: 0, conversionCount: 16 },
-      { slug: "pharmacare-pro", name: "PharmaCare Pro", views: 620, caseStudyOpens: 295, demoClicks: 140, githubClicks: 85, conversionCount: 9 }
+      { slug: "aqarmousa", name: "AqarMousa Real Estate", views: 890, caseStudyOpens: 420, demoClicks: 175, githubClicks: 0, conversionCount: 16 }
     ]
   },
 
@@ -1693,12 +1637,18 @@ class PortfolioDB {
           if (defProj.screenshots) p.screenshots = JSON.parse(JSON.stringify(defProj.screenshots));
           if (defProj.examplesNotice_ar) p.examplesNotice_ar = defProj.examplesNotice_ar;
           if (defProj.examplesNotice) p.examplesNotice = defProj.examplesNotice;
+          if (defProj.roleTypes) p.roleTypes = JSON.parse(JSON.stringify(defProj.roleTypes));
+          if (defProj.domainTypes) p.domainTypes = JSON.parse(JSON.stringify(defProj.domainTypes));
+          if (defProj.dashboardTypes) p.dashboardTypes = JSON.parse(JSON.stringify(defProj.dashboardTypes));
           p.githubUrl = defProj.githubUrl || '';
         } else {
           data.projects.push(JSON.parse(JSON.stringify(defProj)));
         }
       });
-      data.projects = data.projects.filter(x => x.id !== 'proj_mizan' && x.slug !== 'mizan-pos');
+      data.projects = data.projects.filter(x => x.id !== 'proj_mizan' && x.slug !== 'mizan-pos' && x.id !== 'proj_pharmacare' && x.slug !== 'pharmacare-pro');
+      if (data.analytics && Array.isArray(data.analytics.projectInterest)) {
+        data.analytics.projectInterest = data.analytics.projectInterest.filter(x => x.slug !== 'pharmacare-pro');
+      }
     }
 
     // Technologies sync

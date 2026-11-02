@@ -2283,34 +2283,25 @@ body.lang-transition-in .mobile-drawer {
 }
 
 /* ==========================================================================
-   Interactive Motion & Cinematic Animation Engine
+   Interactive Motion & Cinematic Animation Engine (Slow-Motion, Silky Smooth)
    ========================================================================== */
 
-/* 1. Cinematic Slow-Motion Page Entrance */
-@keyframes pageRevealCinematic {
+/* 1. Calm, Slow-Motion Page Entrance */
+@keyframes pageEntranceSmooth {
   0% {
     opacity: 0;
-    transform: translateY(22px) scale(0.994);
-    filter: blur(4px);
-  }
-  65% {
-    filter: blur(0px);
+    transform: translate3d(0, 8px, 0);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
+    transform: translate3d(0, 0, 0);
   }
 }
 
-/* Apply slow-motion smooth reveal to initial page entrance */
 main,
 .page-main-content,
-.hero,
-.hero-section,
-.case-study-hero,
 #caseStudyContainer {
-  animation: pageRevealCinematic 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: pageEntranceSmooth 1.05s cubic-bezier(0.25, 1, 0.45, 1) both;
 }
 
 /* 2. Top Glowing Reading Progress Bar */
@@ -2330,47 +2321,107 @@ main,
   width: 0%;
   background: linear-gradient(90deg, #38BDF8 0%, #6366F1 50%, #10B981 100%);
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.8), 0 0 16px rgba(99, 102, 241, 0.6);
-  transition: width 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.12s ease-out;
 }
 
-/* 3. Luxurious Slow-Motion Scroll-Reveal Animation */
+/* 3. Luxurious Slow-Motion Scroll-Reveal Animation (Zero Blur, Hardware Accelerated) */
 .reveal-on-scroll {
-  opacity: 0 !important;
-  transform: translateY(48px) scale(0.985);
-  filter: blur(8px);
-  transition: opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 1.15s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform, filter;
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+  transition: opacity 1.05s cubic-bezier(0.25, 1, 0.45, 1),
+              transform 1.05s cubic-bezier(0.25, 1, 0.45, 1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .reveal-on-scroll.revealed {
   opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
-  filter: blur(0px) !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
-/* 4. Luxury Card Elevation & Ambient Glow on Hover */
-.card,
-.project-card,
-.service-card,
-.experience-card,
-.dashboard-feature-card,
-.dashboard-gallery-item,
-.db-entity-card {
-  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.32s ease !important;
+/* Dedicated Mobile Optimizations: Calm, smooth, slow-motion pacing */
+@media (max-width: 768px) {
+  @keyframes pageEntranceSmooth {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 6px, 0);
+    }
+    100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  main,
+  .page-main-content,
+  #caseStudyContainer {
+    animation-duration: 0.95s;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.45, 1);
+  }
+
+  .reveal-on-scroll {
+    transform: translate3d(0, 7px, 0);
+    transition: opacity 0.95s cubic-bezier(0.25, 1, 0.45, 1),
+                transform 0.95s cubic-bezier(0.25, 1, 0.45, 1);
+  }
+
+  .reveal-on-scroll.revealed {
+    transform: translate3d(0, 0, 0) !important;
+  }
 }
 
-.card:hover,
-.project-card:hover,
-.service-card:hover,
-.experience-card:hover,
-.dashboard-gallery-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 0 22px -4px rgba(56, 189, 248, 0.22) !important;
-  border-color: var(--accent-cyan) !important;
+/* 4. Luxury Card Elevation on Desktop Hover & Ambient Glow */
+@media (hover: hover) and (pointer: fine) {
+  .card,
+  .project-card,
+  .service-card,
+  .experience-card,
+  .timeline-card,
+  .skill-card-detailed,
+  .philosophy-step-card,
+  .dashboard-feature-card,
+  .dashboard-gallery-item,
+  .db-entity-card,
+  .case-sidebar-card,
+  .case-specs-card,
+  .about-card,
+  .contact-card-box,
+  .contact-info-box,
+  .contact-form-box {
+    transition: transform 0.32s cubic-bezier(0.25, 1, 0.5, 1),
+                box-shadow 0.32s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.32s ease !important;
+  }
+
+  .card:hover,
+  .project-card:hover,
+  .service-card:hover,
+  .experience-card:hover,
+  .timeline-card:hover,
+  .skill-card-detailed:hover,
+  .philosophy-step-card:hover,
+  .dashboard-gallery-item:hover,
+  .dashboard-feature-card:hover,
+  .case-sidebar-card:hover,
+  .about-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.4), 0 0 18px -4px rgba(56, 189, 248, 0.16) !important;
+    border-color: var(--accent-cyan) !important;
+  }
+}
+
+/* Mobile Tactile Active Press Feedback */
+@media (hover: none) {
+  .project-card:active,
+  .service-card:active,
+  .skill-card-detailed:active,
+  .dashboard-gallery-item:active,
+  .philosophy-step-card:active,
+  .btn:active {
+    transform: scale(0.985);
+    transition: transform 0.1s ease;
+  }
 }
 
 /* 5. Button Shimmer Sheen */
@@ -2387,7 +2438,7 @@ main,
   left: -120%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
   transform: skewX(-25deg);
   transition: none;
   pointer-events: none;
@@ -2453,6 +2504,15 @@ main,
   border-color: var(--accent-cyan);
   box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
   transform: translateY(-3px);
+}
+
+@media (max-width: 640px) {
+  .back-to-top-btn {
+    bottom: 1.25rem;
+    inset-inline-end: 1.25rem;
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

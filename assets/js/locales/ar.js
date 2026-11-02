@@ -92,15 +92,43 @@ window.LOCALES.ar = {
   projects: {
     badge: "دراسات الحالة والأنظمة البرمجية",
     title: "المشاريع المختارة",
-    desc: "أنظمة برمجية تم بناؤها لعملاء حقيقيين، ومنصات SaaS، ومسارات أعمال ذات أحجام تشغيلية عالية. استكشف المعمارية التقنية، ومخططات قواعد البيانات، والمسؤوليات البرمجية المنفذة.",
-    statusLive: "قيد التشغيل",
-    statusDev: "قيد التطوير",
+    desc: "أنظمة برمجية حقيقية مطبقة في بيئات إنتاج فعلية (Production Systems)، ومنصات SaaS، ومسارات أعمال ذات أحجام تشغيلية عالية. استكشف المعمارية التقنية، ومخططات قواعد البيانات، والتنفيذ البرمجي المعتمد.",
+    statusLive: "قيد التشغيل (Live)",
+    statusDev: "قيد التطوير (In Dev)",
     showing: "عرض {count} مشاريع عملية",
     showingAll: "عرض كافة المشاريع",
     none: "لم يتم العثور على مشاريع مطابقة",
     noneDesc: "جرب تقليل كلمات البحث أو إعادة ضبط خيارات التصفية.",
     reset: "إعادة ضبط التصفية",
-    clickCardHint: "اضغط على أي بطاقة لقراءة دراسة الحالة التقنية كاملة"
+    clickCardHint: "اضغط على أي بطاقة لقراءة دراسة الحالة التقنية كاملة",
+
+    // 3-Tier Multi-Dimensional Filter Console
+    filterTiersTitle: "مصفوفة تصفية واستكشاف الأنظمة البرمجية",
+    tierRoleLabel: "الدور الهندسي",
+    tierDomainLabel: "مجال المشروع",
+    tierDashboardLabel: "لوحة التحكم",
+
+    roleAll: "كافة الأدوار",
+    roleBackend: "باك إند وواجهات برمجية (Backend & APIs)",
+    roleFullstack: "فل ستاك ومعمارية متكاملة (Full-Stack)",
+    roleEngine: "هندسة محركات وخوارزميات (Engine Architecture)",
+
+    domainAll: "كافة المجالات",
+    domainEcommerce: "تجارة إلكترونية وتوزيع (E-Commerce)",
+    domainLogistics: "لوجستيات وتوصيل فوري (Logistics & Delivery)",
+    domainSaas: "منصات سحابية وإدارة أعمال (SaaS)",
+    domainRealestate: "عقارات ووساطة (Real Estate)",
+    domainHealth: "رعاية صحية واستشارات (HealthTech)",
+
+    dashboardAll: "كافة لوحات التحكم",
+    dashboardCustomBlade: "لوحات مخصصة برمجياً (Custom Blade & Charts)",
+    dashboardFilament: "لوحات Filament V3 المتطورة",
+    dashboardMultiTenant: "إدارة فروع وصلاحيات (Multi-Tenant & RBAC)",
+    dashboardDispatch: "لوحات تشغيلية وخرائط (Dispatch & Operations)",
+
+    toggleMoreFilters: "عرض باقي الفلاتر (المجال ولوحة التحكم)",
+    hideMoreFilters: "إخفاء الفلاتر الإضافية",
+    activeFiltersCount: "({count} مفعل)"
   },
 
   // Experience Page

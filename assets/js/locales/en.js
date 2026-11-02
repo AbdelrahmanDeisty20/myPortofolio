@@ -92,7 +92,7 @@ window.LOCALES.en = {
   projects: {
     badge: "Case Studies & Production Code",
     title: "Selected Projects",
-    desc: "Production systems architected for real clients, SaaS startups, and high-volume business workflows. Explore technical architecture, database schemas, and implementation responsibilities.",
+    desc: "Production-grade systems running in live deployment environments, SaaS platforms, and high-throughput business workflows. Explore technical architectures, database schemas, and engineering execution.",
     statusLive: "Live",
     statusDev: "In Development",
     showing: "Showing {count} production projects",
@@ -100,7 +100,35 @@ window.LOCALES.en = {
     none: "No matching projects found",
     noneDesc: "Try loosening your search terms or clearing active filters.",
     reset: "Reset Filters",
-    clickCardHint: "Click any card to read full technical case study"
+    clickCardHint: "Click any card to read full technical case study",
+
+    // 3-Tier Multi-Dimensional Filter Console
+    filterTiersTitle: "Engineering Systems Exploration Matrix",
+    tierRoleLabel: "Engineering Role",
+    tierDomainLabel: "Project Domain",
+    tierDashboardLabel: "Dashboard Type",
+
+    roleAll: "All Roles",
+    roleBackend: "Backend & REST APIs",
+    roleFullstack: "Full-Stack Architecture",
+    roleEngine: "Engine & Logic Architecture",
+
+    domainAll: "All Domains",
+    domainEcommerce: "E-Commerce & B2B/B2C",
+    domainLogistics: "Logistics & On-Demand Delivery",
+    domainSaas: "SaaS & Enterprise Platforms",
+    domainRealestate: "Real Estate & PropTech",
+    domainHealth: "HealthTech & Diagnostics",
+
+    dashboardAll: "All Dashboards",
+    dashboardCustomBlade: "Custom-Coded Blade & Charts",
+    dashboardFilament: "Advanced Filament V3 Panels",
+    dashboardMultiTenant: "Multi-Tenant & RBAC Systems",
+    dashboardDispatch: "Operational & Dispatch Panels",
+
+    toggleMoreFilters: "Show More Filters (Domain & Dashboard)",
+    hideMoreFilters: "Hide Advanced Filters",
+    activeFiltersCount: "({count} active)"
   },
 
   // Experience Page
