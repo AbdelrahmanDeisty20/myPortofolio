@@ -38,13 +38,12 @@ const MetricChip = ({ metric }) => {
 
 export const Hero = ({ onOpenCommandPalette }) => {
   const { lang, isRTL } = useApp();
-  const [typedCode, setTypedCode] = useState('');
   const [recruiterModalOpen, setRecruiterModalOpen] = useState(false);
   
   const t = portfolioData[lang].hero;
   const metrics = portfolioData[lang].metrics;
 
-  const fullCode = `const engineer = {
+  const typedCode = `const engineer = {
   name: "Abdelrahman Eldeisty",
   handle: "@eldeisty",
   status: "ONLINE • Available for hire",
@@ -53,18 +52,6 @@ export const Hero = ({ onOpenCommandPalette }) => {
   provenProjects: ["K-CODE", "Rawnaq Al-Khaleej", "Aqar Mousa", "AI Interior"],
   executeVision: () => true
 };`;
-
-  useEffect(() => {
-    let index = 0;
-    const interval = setInterval(() => {
-      setTypedCode(fullCode.slice(0, index));
-      index += 2;
-      if (index > fullCode.length) {
-        clearInterval(interval);
-      }
-    }, 18);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section id="hero" className="relative min-h-[85vh] pt-24 sm:pt-28 pb-12 sm:pb-16 flex flex-col justify-center overflow-hidden">
@@ -75,20 +62,27 @@ export const Hero = ({ onOpenCommandPalette }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* Status Ribbon & Recruiter Fast-Track */}
+        {/* Status Ribbon & Recruiter Fast-Track (Optimized for Mobile & Desktop) */}
         <ScrollReveal delay={0.1}>
-          <div className="flex flex-wrap items-center gap-2.5 mb-4 sm:mb-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono tracking-wide">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-              <span className="truncate">{t.statusRibbon}</span>
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-4 sm:mb-6 max-w-full">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono tracking-wide max-w-full">
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="hidden sm:inline truncate">{t.statusRibbon}</span>
+              <span className="inline sm:hidden truncate">{t.statusRibbonMobile || t.statusRibbon}</span>
             </div>
 
             <button
               onClick={() => setRecruiterModalOpen(true)}
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500/15 via-cyan-500/15 to-purple-500/15 hover:from-emerald-500/25 hover:to-cyan-500/25 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wide transition-all shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500/15 via-cyan-500/15 to-purple-500/15 hover:from-emerald-500/25 hover:to-cyan-500/25 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 text-[11px] sm:text-xs font-mono font-bold tracking-wide transition-all shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 cursor-pointer shrink-0"
             >
-              <Zap className="w-3.5 h-3.5 text-amber-400 animate-bounce" />
-              <span>{lang === 'ar' ? 'ملخص التوظيف للشركات • Recruiter HUD' : 'Recruiter Fast-Track • Executive HUD'}</span>
+              <Zap className="w-3.5 h-3.5 text-amber-400 animate-bounce shrink-0" />
+              <span>
+                <span className="hidden sm:inline">{lang === 'ar' ? 'ملخص التوظيف للشركات • Recruiter HUD' : 'Recruiter Fast-Track • Executive HUD'}</span>
+                <span className="inline sm:hidden">{lang === 'ar' ? 'ملخص التوظيف للشركات' : 'Recruiter HUD'}</span>
+              </span>
             </button>
           </div>
         </ScrollReveal>

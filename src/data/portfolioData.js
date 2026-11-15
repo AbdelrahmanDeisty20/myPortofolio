@@ -11,7 +11,8 @@ export const portfolioData = {
       search: "بحث",
     },
     hero: {
-      statusRibbon: "مهندس برمجيات ومطور واجهات متقدم (Full-Stack & Frontend)",
+      statusRibbon: "مهندس برمجيات • Full-Stack & Frontend",
+      statusRibbonMobile: "مهندس برمجيات Full-Stack",
       headingStart: "بناء وتطوير",
       headingGradient: "تطبيقات الويب الحديثة",
       headingEnd: "والأنظمة السحابية المتكاملة",
@@ -334,7 +335,8 @@ export const portfolioData = {
       search: "Search",
     },
     hero: {
-      statusRibbon: "FULL-STACK & FRONTEND SOFTWARE ENGINEER",
+      statusRibbon: "FULL-STACK & FRONTEND ENGINEER",
+      statusRibbonMobile: "FULL-STACK ENGINEER",
       headingStart: "Engineering Robust",
       headingGradient: "Modern Web Apps",
       headingEnd: "& Scalable Digital Systems",
