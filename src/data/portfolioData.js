@@ -26,7 +26,7 @@ export const portfolioData = {
     metrics: [
       { label: "مشاريع وأنظمة منشورة", value: "+18", change: "جاهزة للإنتاج الفعلي" },
       { label: "مساهمات وتطوير", value: "+2,100", change: "GitHub Commits" },
-      { label: "تغطية كاملة للمتصفحات", value: "100%", change: "Responsive & Mobile First" },
+      { label: "تغطية كاملة للمتصفحات", value: "100%", change: "متوافق مع كل الشاشات" },
       { label: "كفاءة وأداء الواجهات", value: "99/100", change: "Core Web Vitals" },
     ],
     projectsPage: {
@@ -349,8 +349,8 @@ export const portfolioData = {
     metrics: [
       { label: "Deployed Systems", value: "+18", change: "Production Ready" },
       { label: "GitHub Commits", value: "+2,100", change: "Active Development" },
-      { label: "Cross-Device Polish", value: "100%", change: "Responsive & Mobile First" },
-      { label: "Core Web Vitals", value: "99/100", change: "Fast Frame Budget" },
+      { label: "Cross-Device Polish", value: "100%", change: "Mobile & Desktop" },
+      { label: "Core Web Vitals", value: "99/100", change: "Fast 60fps Budget" },
     ],
     projectsPage: {
       badge: "PROVEN PRODUCTION PORTFOLIO",

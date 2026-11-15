@@ -6,6 +6,35 @@ import { portfolioData } from '../data/portfolioData';
 import { ScrollReveal } from './ScrollReveal';
 import { RecruiterModal } from './RecruiterModal';
 import { TiltCard } from './TiltCard';
+import { AnimatedCounter } from './AnimatedCounter';
+
+const MetricChip = ({ metric }) => {
+  const [replay, setReplay] = useState(0);
+
+  return (
+    <div
+      onMouseEnter={() => setReplay((r) => r + 1)}
+      className="relative p-3 sm:p-3.5 rounded-2xl glass-panel border border-black/[0.08] dark:border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_20px_-3px_rgba(16,185,129,0.25)] transition-all duration-300 group overflow-hidden cursor-default select-none flex flex-col justify-between"
+    >
+      {/* Top glowing ambient accent */}
+      <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-emerald-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Animated Counter Number */}
+      <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform duration-300 flex items-center justify-start">
+        <AnimatedCounter value={metric.value} replayTrigger={replay} />
+      </div>
+
+      <div className="mt-1 space-y-0.5">
+        <div className="text-xs font-semibold text-slate-800 dark:text-slate-200 truncate">
+          {metric.label}
+        </div>
+        <div className="text-[10px] font-mono text-slate-500 dark:text-slate-400 truncate group-hover:text-emerald-500 transition-colors">
+          {metric.change}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Hero = ({ onOpenCommandPalette }) => {
   const { lang, isRTL } = useApp();
@@ -84,17 +113,11 @@ export const Hero = ({ onOpenCommandPalette }) => {
               </p>
             </ScrollReveal>
 
-            {/* Metric Chips Grid */}
+            {/* Metric Chips Grid with Animated Counters */}
             <ScrollReveal delay={0.4}>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 pt-1">
                 {metrics.map((m, i) => (
-                  <div key={i} className="p-3 rounded-xl glass-panel border border-black/[0.06] dark:border-white/[0.06] hover:border-emerald-500/40 transition-all group">
-                    <div className="text-lg sm:text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform">
-                      {m.value}
-                    </div>
-                    <div className="text-xs font-medium text-slate-800 dark:text-slate-200 mt-0.5 truncate">{m.label}</div>
-                    <div className="text-[10px] font-mono text-slate-500 mt-0.5 truncate">{m.change}</div>
-                  </div>
+                  <MetricChip key={i} metric={m} />
                 ))}
               </div>
             </ScrollReveal>

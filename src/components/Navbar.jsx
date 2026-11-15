@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Terminal, Command, Sun, Moon, Languages, Menu, X } from 'lucide-react';
+import { Command, Sun, Moon, Languages, Menu, X } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { portfolioData } from '../data/portfolioData';
 
@@ -37,18 +37,35 @@ export const Navbar = ({ onOpenCommandPalette }) => {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2">
           
-          {/* Brand Logo / Real Name */}
+          {/* Brand Logo / Real Name with AE Monogram */}
           <Link 
             to="/" 
-            className="flex items-center gap-2 group font-mono text-sm tracking-tight text-slate-900 dark:text-slate-100 hover:text-emerald-500 shrink-0 transition-colors"
+            className="flex items-center gap-2.5 group shrink-0 transition-colors"
           >
-            <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:scale-105 group-hover:border-emerald-400 transition-all shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)]">
-              <Terminal className="w-4 h-4" />
+            {/* Custom Code Tag Badge </> with Status Dot */}
+            <div className="relative px-2.5 h-8 rounded-xl bg-gradient-to-br from-emerald-500/15 via-teal-500/10 to-cyan-500/15 border border-emerald-500/30 group-hover:border-emerald-400/60 flex items-center justify-center shadow-[0_0_15px_-3px_rgba(16,185,129,0.25)] group-hover:shadow-[0_0_20px_-2px_rgba(16,185,129,0.45)] group-hover:scale-105 transition-all duration-300">
+              <span className="font-mono font-black text-xs tracking-wider text-emerald-600 dark:text-emerald-400 select-none" dir="ltr">
+                {'</>'}
+              </span>
+              <span className="absolute -bottom-0.5 -end-0.5 flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500 ring-2 ring-white dark:ring-[#080a0f]"></span>
+              </span>
             </div>
+
+            {/* Name: Responsive across Arabic & English */}
             <div className="flex items-center">
-              <span className="text-emerald-600 dark:text-emerald-400 font-bold">eldeisty</span>
-              <span className="text-slate-500 dark:text-slate-400">.exe</span>
-              <span className="inline-block w-2 h-3.5 bg-emerald-500 dark:bg-emerald-400 ms-1 animate-pulse"></span>
+              {lang === 'ar' ? (
+                <span className="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                  <span className="hidden sm:inline">عبدالرحمن الديسطي</span>
+                  <span className="inline sm:hidden">عبدالرحمن</span>
+                </span>
+              ) : (
+                <span className="font-bold font-sans text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-emerald-500 dark:group-hover:text-emerald-400 transition-colors">
+                  <span className="hidden sm:inline">Abdelrahman Eldeisty</span>
+                  <span className="inline sm:hidden">Abdelrahman</span>
+                </span>
+              )}
             </div>
           </Link>
 
