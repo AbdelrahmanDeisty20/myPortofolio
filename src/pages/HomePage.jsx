@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Terminal, Folder, ExternalLink, Activity, Info, X, CheckCircle2, Github } from 'lucide-react';
 import { Hero } from '../components/Hero';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { TiltCard } from '../components/TiltCard';
 import { useApp } from '../context/AppContext';
 import { portfolioData } from '../data/portfolioData';
 
@@ -44,7 +45,8 @@ export const HomePage = ({ onOpenCommandPalette }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {featuredProjects.map((p, idx) => (
             <ScrollReveal key={p.id} delay={idx * 0.1}>
-              <div className="group rounded-2xl glass-panel hover:glass-panel-glow border border-black/[0.08] dark:border-white/[0.08] hover:border-emerald-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full shadow-sm">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="group rounded-2xl glass-panel hover:glass-panel-glow border border-black/[0.08] dark:border-white/[0.08] hover:border-emerald-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full shadow-sm">
                 
                 {/* Visual Image Banner (Clickable to open details) */}
                 <div 
@@ -135,6 +137,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
                 </div>
 
               </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

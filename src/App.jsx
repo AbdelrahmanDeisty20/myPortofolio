@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { CommandPalette } from './components/CommandPalette';
 import { MouseSpotlight } from './components/MouseSpotlight';
+import { CyberCanvas } from './components/CyberCanvas';
 
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -29,8 +30,9 @@ function MainLayout() {
   return (
     <div className="relative min-h-screen bg-[#f8fafc] dark:bg-[#080a0f] text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30 selection:text-emerald-500 flex flex-col justify-between transition-colors duration-300">
       
-      {/* Subtle Scanlines & Mouse Spotlight */}
+      {/* Subtle Scanlines, Interactive Cyber Particle Canvas & Mouse Spotlight */}
       <div className="fixed inset-0 scanlines pointer-events-none z-20 opacity-40" />
+      <CyberCanvas />
       <MouseSpotlight />
       <ScrollToTop />
 

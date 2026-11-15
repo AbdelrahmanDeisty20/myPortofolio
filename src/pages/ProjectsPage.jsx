@@ -3,6 +3,7 @@ import { Layers, Search, ExternalLink, Github, Activity, Info, X, CheckCircle2 }
 import { useApp } from '../context/AppContext';
 import { portfolioData } from '../data/portfolioData';
 import { ScrollReveal } from '../components/ScrollReveal';
+import { TiltCard } from '../components/TiltCard';
 
 export const ProjectsPage = () => {
   const { lang, isRTL } = useApp();
@@ -94,7 +95,8 @@ export const ProjectsPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {filteredProjects.map((project, idx) => (
             <ScrollReveal key={project.id} delay={(idx % 2) * 0.1}>
-              <div className="group rounded-2xl glass-panel hover:glass-panel-glow border border-black/[0.08] dark:border-white/[0.08] hover:border-emerald-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full shadow-sm">
+              <TiltCard maxTilt={5} className="h-full">
+                <div className="group rounded-2xl glass-panel hover:glass-panel-glow border border-black/[0.08] dark:border-white/[0.08] hover:border-emerald-500/40 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full shadow-sm">
                 
                 {/* Image Banner */}
                 <div className="relative aspect-video w-full overflow-hidden bg-slate-950 border-b border-black/[0.06] dark:border-white/[0.06]">
@@ -182,6 +184,7 @@ export const ProjectsPage = () => {
 
                 </div>
               </div>
+              </TiltCard>
             </ScrollReveal>
           ))}
         </div>

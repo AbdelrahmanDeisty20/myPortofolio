@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Terminal, Code, Cpu, ArrowRight, Github, Twitter, Linkedin, Sparkles } from 'lucide-react';
+import { Terminal, Code, Cpu, ArrowRight, Github, Twitter, Linkedin, Sparkles, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 import { portfolioData } from '../data/portfolioData';
 import { ScrollReveal } from './ScrollReveal';
+import { RecruiterModal } from './RecruiterModal';
+import { TiltCard } from './TiltCard';
 
 export const Hero = ({ onOpenCommandPalette }) => {
   const { lang, isRTL } = useApp();
   const [typedCode, setTypedCode] = useState('');
+  const [recruiterModalOpen, setRecruiterModalOpen] = useState(false);
   
   const t = portfolioData[lang].hero;
   const metrics = portfolioData[lang].metrics;
@@ -43,13 +46,21 @@ export const Hero = ({ onOpenCommandPalette }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
-        {/* Status Ribbon */}
+        {/* Status Ribbon & Recruiter Fast-Track */}
         <ScrollReveal delay={0.1}>
-          <div className="flex items-center gap-2 mb-4 sm:mb-6">
+          <div className="flex flex-wrap items-center gap-2.5 mb-4 sm:mb-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-mono tracking-wide">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
               <span className="truncate">{t.statusRibbon}</span>
             </div>
+
+            <button
+              onClick={() => setRecruiterModalOpen(true)}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500/15 via-cyan-500/15 to-purple-500/15 hover:from-emerald-500/25 hover:to-cyan-500/25 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wide transition-all shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <Zap className="w-3.5 h-3.5 text-amber-400 animate-bounce" />
+              <span>{lang === 'ar' ? 'ملخص التوظيف للشركات // Recruiter HUD' : 'Recruiter Fast-Track // Executive HUD'}</span>
+            </button>
           </div>
         </ScrollReveal>
 
@@ -153,55 +164,63 @@ export const Hero = ({ onOpenCommandPalette }) => {
             </ScrollReveal>
           </div>
 
-          {/* Right Column: Sleek Frosted Glass Code Editor Hero */}
+          {/* Right Column: Sleek Frosted Glass Code Editor Hero with 3D Tilt */}
           <div className="lg:col-span-5" dir="ltr">
             <ScrollReveal delay={0.3} yOffset={35}>
-              <div className="relative group">
-                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 via-cyan-500/20 to-purple-600/30 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 -z-10" />
+              <TiltCard maxTilt={6}>
+                <div className="relative group">
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500/30 via-cyan-500/20 to-purple-600/30 blur-xl opacity-75 group-hover:opacity-100 transition duration-1000 -z-10" />
 
-                <div className="rounded-2xl glass-panel-glow border border-black/10 dark:border-white/10 overflow-hidden shadow-2xl">
-                  {/* Editor Tab Bar */}
-                  <div className="flex items-center justify-between px-4 py-3 bg-slate-200/90 dark:bg-[#0a0d14]/90 border-b border-black/[0.06] dark:border-white/[0.08]">
-                    <div className="flex items-center gap-2">
-                      <span className="w-3 h-3 rounded-full bg-rose-500/80" />
-                      <span className="w-3 h-3 rounded-full bg-amber-500/80" />
-                      <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                      <span className="ml-2 font-mono text-xs text-slate-700 dark:text-slate-400 flex items-center gap-1.5 font-bold">
-                        <Code className="w-3.5 h-3.5 text-cyan-500" />
-                        {t.codeFile}
+                  <div className="rounded-2xl glass-panel-glow border border-black/10 dark:border-white/10 overflow-hidden shadow-2xl">
+                    {/* Editor Tab Bar */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-slate-200/90 dark:bg-[#0a0d14]/90 border-b border-black/[0.06] dark:border-white/[0.08]">
+                      <div className="flex items-center gap-2">
+                        <span className="w-3 h-3 rounded-full bg-rose-500/80" />
+                        <span className="w-3 h-3 rounded-full bg-amber-500/80" />
+                        <span className="w-3 h-3 rounded-full bg-emerald-500/80" />
+                        <span className="ml-2 font-mono text-xs text-slate-700 dark:text-slate-400 flex items-center gap-1.5 font-bold">
+                          <Code className="w-3.5 h-3.5 text-cyan-500" />
+                          {t.codeFile}
+                        </span>
+                      </div>
+                      <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">
+                        {t.editorBadge}
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 font-bold">
-                      {t.editorBadge}
-                    </span>
-                  </div>
 
-                  {/* Editor Content Area */}
-                  <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed bg-slate-900 dark:bg-[#06080d]/90 text-slate-300 overflow-x-auto min-h-[260px] sm:min-h-[290px]">
-                    <pre className="text-emerald-400 dark:text-emerald-300 whitespace-pre font-mono text-[11px] sm:text-xs">
-                      {typedCode}
-                      <span className="inline-block w-2 h-4 bg-emerald-400 ml-0.5 animate-pulse align-middle" />
-                    </pre>
-                  </div>
-
-                  {/* Editor Bottom Status Bar */}
-                  <div className="px-4 py-2 bg-slate-200/90 dark:bg-[#0a0d14]/95 border-t border-black/[0.06] dark:border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-600 dark:text-slate-400">
-                    <div className="flex items-center gap-3">
-                      <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-bold">
-                        <Cpu className="w-3 h-3" />
-                        React 19 + Laravel
-                      </span>
-                      <span>UTF-8</span>
+                    {/* Editor Content Area */}
+                    <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed bg-slate-900 dark:bg-[#06080d]/90 text-slate-300 overflow-x-auto min-h-[260px] sm:min-h-[290px]">
+                      <pre className="text-emerald-400 dark:text-emerald-300 whitespace-pre font-mono text-[11px] sm:text-xs">
+                        {typedCode}
+                        <span className="inline-block w-2 h-4 bg-emerald-400 ml-0.5 animate-pulse align-middle" />
+                      </pre>
                     </div>
-                    <span>Ln 14, Col 2</span>
+
+                    {/* Editor Bottom Status Bar */}
+                    <div className="px-4 py-2 bg-slate-200/90 dark:bg-[#0a0d14]/95 border-t border-black/[0.06] dark:border-white/[0.06] flex items-center justify-between text-[11px] font-mono text-slate-600 dark:text-slate-400">
+                      <div className="flex items-center gap-3">
+                        <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-1 font-bold">
+                          <Cpu className="w-3 h-3" />
+                          React 19 + Laravel
+                        </span>
+                        <span>UTF-8</span>
+                      </div>
+                      <span>Ln 14, Col 2</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </TiltCard>
             </ScrollReveal>
           </div>
 
         </div>
       </div>
+
+      {/* Recruiter Executive Dossier Modal */}
+      <RecruiterModal
+        isOpen={recruiterModalOpen}
+        onClose={() => setRecruiterModalOpen(false)}
+      />
     </section>
   );
 };
