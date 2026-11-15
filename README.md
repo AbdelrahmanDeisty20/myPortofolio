@@ -1,58 +1,39 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Abdelrahman Eldeisty // Cyber Terminal Portfolio (React + Tailwind CSS)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+بورتفوليو مهندس البرمجيات **عبدالرحمن الديسطي (Abdelrahman Eldeisty)** المبني بأحدث تقنيات الويب السريعة، نظام متعدد الصفحات **React Router**، دعم كامل للغتين (العربية والإنجليزية)، ثنائي المظهر (Dark & Light Mode)، وأنيميشن سكرول سلس بواسطة **Framer Motion**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## ⚡ المميزات المنفذة:
+1. **👤 الهوية والاسم الحقيقي:**
+   - تم ضبط الاسم بالكامل: **عبدالرحمن الديسطي (Abdelrahman Eldeisty)**.
+   - اللوجو والبرومبت: `>_ eldeisty.exe`.
+   - البريد الإلكتروني: `abdeisty33@gmail.com`.
+   - حساب GitHub: `https://github.com/AbdelrahmanDeisty20`.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+2. **📂 سابقة الأعمال والمشاريع الحقيقية المنفذة:**
+   - **K-CODE:** متجر العناية الكورية ومحرك التحليل والروتين الذكي (256 منتجاً، 728 سيناريو).
+   - **رونق الخليج (Rawnaq Al-Khaleej):** بوابة المقاولات والخدمات العامة وحساب التكاليف.
+   - **عقار موسى (Aqar Mousa):** منصة التسويق العقاري والفلاتر والخرائط التفاعلية.
+   - **AI Interior Staging:** منصة تنسيق الأثاث والتصميم الداخلي بالذكاء الاصطناعي.
+   - **متجر بينونة (Bynona Store):** منصة تجارة إلكترونية متعددة التصنيفات والدفع الآمن.
+   - **عيادة التخاطب (SpeechClinic):** نظام إدارة واستشارات وجلسات التأهيل الطبي.
+   - **شبكة وتطبيق سفرة (Sofra):** نظام إدارة المطاعم والطلبات اللحظية وتتبع التوصيل.
+   - **بنك الدم الرقمي (Digital Blood Bank):** شبكة الطوارئ لربط المتبرعين بالمستشفيات جغرافياً.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+3. **🔇 إزالة الصوت بالكامل:**
+   - تم حذف محرك الصوتيات والأزرار الصوتية نهائياً من النافبار وجميع المكونات.
 
-## Learning Laravel
+4. **📱 تصميم فائق التجاوب (100% Responsive):**
+   - تنظيم وتنسيق عناصر الهيدر والنافبار لمنع أي ازدحام أو خروج عن حدود الشاشة.
+   - قائمة برجر للهواتف الذكية والأجهزة اللوحية (`Mobile Drawer`) لسهولة التصفح.
+   - كروت المشاريع والمهارات والترمينال متوافقة بالكامل مع مختلف مقاسات الشاشات (Mobile, Tablet, Laptop, Desktop).
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
-
-## Agentic Development
-
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 💻 التشغيل السريع
 
 ```bash
-composer require laravel/boost --dev
-
-php artisan boost:install
+npm run dev
 ```
-
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+افتح المتصفح على: [http://localhost:3000](http://localhost:3000)
