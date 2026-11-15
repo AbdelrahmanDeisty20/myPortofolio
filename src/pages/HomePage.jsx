@@ -26,7 +26,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
             <div>
               <div className="flex items-center gap-2 text-emerald-500 font-mono text-xs uppercase tracking-widest mb-1.5 font-bold">
                 <Folder className="w-4 h-4" />
-                <span>// {lang === 'ar' ? 'أبرز سابقة الأعمال' : 'FEATURED PRODUCTIONS'}</span>
+                <span>{lang === 'ar' ? 'أبرز سابقة الأعمال' : 'FEATURED PRODUCTIONS'}</span>
               </div>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
                 {lang === 'ar' ? 'أنظمة وتطبيقات ويب معتمدة' : 'Featured Client & Enterprise Systems'}
@@ -150,7 +150,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
             <div className="space-y-3 max-w-xl text-center sm:text-start">
               <div className="flex items-center justify-center sm:justify-start gap-2 text-emerald-500 font-mono text-xs uppercase tracking-widest font-bold">
                 <Terminal className="w-4 h-4" />
-                <span>// {lang === 'ar' ? 'الترمينال التفاعلي' : 'INTERACTIVE CLI'}</span>
+                <span>{lang === 'ar' ? 'الترمينال التفاعلي' : 'INTERACTIVE CLI'}</span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
                 {lang === 'ar' ? 'تفضل استعراض الخبرات عبر سطر الأوامر؟' : 'Prefer command-line interfaces?'}
@@ -220,7 +220,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
             <div className="p-6 space-y-6">
               <div>
                 <h4 className="text-xs font-mono text-emerald-500 font-bold uppercase tracking-wider mb-1">
-                  // {lang === 'ar' ? 'نبذة عن المشروع' : 'PROJECT OVERVIEW'}
+                  {lang === 'ar' ? 'نبذة عن المشروع' : 'PROJECT OVERVIEW'}
                 </h4>
                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                   {selectedProject.description}
@@ -230,7 +230,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
               {selectedProject.features && (
                 <div>
                   <h4 className="text-xs font-mono text-cyan-500 font-bold uppercase tracking-wider mb-2">
-                    // {lang === 'ar' ? 'أبرز المزايا والوظائف' : 'KEY CAPABILITIES & FEATURES'}
+                    {lang === 'ar' ? 'أبرز المزايا والوظائف' : 'KEY CAPABILITIES & FEATURES'}
                   </h4>
                   <div className="space-y-2">
                     {selectedProject.features.map((feat, i) => (
@@ -246,7 +246,7 @@ export const HomePage = ({ onOpenCommandPalette }) => {
               {/* Technologies */}
               <div>
                 <h4 className="text-xs font-mono text-purple-500 font-bold uppercase tracking-wider mb-2">
-                  // {lang === 'ar' ? 'التقنيات المستخدمة' : 'TECH STACK'}
+                  {lang === 'ar' ? 'التقنيات المستخدمة' : 'TECH STACK'}
                 </h4>
                 <div className="flex flex-wrap gap-1.5" dir="ltr">
                   {selectedProject.tags.map(tagItem => (

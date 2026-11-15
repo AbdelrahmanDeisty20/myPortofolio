@@ -18,7 +18,7 @@ export const Hero = ({ onOpenCommandPalette }) => {
   const fullCode = `const engineer = {
   name: "Abdelrahman Eldeisty",
   handle: "@eldeisty",
-  status: "ONLINE // Available for hire",
+  status: "ONLINE • Available for hire",
   specialization: "Full-Stack & Frontend Architecture",
   coreStack: ["React", "Next.js", "Laravel", "TypeScript", "Tailwind"],
   provenProjects: ["K-CODE", "Rawnaq Al-Khaleej", "Aqar Mousa", "AI Interior"],
@@ -59,7 +59,7 @@ export const Hero = ({ onOpenCommandPalette }) => {
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-emerald-500/15 via-cyan-500/15 to-purple-500/15 hover:from-emerald-500/25 hover:to-cyan-500/25 border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold tracking-wide transition-all shadow-[0_0_15px_-3px_rgba(16,185,129,0.3)] hover:scale-105 active:scale-95 cursor-pointer"
             >
               <Zap className="w-3.5 h-3.5 text-amber-400 animate-bounce" />
-              <span>{lang === 'ar' ? 'ملخص التوظيف للشركات // Recruiter HUD' : 'Recruiter Fast-Track // Executive HUD'}</span>
+              <span>{lang === 'ar' ? 'ملخص التوظيف للشركات • Recruiter HUD' : 'Recruiter Fast-Track • Executive HUD'}</span>
             </button>
           </div>
         </ScrollReveal>

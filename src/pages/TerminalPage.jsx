@@ -72,7 +72,7 @@ export const TerminalPage = () => {
         {activeTab === 'telemetry' && (
           <div className="rounded-2xl glass-panel-glow border border-cyan-500/30 p-4 sm:p-6 font-mono text-xs space-y-4" dir="ltr">
             <div className="flex items-center justify-between pb-3 border-b border-black/[0.08] dark:border-white/[0.08] text-cyan-500 font-bold">
-              <span>// LIVE SYSTEM TELEMETRY & DIAGNOSTICS</span>
+              <span>LIVE SYSTEM TELEMETRY & DIAGNOSTICS</span>
               <span className="text-emerald-500">STATUS: 100% OPERATIONAL</span>
             </div>
 

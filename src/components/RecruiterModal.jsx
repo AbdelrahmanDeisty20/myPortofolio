@@ -22,10 +22,10 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-emerald-500 font-mono text-xs uppercase tracking-widest font-bold">
               <Zap className="w-4 h-4 animate-pulse" />
-              <span>// {lang === 'ar' ? 'ملخص التوظيف السريع' : 'RECRUITER EXECUTIVE SUMMARY'}</span>
+              <span>{lang === 'ar' ? 'ملخص التوظيف السريع' : 'RECRUITER EXECUTIVE SUMMARY'}</span>
             </div>
             <h3 className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">
-              {lang === 'ar' ? 'عبدالرحمن الديسطي // ملخص الكفاءات التقنية' : 'Abdelrahman Eldeisty // Engineering Dossier'}
+              {lang === 'ar' ? 'عبدالرحمن الديسطي • ملخص الكفاءات التقنية' : 'Abdelrahman Eldeisty • Engineering Dossier'}
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
               Full-Stack & Frontend Software Engineer • Cairo / Remote Worldwide
@@ -63,7 +63,7 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
         {/* Core Value Proposition */}
         <div className="space-y-2">
           <h4 className="text-xs font-mono font-bold text-emerald-500 uppercase tracking-wider">
-            // {lang === 'ar' ? 'لماذا تختارني لفريقك الهندسي؟' : 'ENGINEERING VALUE PROPOSITION'}
+            {lang === 'ar' ? 'لماذا تختارني لفريقك الهندسي؟' : 'ENGINEERING VALUE PROPOSITION'}
           </h4>
           <div className="space-y-2 font-sans text-xs sm:text-sm text-slate-700 dark:text-slate-300">
             <div className="flex items-start gap-2.5">
@@ -96,7 +96,7 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
         {/* Production Stack Pills */}
         <div className="space-y-2">
           <h4 className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-wider">
-            // {lang === 'ar' ? 'الحزمة التقنية للإنتاج' : 'PRODUCTION TOOLCHAIN'}
+            {lang === 'ar' ? 'الحزمة التقنية للإنتاج' : 'PRODUCTION TOOLCHAIN'}
           </h4>
           <div className="flex flex-wrap gap-1.5" dir="ltr">
             {['React', 'Next.js', 'TypeScript', 'Laravel 12', 'PHP 8.3', 'Filament v5', 'MySQL', 'Redis', 'Tailwind CSS', 'Docker', 'REST APIs', 'Firebase FCM', 'Git / CI-CD'].map((tech) => (

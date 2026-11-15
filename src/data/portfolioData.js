@@ -1,17 +1,17 @@
 export const portfolioData = {
   ar: {
     nav: {
-      home: "// الرئيسية",
-      about: "// عني",
-      projects: "// الأعمال والمشاريع",
-      skills: "// المهارات",
-      terminal: "// الترمينال",
-      contact: "// التواصل",
+      home: "الرئيسية",
+      about: "عني",
+      projects: "الأعمال والمشاريع",
+      skills: "المهارات",
+      terminal: "الترمينال",
+      contact: "التواصل",
       available: "متاح للعمل",
       search: "بحث",
     },
     hero: {
-      statusRibbon: "مهندس برمجيات ومطور واجهات متقدم // Full-Stack & Frontend Engineer",
+      statusRibbon: "مهندس برمجيات ومطور واجهات متقدم (Full-Stack & Frontend)",
       headingStart: "بناء وتطوير",
       headingGradient: "تطبيقات الويب الحديثة",
       headingEnd: "والأنظمة السحابية المتكاملة",
@@ -30,7 +30,7 @@ export const portfolioData = {
       { label: "كفاءة وأداء الواجهات", value: "99/100", change: "Core Web Vitals" },
     ],
     projectsPage: {
-      badge: "// معرض الأعمال والمشاريع الحقيقية",
+      badge: "معرض الأعمال والمشاريع الحقيقية",
       title: "سابقة الأعمال والأنظمة البرمجية",
       subtitle: "مجموعة منتقاة من أبرز المشاريع والأنظمة الحقيقية التي قمت بتطويرها وبرمجتها، تتنوع بين منصات تجارة إلكترونية متقدمة، بوابات خدمات كبرى، محركات ذكاء اصطناعي، وأنظمة إدارة متكاملة.",
       searchPlaceholder: "ابحث باسم المشروع أو التقنية (مثال: React, Laravel, TypeScript)...",
@@ -42,7 +42,7 @@ export const portfolioData = {
     projects: [
       {
         id: "kcode-platform",
-        title: "متجر KCODE للعناية الكورية // KCODE E-Commerce",
+        title: "متجر KCODE للعناية الكورية",
         category: "تجارة إلكترونية ومتاجر",
         categoryKey: "ecommerce",
         tagline: "متجر متكامل لمنتجات العناية الكورية مع محرك تشخيص روتين مخصص يغطي 728 سيناريو تحليلي لأكثر من 250 منتجاً.",
@@ -63,7 +63,7 @@ export const portfolioData = {
       },
       {
         id: "wasly-platform",
-        title: "منصة وصلي للخدمات المنزلية والتوصيل الفوري // Wasly Platform",
+        title: "منصة وصلي للخدمات المنزلية والتوصيل الفوري",
         category: "منصات ومواقع خدمية",
         categoryKey: "services",
         tagline: "منصة خدمات لوجستية وتوصيل منزلي مبنية بلارافيل مع لوحة تحكم Filament v5 وإشعارات Firebase FCM الفورية.",
@@ -84,7 +84,7 @@ export const portfolioData = {
       },
       {
         id: "bynona-store",
-        title: "منصة بينونة للتجارة والتوزيع // Bynona Platform (B2B & B2C)",
+        title: "منصة بينونة للتجارة والتوزيع (B2B & B2C)",
         category: "تجارة إلكترونية ومتاجر",
         categoryKey: "ecommerce",
         tagline: "محرك تجارة إلكترونية متكامل يدعم البيع بالتجزئة والجملة بنظام تسعير مزدوج ولوحة تحكم برمجية مخصصة.",
@@ -105,7 +105,7 @@ export const portfolioData = {
       },
       {
         id: "aqar-mousa",
-        title: "عقار موسى — منصة العقارات وإدارة العملاء // AqarMousa Real Estate",
+        title: "عقار موسى — منصة العقارات وإدارة العملاء",
         category: "منصات ومواقع خدمية",
         categoryKey: "services",
         tagline: "بوابة عقارية متقدمة لعرض وطلب الوحدات السكنية والتجارية مع فلاتر بحث مخصصة وربط بـ WhatsApp API.",
@@ -126,7 +126,7 @@ export const portfolioData = {
       },
       {
         id: "rawnaq-khaleej",
-        title: "منصة رونق الخليج // بوابة الخدمات العامة والمقاولات والعزل",
+        title: "منصة رونق الخليج للمقاولات والخدمات العامة",
         category: "منصات ومواقع خدمية",
         categoryKey: "services",
         tagline: "بوابة إلكترونية متكاملة لحجز وإدارة خدمات العزل، النظافة العامة، ومقاولات الصيانة في السعودية والخليج.",
@@ -147,7 +147,7 @@ export const portfolioData = {
       },
       {
         id: "ai-interior-staging",
-        title: "منصة AI Interior // التصميم والديكور بالذكاء الاصطناعي",
+        title: "منصة AI Interior لتصميم الديكور بالذكاء الاصطناعي",
         category: "ذكاء اصطناعي وابتكار",
         categoryKey: "ai",
         tagline: "منصة لتوليد وتنسيق الديكورات وتصميم الأثاث الداخلي افتراضياً باستخدام نماذج الذكاء الاصطناعي.",
@@ -168,7 +168,7 @@ export const portfolioData = {
       },
       {
         id: "sofra-app",
-        title: "شبكة وتطبيق سفرة // إدارة المطاعم وطلبات الطعام",
+        title: "شبكة وتطبيق سفرة لإدارة طلبات المطاعم",
         category: "منصات ومواقع خدمية",
         categoryKey: "services",
         tagline: "منصة مطاعم متكاملة لربط العملاء بقوائم المأكولات، مع نظام إدارة وتتبع الطلبات وتوصيلها.",
@@ -189,7 +189,7 @@ export const portfolioData = {
       },
       {
         id: "blood-bank-system",
-        title: "نظام بنك الدم الرقمي // شبكة التبرع بالحالات الحرجة",
+        title: "نظام بنك الدم الرقمي لإنقاذ الحالات الحرجة",
         category: "أنظمة إدارة ولوحات تحكم",
         categoryKey: "management",
         tagline: "منصة إنسانية تربط المتبرعين بالدم بالمستشفيات والحالات الطارئة حسب الموقع وفصيلة الدم.",
@@ -210,7 +210,7 @@ export const portfolioData = {
       }
     ],
     skillsPage: {
-      badge: "// مصفوفة القدرات والمهارات التقنية",
+      badge: "مصفوفة القدرات والمهارات التقنية",
       title: "الترسانة التقنية وهندسة الأنظمة",
       subtitle: "تفصيل شامل للمهارات البرمجية وأطر العمل التي أتقنها في هندسة الواجهات الأمامية والباك إند وتطوير الأنظمة السحابية المتكاملة.",
       sliderLabel: "فلترة حسب الحد الأدنى للإتقان:",
@@ -240,7 +240,7 @@ export const portfolioData = {
       ]
     },
     aboutPage: {
-      badge: "// الملف الشخصي والسيرة الذاتية",
+      badge: "الملف الشخصي والسيرة الذاتية",
       title: "مرحباً، أنا عبدالرحمن الديسطي",
       p1: "مهندس برمجيات ومطور واجهات متقدم (Full-Stack & Frontend Engineer) شغوف ببناء تطبيقات الويب الحديثة، والأنظمة السحابية، ومنصات التجارة الإلكترونية المعقدة.",
       p2: "قمت بتطوير وتنفيذ العديد من المشاريع الناجحة لمتاجر وشركات في مصر والخليج العربي، وأركز دائماً على الجمع بين التصميم الجذاب عالي الاحترافية، والسرعة الخارقة في التحميل، والتوافق الكامل مع جميع الشاشات والأجهزة المحمولة.",
@@ -288,7 +288,7 @@ export const portfolioData = {
       }
     ],
     terminalPage: {
-      badge: "// بيئة سطر الأوامر التفاعلية",
+      badge: "بيئة سطر الأوامر التفاعلية",
       title: "ترمينال عبدالرحمن الديسطي",
       consoleTab: "eldeisty.zsh",
       telemetryTab: "telemetry.log",
@@ -299,7 +299,7 @@ export const portfolioData = {
       sudoText: "تم منحك صلاحيات التوظيف والاتفاق الفوري! تواصل مع عبدالرحمن عبر زر التواصل 😉",
     },
     contactPage: {
-      badge: "// بدء التواصل ومناقشة المشاريع",
+      badge: "بدء التواصل ومناقشة المشاريع",
       title: "لنبدأ في بناء مشروعك القادم معاً",
       subtitle: "متاح لاستقبال المشاريع البرمجية الجديدة، عقود العمل الحر، وتطوير المنصات وتطبيقات الويب بمواصفات عالمية.",
       directEmail: "البريد الإلكتروني المباشر",
@@ -324,12 +324,12 @@ export const portfolioData = {
 
   en: {
     nav: {
-      home: "// Home",
-      about: "// About",
-      projects: "// Works & Projects",
-      skills: "// Skills",
-      terminal: "// Terminal",
-      contact: "// Contact",
+      home: "Home",
+      about: "About",
+      projects: "Works & Projects",
+      skills: "Skills",
+      terminal: "Terminal",
+      contact: "Contact",
       available: "Available for Hire",
       search: "Search",
     },
@@ -353,7 +353,7 @@ export const portfolioData = {
       { label: "Core Web Vitals", value: "99/100", change: "Fast Frame Budget" },
     ],
     projectsPage: {
-      badge: "// PROVEN PRODUCTION PORTFOLIO",
+      badge: "PROVEN PRODUCTION PORTFOLIO",
       title: "Real-World Projects & Systems",
       subtitle: "A showcase of real production-ready web applications, e-commerce platforms, and management systems engineered with clean code, responsive design, and robust architecture.",
       searchPlaceholder: "Search by project name or tech (e.g. React, Laravel)...",
@@ -365,7 +365,7 @@ export const portfolioData = {
     projects: [
       {
         id: "kcode-platform",
-        title: "KCODE E-Commerce // Korean Skincare & Routine AI Engine",
+        title: "KCODE E-Commerce • Korean Skincare & Routine AI Engine",
         category: "E-Commerce & Retail",
         categoryKey: "ecommerce",
         tagline: "Comprehensive Korean beauty e-commerce store with an AI routine diagnostic engine covering 728 scenarios across 250+ products.",
@@ -386,7 +386,7 @@ export const portfolioData = {
       },
       {
         id: "wasly-platform",
-        title: "Wasly Platform // On-Demand Home Services & Delivery",
+        title: "Wasly Platform • On-Demand Home Services & Delivery",
         category: "Enterprise & Services",
         categoryKey: "services",
         tagline: "Enterprise on-demand dispatch and booking platform with Filament v5 admin suite, Spatie Shield, and Firebase FCM alerts.",
@@ -407,7 +407,7 @@ export const portfolioData = {
       },
       {
         id: "bynona-store",
-        title: "Bynona Commerce // Dual B2B & B2C Distribution Engine",
+        title: "Bynona Commerce • Dual B2B & B2C Distribution Engine",
         category: "E-Commerce & Retail",
         categoryKey: "ecommerce",
         tagline: "Enterprise B2B/B2C dual commerce engine with wholesale/retail middleware, custom-coded Blade dashboard, and Excel bulk sync.",
@@ -428,7 +428,7 @@ export const portfolioData = {
       },
       {
         id: "aqar-mousa",
-        title: "Aqar Mousa // Real Estate & Property Discovery Platform",
+        title: "Aqar Mousa • Real Estate & Property Discovery Platform",
         category: "Enterprise & Services",
         categoryKey: "services",
         tagline: "Smart property marketplace for residential and commercial real estate with multi-parameter search filters and WhatsApp API.",
@@ -449,7 +449,7 @@ export const portfolioData = {
       },
       {
         id: "rawnaq-khaleej",
-        title: "Rawnaq Al-Khaleej // Enterprise Services Portal",
+        title: "Rawnaq Al-Khaleej • Enterprise Services Portal",
         category: "Enterprise & Services",
         categoryKey: "services",
         tagline: "High-conversion service booking and contracting portal for maintenance, cleaning, and insulation in Saudi Arabia and the Gulf.",
@@ -470,7 +470,7 @@ export const portfolioData = {
       },
       {
         id: "ai-interior-staging",
-        title: "AI Interior // Generative Room Staging Engine",
+        title: "AI Interior • Generative Room Staging Engine",
         category: "AI & Innovation",
         categoryKey: "ai",
         tagline: "Innovative web application generating realistic interior designs and furniture layouts from empty room photos using AI.",
@@ -491,7 +491,7 @@ export const portfolioData = {
       },
       {
         id: "sofra-app",
-        title: "Sofra // Restaurant & Order Management System",
+        title: "Sofra • Restaurant & Order Management System",
         category: "Enterprise & Services",
         categoryKey: "services",
         tagline: "Interactive dining platform connecting food lovers with real-time menus, kitchen order dispatch, and delivery tracking.",
@@ -512,7 +512,7 @@ export const portfolioData = {
       },
       {
         id: "blood-bank-system",
-        title: "Digital Blood Bank // Urgent Donor Matching Network",
+        title: "Digital Blood Bank • Urgent Donor Matching Network",
         category: "Healthcare & Tech",
         categoryKey: "management",
         tagline: "Life-saving donor matching network bridging hospital blood shortages with nearby eligible donors based on geolocation.",
@@ -533,7 +533,7 @@ export const portfolioData = {
       }
     ],
     skillsPage: {
-      badge: "// TECHNICAL ARSENAL",
+      badge: "TECHNICAL ARSENAL",
       title: "Core Engineering & Technical Stack",
       subtitle: "A detailed breakdown of the technical skills, architectural methodologies, and framework toolchains I leverage across frontend and full-stack software development.",
       sliderLabel: "Filter by Minimum Proficiency:",
@@ -563,7 +563,7 @@ export const portfolioData = {
       ]
     },
     aboutPage: {
-      badge: "// DEVELOPER SPECIFICATIONS",
+      badge: "DEVELOPER SPECIFICATIONS",
       title: "Hi, I’m Abdelrahman Eldeisty",
       p1: "A Full-Stack & Frontend Software Engineer passionate about building modern web applications, scalable cloud systems, and rich e-commerce platforms.",
       p2: "Over the past 4+ years, I’ve delivered production-ready systems for companies across Egypt and the Gulf, always focusing on high visual elegance, lightning-fast performance, and flawless responsiveness across all devices.",
@@ -611,7 +611,7 @@ export const portfolioData = {
       }
     ],
     terminalPage: {
-      badge: "// INTERACTIVE TERMINAL ENVIRONMENT",
+      badge: "INTERACTIVE TERMINAL ENVIRONMENT",
       title: "Abdelrahman Eldeisty's Terminal",
       consoleTab: "eldeisty.zsh",
       telemetryTab: "telemetry.log",
@@ -622,7 +622,7 @@ export const portfolioData = {
       sudoText: "Hiring privileges unlocked! Reach out directly via the contact section 😉",
     },
     contactPage: {
-      badge: "// GET IN TOUCH",
+      badge: "GET IN TOUCH",
       title: "Let’s Build Your Next Project Together",
       subtitle: "Available for full-time engineering roles, freelance contracts, and high-impact web development projects.",
       directEmail: "Direct Email Dispatch",

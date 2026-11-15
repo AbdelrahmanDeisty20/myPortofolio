@@ -17,7 +17,7 @@ export const Experience = () => {
           <div className="mb-12">
             <div className="flex items-center gap-2 text-emerald-500 font-mono text-xs uppercase tracking-widest mb-2">
               <Briefcase className="w-4 h-4" />
-              <span>// {lang === 'ar' ? 'سجل الخبرات والمسيرة المهنية' : 'CHRONOLOGICAL LOGS'}</span>
+              <span>{lang === 'ar' ? 'سجل الخبرات والمسيرة المهنية' : 'CHRONOLOGICAL LOGS'}</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
               {lang === 'ar' ? 'الخبرات العملية والقيادة التقنية' : 'Career Experience & Leadership'}

@@ -229,7 +229,7 @@ export const ProjectsPage = () => {
             <div className="p-6 space-y-6">
               <div>
                 <h4 className="text-xs font-mono text-emerald-500 font-bold uppercase tracking-wider mb-1">
-                  // {lang === 'ar' ? 'نبذة عن المشروع' : 'PROJECT OVERVIEW'}
+                  {lang === 'ar' ? 'نبذة عن المشروع' : 'PROJECT OVERVIEW'}
                 </h4>
                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
                   {selectedProject.description}
@@ -239,7 +239,7 @@ export const ProjectsPage = () => {
               {selectedProject.features && (
                 <div>
                   <h4 className="text-xs font-mono text-cyan-500 font-bold uppercase tracking-wider mb-2">
-                    // {lang === 'ar' ? 'أبرز المزايا والوظائف' : 'KEY CAPABILITIES & FEATURES'}
+                    {lang === 'ar' ? 'أبرز المزايا والوظائف' : 'KEY CAPABILITIES & FEATURES'}
                   </h4>
                   <div className="space-y-2">
                     {selectedProject.features.map((feat, i) => (
@@ -255,7 +255,7 @@ export const ProjectsPage = () => {
               {/* Technologies */}
               <div>
                 <h4 className="text-xs font-mono text-purple-500 font-bold uppercase tracking-wider mb-2">
-                  // {lang === 'ar' ? 'التقنيات المستخدمة' : 'TECH STACK'}
+                  {lang === 'ar' ? 'التقنيات المستخدمة' : 'TECH STACK'}
                 </h4>
                 <div className="flex flex-wrap gap-1.5" dir="ltr">
                   {selectedProject.tags.map(t => (

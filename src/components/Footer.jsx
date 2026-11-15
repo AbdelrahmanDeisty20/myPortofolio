@@ -22,7 +22,7 @@ export const Footer = () => {
               <Terminal className="w-3.5 h-3.5" />
             </div>
             <div className="font-mono text-xs text-slate-700 dark:text-slate-300">
-              <span className="text-emerald-500 font-bold">{t.brand}</span> // 2026
+              <span className="text-emerald-500 font-bold">{t.brand}</span> • 2026
             </div>
             <span className="text-slate-400 dark:text-slate-600">|</span>
             <div className="flex items-center gap-1.5 text-xs font-mono text-slate-500">
