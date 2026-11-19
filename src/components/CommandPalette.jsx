@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Search, Terminal, Folder, Cpu, User, Mail, Github, Twitter, Linkedin, Sparkles, X, Copy, Check } from 'lucide-react';
+import { Search, Terminal, Folder, Cpu, User, Mail, Github, Twitter, Linkedin, Sparkles, X, Copy, Check, MessageSquare } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { portfolioData } from '../data/portfolioData';
 
@@ -98,13 +98,23 @@ export const CommandPalette = ({ isOpen, onClose }) => {
     },
     {
       id: 'copy-email',
-      title: lang === 'ar' ? 'نسخ البريد الإلكتروني (abdeisty33@gmail.com)' : 'Copy Email (abdeisty33@gmail.com)',
+      title: lang === 'ar' ? `نسخ البريد الإلكتروني (${portfolioData.profile.email})` : `Copy Email (${portfolioData.profile.email})`,
       category: lang === 'ar' ? 'إجراء سريع' : 'Quick Action',
       icon: copied ? Check : Copy,
       action: () => {
         navigator.clipboard.writeText(portfolioData.profile.email);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
+      }
+    },
+    {
+      id: 'whatsapp',
+      title: lang === 'ar' ? `محادثة واتساب مباشرة (${portfolioData.profile.phone})` : `Chat on WhatsApp (${portfolioData.profile.phone})`,
+      category: lang === 'ar' ? 'إجراء سريع' : 'Quick Action',
+      icon: MessageSquare,
+      action: () => {
+        window.open(portfolioData.profile.whatsapp, '_blank', 'noopener,noreferrer');
+        onClose();
       }
     },
     {

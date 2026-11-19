@@ -8,7 +8,8 @@
 1. **👤 الهوية والاسم الحقيقي:**
    - تم ضبط الاسم بالكامل: **عبدالرحمن الديسطي (Abdelrahman Eldeisty)**.
    - اللوجو والبرومبت: `>_ eldeisty.exe`.
-   - البريد الإلكتروني: `abdeisty33@gmail.com`.
+   - البريد الإلكتروني: `abdulrahmaneldeisty@gmail.com`.
+   - الهاتف والواتساب: `01043778564`.
    - حساب GitHub: `https://github.com/AbdelrahmanDeisty20`.
 
 2. **📂 سابقة الأعمال والمشاريع الحقيقية المنفذة:**

@@ -28,7 +28,7 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
               {lang === 'ar' ? 'عبدالرحمن الديسطي • ملخص الكفاءات التقنية' : 'Abdelrahman Eldeisty • Engineering Dossier'}
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
-              Full-Stack & Frontend Software Engineer • Cairo / Remote Worldwide
+              Full-Stack & Backend Software Engineer • Mansoura / Remote Worldwide
             </p>
           </div>
 
@@ -44,26 +44,26 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 font-mono text-xs">
           <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/25">
             <div className="text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">{lang === 'ar' ? 'الحالة الحالية' : 'STATUS'}</div>
-            <div className="font-bold text-slate-900 dark:text-white mt-0.5">{lang === 'ar' ? 'متاح للعمل الفوري' : 'Open for Hire'}</div>
+            <div className="font-bold text-slate-900 dark:text-white mt-0.5 truncate">{lang === 'ar' ? 'متاح للعمل الفوري' : 'Open for Hire'}</div>
           </div>
           <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/25">
             <div className="text-[10px] text-cyan-600 dark:text-cyan-400 font-bold">{lang === 'ar' ? 'طبيعة العمل' : 'WORK TYPE'}</div>
-            <div className="font-bold text-slate-900 dark:text-white mt-0.5">{lang === 'ar' ? 'عن بُعد / Full-Time' : 'Remote / Full-Time'}</div>
+            <div className="font-bold text-slate-900 dark:text-white mt-0.5 text-[11px] sm:text-xs truncate">{lang === 'ar' ? 'عن بُعد / دوام كامل' : 'Remote / Full-Time'}</div>
           </div>
           <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/25">
             <div className="text-[10px] text-indigo-600 dark:text-indigo-400 font-bold">{lang === 'ar' ? 'الخبرة العملية' : 'EXPERIENCE'}</div>
-            <div className="font-bold text-slate-900 dark:text-white mt-0.5">+2 Years Production</div>
+            <div className="font-bold text-slate-900 dark:text-white mt-0.5" dir="ltr">+2 Years Production</div>
           </div>
           <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/25">
             <div className="text-[10px] text-amber-600 dark:text-amber-400 font-bold">{lang === 'ar' ? 'كفاءة الكود' : 'CODE EFFICIENCY'}</div>
-            <div className="font-bold text-slate-900 dark:text-white mt-0.5">99/100 Vitals</div>
+            <div className="font-bold text-slate-900 dark:text-white mt-0.5" dir="ltr">99/100 Vitals</div>
           </div>
         </div>
 
         {/* Core Value Proposition */}
         <div className="space-y-2">
           <h4 className="text-xs font-mono font-bold text-emerald-500 uppercase tracking-wider">
-            {lang === 'ar' ? 'لماذا تختارني لفريقك الهندسي؟' : 'ENGINEERING VALUE PROPOSITION'}
+            {lang === 'ar' ? 'القيمة الهندسية والخبرة المضافة' : 'ENGINEERING VALUE & IMPACT'}
           </h4>
           <div className="space-y-2 font-sans text-xs sm:text-sm text-slate-700 dark:text-slate-300">
             <div className="flex items-start gap-2.5">
@@ -78,8 +78,8 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
               <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
               <span>
                 {lang === 'ar'
-                  ? 'إتقان عميق للواجهات الحديثة (React, Next.js, Tailwind, Framer Motion) مع باكد إند قوي (Laravel 12, Filament, MySQL, Redis, REST APIs).'
-                  : 'Mastery of modern frontends (React, Next.js, Tailwind, Framer Motion) coupled with solid backend mastery (Laravel, Filament, Redis, REST APIs).'}
+                  ? 'إتقان عميق للواجهات الحديثة والتفاعلية (React, Tailwind) مع باكد إند صلب ومتكامل (Laravel, PHP, Filament, MySQL, Redis, REST APIs).'
+                  : 'Mastery of modern responsive frontends (React, Tailwind) coupled with solid backend architecture (Laravel, PHP, Filament, Redis, REST APIs).'}
               </span>
             </div>
             <div className="flex items-start gap-2.5">
@@ -90,16 +90,24 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
                   : 'Algorithmic engineering mindset (e.g. 728-scenario diagnostic routine engine, B2B/B2C dual-pricing middleware).'}
               </span>
             </div>
+            <div className="flex items-start gap-2.5">
+              <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+              <span>
+                {lang === 'ar'
+                  ? 'كتابة كود نظيف ومعياري (Clean Code & SOLID): معمارية برمجية منظمة وسهلة الصيانة، تضمن استقرار الأنظمة وتقلل التكاليف التقنية (Technical Debt) للشركات.'
+                  : 'Rigorous Clean Code & SOLID principles: Maintainable, self-documenting code architecture minimizing technical debt and maximizing long-term stability.'}
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Production Stack Pills */}
         <div className="space-y-2">
           <h4 className="text-xs font-mono font-bold text-cyan-500 uppercase tracking-wider">
-            {lang === 'ar' ? 'الحزمة التقنية للإنتاج' : 'PRODUCTION TOOLCHAIN'}
+            {lang === 'ar' ? 'الترسانة البرمجية وأدوات التطوير' : 'CORE TECH STACK & TOOLS'}
           </h4>
           <div className="flex flex-wrap gap-1.5" dir="ltr">
-            {['React', 'Next.js', 'TypeScript', 'Laravel 12', 'PHP 8.3', 'Filament v5', 'MySQL', 'Redis', 'Tailwind CSS', 'Docker', 'REST APIs', 'Firebase FCM', 'Git / CI-CD'].map((tech) => (
+            {['Laravel', 'PHP', 'React', 'Filament', 'MySQL', 'Redis', 'Tailwind CSS', 'REST APIs', 'Clean Code', 'Postman', 'Git / CI-CD'].map((tech) => (
               <span
                 key={tech}
                 className="px-2.5 py-1 rounded-lg bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.08] dark:border-white/[0.08] text-xs font-mono text-slate-800 dark:text-slate-200"
@@ -125,7 +133,7 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
 
           <div className="flex items-center gap-2 w-full sm:w-auto">
             <a
-              href="https://wa.me/201026040846"
+              href="https://wa.me/201043778564"
               target="_blank"
               rel="noreferrer"
               className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-mono text-xs flex items-center justify-center gap-1.5 transition-colors font-bold"
@@ -135,7 +143,7 @@ export const RecruiterModal = ({ isOpen, onClose }) => {
             </a>
 
             <a
-              href="mailto:abdeisty33@gmail.com"
+              href="mailto:abdulrahmaneldeisty@gmail.com"
               className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl glass-panel hover:bg-black/[0.06] dark:hover:bg-white/[0.06] text-slate-700 dark:text-slate-300 font-mono text-xs flex items-center justify-center gap-1.5 border border-black/10 dark:border-white/10 transition-colors"
             >
               <Mail className="w-3.5 h-3.5 text-indigo-500" />

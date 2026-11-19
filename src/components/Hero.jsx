@@ -45,11 +45,13 @@ export const Hero = ({ onOpenCommandPalette }) => {
 
   const typedCode = `const engineer = {
   name: "Abdelrahman Eldeisty",
-  handle: "@eldeisty",
-  status: "ONLINE • Available for hire",
-  specialization: "Full-Stack & Frontend Architecture",
-  coreStack: ["React", "Next.js", "Laravel", "TypeScript", "Tailwind"],
-  provenProjects: ["K-CODE", "Rawnaq Al-Khaleej", "Aqar Mousa", "AI Interior"],
+  location: "Mansoura, Dakahlia, Egypt",
+  experience: "+2 Years Production Experience",
+  codePhilosophy: "Clean Code • SOLID Principles",
+  availability: "Remote / Full-Time / Freelance",
+  specialization: "Full-Stack & Backend Architecture",
+  coreStack: ["Laravel", "PHP", "React", "MySQL", "Tailwind"],
+  provenProjects: ["K-CODE", "Rawnaq Al-Khaleej", "Aqar Mousa"],
   executeVision: () => true
 };`;
 

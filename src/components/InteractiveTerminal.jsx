@@ -54,8 +54,8 @@ export const InteractiveTerminal = () => {
       newLogs.push({
         type: 'output',
         text: lang === 'ar'
-          ? "الاسم: عبدالرحمن الديسطي (Abdelrahman Eldeisty)\nالمسمى: مهندس برمجيات وواجهات متقدم (Full-Stack & Frontend)\nالتقنيات: React 19, Next.js, TypeScript, Laravel, Tailwind CSS, MySQL\nالخبرة: +4 سنوات في بناء المتاجر والمنصات السحابية\nالحالة: 🟢 متاح لاستقبال المشاريع والتعاقد الفوري"
-          : "Name: Abdelrahman Eldeisty\nRole: Full-Stack & Frontend Software Engineer\nStack: React 19, Next.js, TypeScript, Laravel, Tailwind CSS, MySQL\nExperience: 4+ Years shipping production platforms\nStatus: 🟢 Available for contracts & full-time roles"
+          ? "الاسم: عبدالرحمن الديسطي (Abdelrahman Eldeisty)\nالمسمى: مهندس برمجيات وباك إند متقدم (Full-Stack & Backend)\nالتقنيات: Laravel, PHP, React, Tailwind CSS, MySQL, Redis, REST APIs\nالخبرة: +2 سنوات في بناء وتطوير الأنظمة السحابية والمنصات\nالحالة: 🟢 متاح لاستقبال المشاريع والتعاقد الفوري"
+          : "Name: Abdelrahman Eldeisty\nRole: Full-Stack & Backend Software Engineer\nStack: Laravel, PHP, React, Tailwind CSS, MySQL, Redis, REST APIs\nExperience: 2+ Years shipping production platforms\nStatus: 🟢 Available for contracts & full-time roles"
       });
     } else if (cmd === 'skills') {
       newLogs.push({
@@ -67,7 +67,7 @@ export const InteractiveTerminal = () => {
     } else if (cmd === 'contact') {
       newLogs.push({
         type: 'output',
-        text: "Email: abdeisty33@gmail.com\nGitHub: github.com/AbdelrahmanDeisty20\nLocation: Egypt (Worldwide Remote)\nStatus: Available for hire"
+        text: `Email: ${portfolioData.profile.email}\nWhatsApp / Phone: +20 ${portfolioData.profile.phone}\nGitHub: github.com/AbdelrahmanDeisty20\nLocation: Mansoura, Egypt (Worldwide Remote)\nStatus: Available for hire`
       });
     } else if (cmd === 'projects') {
       const projSummary = projects

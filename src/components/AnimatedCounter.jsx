@@ -5,7 +5,7 @@ export const AnimatedCounter = ({ value, duration = 1600, replayTrigger = 0 }) =
   const elementRef = useRef(null);
   const animFrameId = useRef(null);
 
-  // Parse any value string: e.g. "+18", "+2,100", "100%", "99/100"
+  // Parse any value string: e.g. "+8", "<50ms", "100%", "99/100"
   const parseConfig = (valStr) => {
     const str = String(valStr).trim();
     if (str.includes('/')) {
@@ -19,15 +19,25 @@ export const AnimatedCounter = ({ value, duration = 1600, replayTrigger = 0 }) =
       };
     }
 
+    const hasLessThan = str.includes('<');
     const hasPlus = str.includes('+');
     const hasPercent = str.includes('%');
+    const hasMs = str.toLowerCase().includes('ms');
     const cleanNum = parseInt(str.replace(/[^0-9]/g, ''), 10) || 0;
     const useComma = str.includes(',') || cleanNum >= 1000;
 
+    let prefix = '';
+    if (hasLessThan) prefix = '<';
+    else if (hasPlus) prefix = '+';
+
+    let suffix = '';
+    if (hasMs) suffix = 'ms';
+    else if (hasPercent) suffix = '%';
+
     return {
       target: cleanNum,
-      hasPlus,
-      hasPercent,
+      prefix,
+      suffix,
       useComma,
     };
   };
@@ -54,15 +64,7 @@ export const AnimatedCounter = ({ value, duration = 1600, replayTrigger = 0 }) =
         ? current.toLocaleString('en-US')
         : current.toString();
 
-      if (config.suffix) {
-        setDisplayValue(`${formattedNum}${config.suffix}`);
-      } else if (config.hasPercent) {
-        setDisplayValue(`${formattedNum}%`);
-      } else if (config.hasPlus) {
-        setDisplayValue(`+${formattedNum}`);
-      } else {
-        setDisplayValue(formattedNum);
-      }
+      setDisplayValue(`${config.prefix}${formattedNum}${config.suffix}`);
 
       if (progress < 1) {
         animFrameId.current = requestAnimationFrame(step);
