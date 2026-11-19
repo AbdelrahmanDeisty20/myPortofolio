@@ -42,7 +42,7 @@ export const ProjectsPage = () => {
             <Layers className="w-4 h-4" />
             <span>{t.badge}</span>
           </div>
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h1 className="text-3xl/[1.35] sm:text-5xl/[1.3] font-extrabold text-slate-900 dark:text-white tracking-tight">
             {t.title}
           </h1>
           <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed font-sans">

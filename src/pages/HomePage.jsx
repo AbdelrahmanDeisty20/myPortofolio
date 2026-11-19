@@ -258,25 +258,15 @@ export const HomePage = ({ onOpenCommandPalette }) => {
               </div>
 
               {/* Footer CTA */}
-              <div className="flex items-center justify-between pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
+              <div className="flex items-center justify-start pt-4 border-t border-black/[0.06] dark:border-white/[0.06]">
                 <a
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold font-mono text-xs flex items-center gap-2 shadow-sm"
                 >
-                  <span>{lang === 'ar' ? 'إطلاق المنصة' : 'Launch System'}</span>
+                  <span>{lang === 'ar' ? 'عرض الموقع' : 'View Website'}</span>
                   <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-
-                <a
-                  href={selectedProject.githubUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-4 py-2.5 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-black dark:hover:text-white font-mono text-xs flex items-center gap-2 border border-black/10 dark:border-white/10"
-                >
-                  <Github className="w-3.5 h-3.5" />
-                  <span>{lang === 'ar' ? 'الكود المصدري' : 'Source Code'}</span>
                 </a>
               </div>
 

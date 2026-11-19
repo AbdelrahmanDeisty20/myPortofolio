@@ -19,7 +19,7 @@ export const Experience = () => {
               <Briefcase className="w-4 h-4" />
               <span>{lang === 'ar' ? 'سجل الخبرات والمسيرة المهنية' : 'CHRONOLOGICAL LOGS'}</span>
             </div>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h2 className={`text-3xl/[1.35] sm:text-5xl/[1.3] font-extrabold text-slate-900 dark:text-white ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>
               {lang === 'ar' ? 'الخبرات العملية والقيادة التقنية' : 'Career Experience & Leadership'}
             </h2>
           </div>

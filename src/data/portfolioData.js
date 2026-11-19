@@ -36,7 +36,7 @@ export const portfolioData = {
       subtitle: "مجموعة منتقاة من أبرز المشاريع والأنظمة الحقيقية التي قمت بتطويرها وبرمجتها، تتنوع بين منصات تجارة إلكترونية متقدمة، بوابات خدمات كبرى، محركات ذكاء اصطناعي، وأنظمة إدارة متكاملة.",
       searchPlaceholder: "ابحث باسم المشروع أو التقنية (مثال: React, Laravel, TypeScript)...",
       all: "جميع الأعمال",
-      launch: "معاينة المشروع",
+      launch: "عرض الموقع",
       source: "الكود المصدري",
       details: "تفاصيل النظام",
     },
@@ -54,9 +54,9 @@ export const portfolioData = {
           "مزامنة فورية للأسعار والمخزون مع الباك إند و Redis",
           "واجهة مستخدم سريعة مصممة خصيصاً للجوال"
         ],
-        tags: ["Laravel", "PHP", "MySQL", "Filament", "Redis", "REST APIs", "Sanctum", "Stripe"],
+        tags: ["Laravel", "PHP", "MySQL", "Filament", "Redis", "REST APIs", "Sanctum"],
         metrics: "256 منتجاً معتمداً • 728 سيناريو روتين • استجابة أقل من 20ms",
-        liveUrl: "https://kcode.store/",
+        liveUrl: "https://kcode-pied.vercel.app/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
         status: "مشروع مكتمل (Live)",
         image: "/projects/kcode.webp",
@@ -77,7 +77,7 @@ export const portfolioData = {
         ],
         tags: ["Laravel", "PHP", "Filament", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Spatie"],
         metrics: "+2,500 حجز شهري • إشعارات لحظية عبر FCM • أمان عالي",
-        liveUrl: "https://wasly.net/",
+        liveUrl: "https://wasly-two.vercel.app/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
         status: "منشور في الإنتاج",
         image: "/projects/wasly.webp",
@@ -96,7 +96,7 @@ export const portfolioData = {
           "محرك خصائص ومتغيرات المنتجات (Variant Attributes)",
           "استيراد وتصدير جماعي للكتالوج بـ Excel وفك حزم ZIP"
         ],
-        tags: ["Laravel", "PHP 8.3", "Custom Blade Dashboard", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Excel Sync"],
+        tags: ["Laravel", "PHP", "Custom Blade Dashboard", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Excel Sync"],
         metrics: "أكثر من 5,000 صنف • تسعير مزدوج قطاعي وجملة • استجابة 0.8s",
         liveUrl: "https://bynona.store/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
@@ -221,7 +221,7 @@ export const portfolioData = {
     },
     skills: {
       frontend: [
-        { name: "React / Next.js", level: 98, highlight: "Hooks, Router, SSR, Performance Optimization" },
+        { name: "React", level: 98, highlight: "Hooks, Router, SPA, Performance Optimization" },
         { name: "JavaScript / TypeScript", level: 95, highlight: "ES6+, Async/Await, Strict Typing" },
         { name: "Tailwind CSS / CSS3", level: 99, highlight: "Modern Responsive Layouts, Flexbox, Grid" },
         { name: "Framer Motion", level: 90, highlight: "Smooth UI Animations, Micro-interactions" },
@@ -261,10 +261,10 @@ export const portfolioData = {
       workstationTitle: "بيئة التطوير والبرمجة",
     },
     principles: [
-      { title: "معايير الكود النظيف (Clean Code & SOLID)", desc: "كتابة كود نظيف، واضح التسميات، يتبع معايير SOLID و MVC لضمان سهولة الصيانة والتوسع المستقبلي وتجنب الديون التقنية." },
-      { title: "الأداء وسرعة التحميل الفائقة", desc: "كود نظيف خفيف الوزن بزمن استجابة فائق السرعة وبدون أي بطء على الإطلاق." },
-      { title: "التوافق التام مع الجوال (Mobile First)", desc: "تصميم متجاوب بنسبة 100% يضمن تجربة مستخدم سلسة ومثالية على أصغر شاشات الهواتف." },
-      { title: "معمارية برمجية صلبة وقابلة للتوسع", desc: "فصل كامل للمهام، بناء أنظمة متينة تقلل الديون التقنية للشركات وتدعم التوسع." },
+      { title: "كود نظيف يسهل البناء عليه", desc: "الالتزام بمعايير Clean Code لتسليم برمجيات مستقرة ومرتبة يسهل تعديلها أو تطويرها في أي وقت." },
+      { title: "أداء سريع واستقرار مستمر", desc: "تحسين كفاءة الخادم وقواعد البيانات والواجهات لضمان سرعة تحميل عالية وعمل النظام بسلاسة تحت الضغط." },
+      { title: "هندسة تحل مشاكل البيزنس", desc: "تحويل متطلبات العمل المعقدة — مثل التسعير المزدوج وإدارة المخزون والحجوزات — إلى أنظمة عملية دقيقة." },
+      { title: "تجربة مستخدم متكاملة", desc: "تصميم وتنفيذ شاشات واضحة ومتجاوبة مع الجوال والكمبيوتر تربط المستخدم بالخدمة بأقل خطوات ممكنة." },
     ],
     workstation: [
       { label: "نظام التشغيل", value: "Windows 11 / Linux Environment" },
@@ -278,7 +278,7 @@ export const portfolioData = {
         company: "مطور مستقل ومستشار تقني (Freelance)",
         period: "2023 - حتى الآن",
         description: "تصميم وبرمجة تطبيقات ومتاجر إلكترونية متكاملة للعديد من العملاء والشركات في السعودية، الإمارات، ومصر. بناء منصات مثل K-CODE، رونق الخليج، عقار موسى، وأنظمة إدارة المستودعات والمطاعم مع التركيز التام على السرعة وتجربة المستخدم.",
-        tags: ["React", "Next.js", "Laravel", "TailwindCSS", "E-Commerce", "REST APIs"]
+        tags: ["React", "Laravel", "TailwindCSS", "E-Commerce", "REST APIs"]
       },
       {
         role: "مطور ويب وواجهات تفاعلية",
@@ -360,7 +360,7 @@ export const portfolioData = {
       subtitle: "A showcase of real production-ready web applications, e-commerce platforms, and management systems engineered with clean code, responsive design, and robust architecture.",
       searchPlaceholder: "Search by project name or tech (e.g. React, Laravel)...",
       all: "All Works",
-      launch: "View Project",
+      launch: "View Website",
       source: "Source Code",
       details: "System Details",
     },
@@ -378,9 +378,9 @@ export const portfolioData = {
           "Real-time price & stock inventory sync with Laravel back-end and Redis",
           "Ultra-fast mobile-first responsive checkout and product detail views"
         ],
-        tags: ["Laravel", "PHP", "MySQL", "Filament", "Redis", "REST APIs", "Sanctum", "Stripe"],
+        tags: ["Laravel", "PHP", "MySQL", "Filament", "Redis", "REST APIs", "Sanctum"],
         metrics: "256 Curated Products • 728 Routine Scenarios • Sub-20ms Response Time",
-        liveUrl: "https://kcode.store/",
+        liveUrl: "https://kcode-pied.vercel.app/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
         status: "COMPLETED (LIVE)",
         image: "/projects/kcode.webp",
@@ -401,7 +401,7 @@ export const portfolioData = {
         ],
         tags: ["Laravel", "PHP", "Filament", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Spatie"],
         metrics: "+2,500 Monthly Bookings • Real-time FCM Alerts • High Security",
-        liveUrl: "https://wasly.net/",
+        liveUrl: "https://wasly-two.vercel.app/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
         status: "LIVE PRODUCTION",
         image: "/projects/wasly.webp",
@@ -420,7 +420,7 @@ export const portfolioData = {
           "EAV-inspired dynamic product attributes and variant specification engine",
           "Batch Excel catalog ingestion pipeline with ZIP media auto-extraction"
         ],
-        tags: ["Laravel", "PHP 8.3", "Custom Blade Dashboard", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Excel Sync"],
+        tags: ["Laravel", "PHP", "Custom Blade Dashboard", "MySQL", "REST APIs", "Sanctum", "Firebase FCM", "Excel Sync"],
         metrics: "+5,000 Catalog Items • Dual Retail/Wholesale Engine • 0.8s Page Speed",
         liveUrl: "https://bynona.store/",
         githubUrl: "https://github.com/AbdelrahmanDeisty20",
@@ -545,7 +545,7 @@ export const portfolioData = {
     },
     skills: {
       frontend: [
-        { name: "React / Next.js", level: 98, highlight: "Hooks, Router, SSR, Performance Optimization" },
+        { name: "React", level: 98, highlight: "Hooks, Router, SPA, Performance Optimization" },
         { name: "JavaScript / TypeScript", level: 95, highlight: "ES6+, Async/Await, Strict Typing" },
         { name: "Tailwind CSS / CSS3", level: 99, highlight: "Modern Responsive Layouts, Flexbox, Grid" },
         { name: "Framer Motion", level: 90, highlight: "Smooth UI Animations, Micro-interactions" },
@@ -585,10 +585,10 @@ export const portfolioData = {
       workstationTitle: "Workstation & Development Tools",
     },
     principles: [
-      { title: "Clean Code & SOLID Standards", desc: "Writing self-documenting, maintainable code following SOLID and MVC patterns to eliminate technical debt and ensure longevity." },
-      { title: "Sub-16ms Frame Budget & Fast Loads", desc: "Clean, lightweight code ensuring blazing fast loading times and zero UI stutter." },
-      { title: "Mobile-First Responsiveness", desc: "100% responsive interfaces ensuring perfect layouts and ergonomics on every screen size." },
-      { title: "Scalable Architecture", desc: "Clean separation of concerns, robust database schema, and long-term enterprise maintainability." },
+      { title: "Clean & Maintainable Code", desc: "Applying Clean Code standards to deliver stable, well-structured software that stays easy to update and expand anytime." },
+      { title: "High Speed & Reliability", desc: "Optimizing server efficiency, database queries, and frontend performance so systems run smoothly under load." },
+      { title: "Business-Driven Engineering", desc: "Turning complex business requirements—such as dual pricing, inventory workflows, and live bookings—into accurate systems." },
+      { title: "Seamless User Experience", desc: "Designing and building clear, responsive screens for mobile and desktop that connect users to services effortlessly." },
     ],
     workstation: [
       { label: "Operating System", value: "Windows 11 / Linux Environment" },
@@ -602,7 +602,7 @@ export const portfolioData = {
         company: "Freelance & Technical Consultant",
         period: "2023 - Present",
         description: "Architecting and implementing scalable digital solutions for clients in Saudi Arabia, UAE, and Egypt. Developed platforms including K-CODE e-commerce, Rawnaq Al-Khaleej, Aqar Mousa, and inventory logistics systems.",
-        tags: ["React", "Next.js", "Laravel", "TailwindCSS", "E-Commerce", "REST APIs"]
+        tags: ["React", "Laravel", "TailwindCSS", "E-Commerce", "REST APIs"]
       },
       {
         role: "Web Applications Developer",

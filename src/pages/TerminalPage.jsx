@@ -21,7 +21,7 @@ export const TerminalPage = () => {
               <TerminalIcon className="w-4 h-4" />
               <span>{t.badge}</span>
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-3xl/[1.35] sm:text-5xl/[1.3] font-extrabold text-slate-900 dark:text-white tracking-tight">
               {t.title}
             </h1>
           </div>

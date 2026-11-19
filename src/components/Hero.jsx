@@ -94,9 +94,15 @@ export const Hero = ({ onOpenCommandPalette }) => {
           {/* Left Column: Big Typography & Bio */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6">
             <ScrollReveal delay={0.2}>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.25]">
+              <h1
+                className={`font-extrabold text-slate-900 dark:text-white ${
+                  isRTL
+                    ? 'text-3xl/[1.42] sm:text-5xl/[1.4] lg:text-6xl/[1.38] tracking-normal'
+                    : 'text-3xl/[1.2] sm:text-5xl/[1.15] lg:text-6xl/[1.15] tracking-tight'
+                }`}
+              >
                 {t.headingStart}{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-purple-500 dark:from-emerald-400 dark:via-cyan-300 dark:to-purple-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-purple-500 dark:from-emerald-400 dark:via-cyan-300 dark:to-purple-400 py-0.5">
                   {t.headingGradient}
                 </span>{' '}
                 {t.headingEnd}
@@ -105,7 +111,15 @@ export const Hero = ({ onOpenCommandPalette }) => {
 
             <ScrollReveal delay={0.3}>
               <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl font-sans">
-                {t.bio}
+                {t.bio.split(/\*\*(.*?)\*\*/g).map((part, idx) =>
+                  idx % 2 === 1 ? (
+                    <strong key={idx} className="font-bold text-slate-900 dark:text-white">
+                      {part}
+                    </strong>
+                  ) : (
+                    part
+                  )
+                )}
               </p>
             </ScrollReveal>
 

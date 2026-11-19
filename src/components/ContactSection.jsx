@@ -56,7 +56,7 @@ export const ContactSection = () => {
               <Terminal className="w-3.5 h-3.5" />
               <span>{t.badge}</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h2 className={`text-2xl/[1.35] sm:text-4xl/[1.3] lg:text-5xl/[1.3] font-extrabold text-slate-900 dark:text-white ${isRTL ? 'tracking-normal' : 'tracking-tight'}`}>
               {t.title}
             </h2>
             <p className="text-slate-600 dark:text-slate-400 text-xs sm:text-base mt-2 sm:mt-3">

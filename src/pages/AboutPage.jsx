@@ -28,7 +28,7 @@ export const AboutPage = () => {
           </ScrollReveal>
 
           <ScrollReveal delay={0.2}>
-            <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+            <h1 className="text-3xl/[1.35] sm:text-5xl/[1.3] font-extrabold text-slate-900 dark:text-white tracking-tight">
               {t.title}
             </h1>
           </ScrollReveal>
@@ -94,7 +94,7 @@ export const AboutPage = () => {
                 </div>
                 <div className="flex justify-between py-1 border-b border-black/[0.04] dark:border-white/[0.04]">
                   <span className="text-slate-500">{t.weapon}</span>
-                  <span className="text-cyan-600 dark:text-cyan-400 font-bold">React, Next.js, Laravel</span>
+                  <span className="text-cyan-600 dark:text-cyan-400 font-bold">React, Laravel</span>
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-slate-500">{t.clearance}</span>
@@ -119,7 +119,9 @@ export const AboutPage = () => {
           {principles.map((pr, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>
               <div className="p-5 rounded-xl glass-panel border border-black/[0.06] dark:border-white/[0.06] space-y-2 h-full">
-                <div className="text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">0{i+1}.</div>
+                <div className="text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">
+                  <span dir="ltr" className="inline-block">0{i + 1}.</span>
+                </div>
                 <h3 className="text-sm font-bold text-slate-900 dark:text-white">{pr.title}</h3>
                 <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">{pr.desc}</p>
               </div>

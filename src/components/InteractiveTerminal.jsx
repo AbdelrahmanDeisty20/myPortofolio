@@ -61,8 +61,8 @@ export const InteractiveTerminal = () => {
       newLogs.push({
         type: 'output',
         text: lang === 'ar'
-          ? "المهارات الأساسية:\n[98%] React / Next.js\n[96%] Laravel & PHP\n[95%] TypeScript & JavaScript (ES6+)\n[99%] Tailwind CSS & Responsive Layouts\n[94%] REST APIs & WebSockets\n[92%] MySQL & Schema Design"
-          : "CORE CAPABILITIES:\n[98%] React / Next.js Architecture\n[96%] Laravel & PHP Back-end\n[95%] TypeScript & Modern JavaScript\n[99%] Tailwind CSS & Mobile-First UX\n[94%] RESTful APIs & WebSockets\n[92%] MySQL & Database Optimization"
+          ? "المهارات الأساسية:\n[98%] React\n[96%] Laravel & PHP\n[95%] JavaScript (ES6+)\n[99%] Tailwind CSS & Responsive Layouts\n[94%] REST APIs & WebSockets\n[92%] MySQL & Schema Design"
+          : "CORE CAPABILITIES:\n[98%] React Architecture\n[96%] Laravel & PHP Back-end\n[95%] Modern JavaScript (ES6+)\n[99%] Tailwind CSS & Mobile-First UX\n[94%] RESTful APIs & WebSockets\n[92%] MySQL & Database Optimization"
       });
     } else if (cmd === 'contact') {
       newLogs.push({
